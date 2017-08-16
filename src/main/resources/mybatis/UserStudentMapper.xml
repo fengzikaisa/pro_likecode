@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.senyint.dao.UserStudentDao">
+
+    <select id="getStudents" resultType="com.senyint.bean.UserStudent">
+        select u.id,u.`name`,u.mobile from t_user_student u
+    </select>
+    <select id="getCounts" resultType="java.lang.Integer">
+        select count(*) from t_user_student
+    </select>
+</mapper>
