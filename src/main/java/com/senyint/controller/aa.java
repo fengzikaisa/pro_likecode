@@ -1,15 +1,29 @@
 package com.senyint.controller;
 
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
-import com.alibaba.fastjson.JSONObject;
 import com.googlecode.jsonrpc4j.JsonRpcHttpClient;
+import com.senyint.bean.UserStudent;
 import com.senyint.common.bean.JsonBean;
 import com.senyint.common.bean.ParameterBean;
 import com.senyint.common.bean.ResultBean;
+
+/*public class aa {
+	public static void main(String[] args) throws Throwable {
+		JsonRpcHttpClient client = new JsonRpcHttpClient(new URL("http://localhost:8081/userInfo"));
+
+		String aa = "";
+
+//		String result = client.invoke("multiplier", new Object[] { aa }, String.class);
+//		Integer number= client.invoke("getCounts",new Object[] {aa}, Integer.class);
+		List<UserStudent> number = client.invoke("getStudents", new Object[]{aa}, UserStudent.class);
+
+		System.out.println(number);
+	}*/
+
 
 public class aa {
 	public static void main(String[] args) throws Throwable {
