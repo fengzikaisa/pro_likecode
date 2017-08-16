@@ -16,11 +16,11 @@ import com.senyint.common.Exception.ParameterException;
 
 @Data
 public class JsonBean {
-	private String version;// 接口版本号
-	private String id;// 业务ID
-	private String source;// 来源
-	private Object custom;// 自定义消息
-	private Object parameter;// 接口参数
+	private String version;//
+	private String id;//
+	private String source;//
+	private Object custom;//
+	private Object parameter;//
 
 	public String toString() {
 		String str = null;
@@ -46,12 +46,12 @@ public class JsonBean {
 	}
 
 	/**
-	 * json串转换成ParameterBean对象构造器parameter返回对象.
+	 * json锟斤拷转锟斤拷锟斤拷ParameterBean锟斤拷锟斤拷锟斤拷锟斤拷parameter锟斤拷锟截讹拷锟斤拷.
 	 * 
 	 * @param json
-	 *            json串
+	 *            json锟斤拷
 	 * @throws Exception
-	 *             参数转换异常
+	 *             锟斤拷锟斤拷转锟斤拷锟届常
 	 */
 	public JsonBean(String json, Class<?> cls) throws ParameterException {
 		super();
@@ -60,19 +60,19 @@ public class JsonBean {
 		try {
 			dto = objectMapper.readValue(json, JsonBean.class);
 		} catch (Exception e) {
-			throw new ParameterException("接收参数异常");
+			throw new ParameterException("锟斤拷锟秸诧拷锟斤拷锟届常");
 		}
 		this.version = dto.getVersion();
 		this.id = dto.getId();
 		this.source = dto.getSource();
 		this.custom = dto.getCustom();
 
-		// 纯如的JSON串中的parameter为List类型
+		// 锟斤拷锟斤拷锟絁SON锟斤拷锟叫碉拷parameter为List锟斤拷锟斤拷
 		if (dto.getParameter() instanceof List) {
 			JSONArray jsonArray = JSONArray.fromObject(dto.getParameter());
 			this.parameter = JSONArray.toList(jsonArray, cls);
 		}
-		// 纯如的JSON串中的parameter为Map类型
+		// 锟斤拷锟斤拷锟絁SON锟斤拷锟叫碉拷parameter为Map锟斤拷锟斤拷
 		else {
 			JSONObject jsonobject = JSONObject.fromObject(dto.getParameter());
 			this.parameter = JSONObject.toBean(jsonobject, cls);
@@ -81,12 +81,12 @@ public class JsonBean {
 	}
 
 	/**
-	 * json串转换成ParameterBean对象构造器parameter返回map类型适用于多个参数的map
+	 * json锟斤拷转锟斤拷锟斤拷ParameterBean锟斤拷锟斤拷锟斤拷锟斤拷parameter锟斤拷锟斤拷map锟斤拷锟斤拷锟斤拷锟斤拷锟节讹拷锟斤拷锟斤拷锟斤拷锟絤ap
 	 * 
 	 * @param json
-	 *            json串
+	 *            json锟斤拷
 	 * @throws Exception
-	 *             参数转换异常
+	 *             锟斤拷锟斤拷转锟斤拷锟届常
 	 */
 	public JsonBean(String json) throws ParameterException {
 		super();
@@ -95,7 +95,7 @@ public class JsonBean {
 		try {
 			dto = objectMapper.readValue(json, JsonBean.class);
 		} catch (Exception e) {
-			throw new ParameterException("接收参数异常");
+			throw new ParameterException("锟斤拷锟秸诧拷锟斤拷锟届常");
 		}
 		this.version = dto.getVersion();
 		this.id = dto.getId();
@@ -125,7 +125,7 @@ public class JsonBean {
 		} catch (JsonProcessingException e) {
 			e.printStackTrace();
 		}
-		System.out.println("对象转换成json:" + str);
+		System.out.println("锟斤拷锟斤拷转锟斤拷锟斤拷json:" + str);
 
 		System.out.println("===================================");
 
