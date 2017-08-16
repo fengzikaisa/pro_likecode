@@ -1,18 +1,18 @@
 package com.senyint.common.utils;
 
 public class ConstantDefinition {
-	/** ·µ»Ø³É¹¦ */
+	/** è¿”å›æˆåŠŸ */
 	public static final String SYSTEM_SUCCESS = "100000";
-	/** ·µ»ØÊ§°Ü */
+	/** è¿”å›å¤±è´¥ */
 	public static final String SYSTEM_ERROR = "100001";
-	/** ·µ»ØÖµÎª¿Õ */
+	/** è¿”å›å€¼ä¸ºç©º */
 	public static final String SYSTEM_RESULT_EMPTY = "100002";
-	/** ×Ó·½·¨²ÎÊıÎª¿Õ */
+	/** å­æ–¹æ³•å‚æ•°ä¸ºç©º */
 	public static final String SYSTEM_METHOD_JSON = "100003";
-	/** ×Ó·½·¨ÕÒ²»µ½ */
+	/** å­æ–¹æ³•æ‰¾ä¸åˆ° */
 	public static final String SYSTEM_METHOD_NULL = "100004";
-	/** ×Ó·½·¨°²È«ÇÖ·¸ */
+	/** å­æ–¹æ³•å®‰å…¨ä¾µçŠ¯ */
 	public static final String SYSTEM_METHOD_SECURITY = "100005";
-	/** ×Ó·½·¨Ö´ĞĞÊ§°Ü */
+	/** å­æ–¹æ³•æ‰§è¡Œå¤±è´¥ */
 	public static final String SYSTEM_METHOD_ERROR = "100006";
 }

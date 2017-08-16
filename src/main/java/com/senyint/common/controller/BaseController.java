@@ -10,7 +10,7 @@ import lombok.extern.log4j.Log4j;
 @Log4j
 public class BaseController {
 	/**
-	 * 全局异常返回
+	 * 鍏ㄥ眬寮傚父杩斿洖
 	 * 
 	 * @param e
 	 * @return

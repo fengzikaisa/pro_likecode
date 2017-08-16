@@ -21,13 +21,13 @@ public class ParameterBean implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	/** ÓÃ»§id */
+	/** ç”¨æˆ·id */
 	private String uid;
-	/** ¶ş¼¶×ª·¢½Ó¿ÚURL */
+	/** äºŒçº§è½¬å‘æ¥å£URL */
 	private String interfaceUrl;
-	/** Ö´ĞĞ·½·¨ */
+	/** æ‰§è¡Œæ–¹æ³• */
 	private String method;
-	/** ½Ó¿Ú²ÎÊı */
+	/** æ¥å£å‚æ•° */
 	private Object parameter;
 
 	public Object getParameter() {
@@ -39,7 +39,7 @@ public class ParameterBean implements Serializable {
 	}
 
 	/***
-	 * Parameter Àà×ª»»
+	 * Parameter ç±»è½¬æ¢
 	 * 
 	 * @param cls
 	 * @return object
@@ -50,14 +50,14 @@ public class ParameterBean implements Serializable {
 			String json = mapper.writeValueAsString(parameter);
 			parameter = mapper.readValue(json, cls);
 		} catch (Exception e) {
-			log.error("²ÎÊı×ª»»³ö´í:", e);
+			log.error("å‚æ•°è½¬æ¢å‡ºé”™:", e);
 			e.printStackTrace();
 		}
 		return parameter;
 	}
 
 	/***
-	 * string×ªjson
+	 * stringè½¬json
 	 * 
 	 * @param cls
 	 * @param str
@@ -75,7 +75,7 @@ public class ParameterBean implements Serializable {
 	}
 
 	/***
-	 * ÖØĞ´
+	 * é‡å†™
 	 */
 	public String toString() {
 		String str = null;
@@ -83,10 +83,10 @@ public class ParameterBean implements Serializable {
 		try {
 			str = mapper.writeValueAsString(this);
 		} catch (JsonProcessingException e) {
-			log.info("Àà×ª»»json³ö´í:", e);
+			log.info("ç±»è½¬æ¢jsonå‡ºé”™:", e);
 			e.printStackTrace();
 		} catch (Exception e) {
-			log.info("Àà×ª»»json³ö´í:", e);
+			log.info("ç±»è½¬æ¢jsonå‡ºé”™:", e);
 			e.printStackTrace();
 		}
 		return str;

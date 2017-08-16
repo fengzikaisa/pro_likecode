@@ -14,7 +14,7 @@ import org.apache.log4j.RollingFileAppender;
  * 
  * @author ly
  * @version v1.0
- * @deprecated: ×Ô¶¨ÒåÈÕÖ¾Êä³ö(ÓëÄ¿±êÎÄ¼şÍ¬Ä¿Â¼)
+ * @deprecated: è‡ªå®šä¹‰æ—¥å¿—è¾“å‡º(ä¸ç›®æ ‡æ–‡ä»¶åŒç›®å½•)
  *
  */
 public class Loger {

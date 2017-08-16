@@ -8,17 +8,17 @@ import org.springframework.aop.framework.AopProxy;
  * 
  * @author ly
  * @version v1.0
- * @deprecated ÓĞÎÊÌâ²»¹ıÄÜÓÃ
+ * @deprecated æœ‰é—®é¢˜ä¸è¿‡èƒ½ç”¨
  *
  */
 public class AopTargetUtils {
-	// Ö±½Ó·µ»Ø
+	// ç›´æ¥è¿”å›
 	public static Object getTarget(Object proxy) throws Exception {
 		return proxy;
 	}
 
 	/***
-	 * ÓĞÎÊÌâ1
+	 * æœ‰é—®é¢˜1
 	 * 
 	 * @param proxy
 	 * @return
@@ -38,7 +38,7 @@ public class AopTargetUtils {
 	}
 
 	/***
-	 * ÓĞÎÊÌâ2
+	 * æœ‰é—®é¢˜2
 	 * 
 	 * @param proxy
 	 * @return

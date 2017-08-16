@@ -1,20 +1,19 @@
 package com.senyint.common.utils;
 
-import com.senyint.common.bean.ParameterBean;
-import com.senyint.common.bean.ResultBean;
-import lombok.extern.log4j.Log4j;
+import java.lang.reflect.Method;
 import org.codehaus.jackson.JsonProcessingException;
 import org.springframework.stereotype.Service;
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
-
-import java.lang.reflect.Method;
+import com.senyint.common.bean.ParameterBean;
+import com.senyint.common.bean.ResultBean;
+import lombok.extern.log4j.Log4j;
 
 /***
  * 
  * @author ly
  * @version v1.0
- * @deprecated ƒ£øÈ¥˙¿Ì¿‡
+ * @deprecated Ê®°Âùó‰ª£ÁêÜÁ±ª
  */
 @Service
 @Log4j

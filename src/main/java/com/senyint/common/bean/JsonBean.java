@@ -16,10 +16,15 @@ import com.senyint.common.Exception.ParameterException;
 
 @Data
 public class JsonBean {
-	private String version;//
+	/** 接口版本号 */
+	private String version;
+	/** 业务id */
 	private String id;//
+	/** 来源android java php 等 */
 	private String source;//
+	/** 自定义消息 */
 	private Object custom;//
+	/** 接口私有参数 */
 	private Object parameter;//
 
 	public String toString() {
@@ -46,12 +51,12 @@ public class JsonBean {
 	}
 
 	/**
-	 * json��ת����ParameterBean��������parameter���ض���.
+	 * json串转换成ParameterBean对象构造器parameter返回对象.
 	 * 
 	 * @param json
-	 *            json��
+	 *            json串
 	 * @throws Exception
-	 *             ����ת���쳣
+	 *             参数转换异常
 	 */
 	public JsonBean(String json, Class<?> cls) throws ParameterException {
 		super();
@@ -60,19 +65,19 @@ public class JsonBean {
 		try {
 			dto = objectMapper.readValue(json, JsonBean.class);
 		} catch (Exception e) {
-			throw new ParameterException("���ղ����쳣");
+			throw new ParameterException("接收参数异常");
 		}
 		this.version = dto.getVersion();
 		this.id = dto.getId();
 		this.source = dto.getSource();
 		this.custom = dto.getCustom();
 
-		// �����JSON���е�parameterΪList����
+		// // JSON串中的parameter为List类型
 		if (dto.getParameter() instanceof List) {
 			JSONArray jsonArray = JSONArray.fromObject(dto.getParameter());
 			this.parameter = JSONArray.toList(jsonArray, cls);
 		}
-		// �����JSON���е�parameterΪMap����
+		// JSON串中的parameter为Map类型
 		else {
 			JSONObject jsonobject = JSONObject.fromObject(dto.getParameter());
 			this.parameter = JSONObject.toBean(jsonobject, cls);
@@ -81,12 +86,12 @@ public class JsonBean {
 	}
 
 	/**
-	 * json��ת����ParameterBean��������parameter����map���������ڶ��������map
+	 * json串转换成ParameterBean对象构造器parameter返回map类型适用于多个参数的map
 	 * 
 	 * @param json
-	 *            json��
+	 *            json串
 	 * @throws Exception
-	 *             ����ת���쳣
+	 *             参数转换异常
 	 */
 	public JsonBean(String json) throws ParameterException {
 		super();
@@ -95,7 +100,7 @@ public class JsonBean {
 		try {
 			dto = objectMapper.readValue(json, JsonBean.class);
 		} catch (Exception e) {
-			throw new ParameterException("���ղ����쳣");
+			throw new ParameterException("接收参数异常");
 		}
 		this.version = dto.getVersion();
 		this.id = dto.getId();
@@ -107,6 +112,7 @@ public class JsonBean {
 	public JsonBean() {
 		super();
 	}
+
 	public static void main(String args[]) {
 		JsonBean setdto = new JsonBean();
 		setdto.setId("1");
@@ -125,25 +131,5 @@ public class JsonBean {
 		} catch (JsonProcessingException e) {
 			e.printStackTrace();
 		}
-		System.out.println("����ת����json:" + str);
-
-		System.out.println("===================================");
-
-		/*try {
-			System.out.println("str=" + str);
-			JsonBean getBean = new JsonBean(str,
-					UserBean.class);
-			System.out.println("version=" + getBean.getVersion());
-			System.out.println("id=" + getBean.getId());
-			System.out.println("source=" + getBean.getSource());
-
-			UserBean userBean = (UserBean) getBean.getParameter();
-			System.out.println(userBean.getId());
-			System.out.println(userBean.getPassword());
-			System.out.println(userBean.getUserName());
-
-		} catch (Exception e) {
-			e.printStackTrace();
-		}*/
 	}
 }

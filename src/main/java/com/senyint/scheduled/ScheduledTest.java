@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 import lombok.extern.log4j.Log4j;
 
 /***
- * 设置定时任务
+ * 璁剧疆瀹氭椂浠诲姟
  * 
  * @author ly
  *

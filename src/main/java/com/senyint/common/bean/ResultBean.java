@@ -12,9 +12,9 @@ import org.codehaus.jackson.map.annotate.JsonSerialize.Inclusion;
 public class ResultBean implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	/** ×´Ì¬Âë */
+	/** çŠ¶æ€ç  */
 	private String status;
-	/** ·µ»ØÖµ */
+	/** è¿”å›å€¼ */
 	private Object result;
 
 	public ResultBean() {
