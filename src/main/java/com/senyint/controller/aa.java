@@ -9,10 +9,23 @@ import com.alibaba.fastjson.JSONObject;
 import com.googlecode.jsonrpc4j.JsonRpcHttpClient;
 import com.senyint.common.bean.JsonBean;
 import com.senyint.common.bean.ParameterBean;
+import com.senyint.common.bean.ResultBean;
 
 public class aa {
 	public static void main(String[] args) throws Throwable {
 		JsonRpcHttpClient client = new JsonRpcHttpClient(new URL("http://localhost:8081/aaa"));
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("aa", "11");
+		map.put("bb", "22");
+		JsonBean bean = new JsonBean();
+		bean.setVersion("1.0");
+		bean.setSource("AA");
+		bean.setCustom("ASDA");
+		bean.setId("1");
+		bean.setParameter(map);
+		String json = bean.toString();
+		ResultBean result = client.invoke("testMethod", new Object[] { json }, ResultBean.class);
+		System.out.println(result.toString());
 //		Map<String, String> map = new HashMap<String, String>();
 //		map.put("key", "12345678");
 //		map.put("compId", "31");
@@ -22,16 +35,16 @@ public class aa {
 //		// map.put("type", "1");
 //
 //		JsonBean bean = new JsonBean();
-//		bean.setVersion("1.0(°æ±¾ºÅ)");
-//		bean.setSource("php(À´Ô´)");
-//		bean.setCustom("ÐèÒª·µ»ØµÄ²ÎÊý(×Ô¶¨ÒåÏûÏ¢)");
-//		bean.setId("1(ÒµÎñID)");
+//		bean.setVersion("1.0(ï¿½æ±¾ï¿½ï¿½)");
+//		bean.setSource("php(ï¿½ï¿½Ô´)");
+//		bean.setCustom("ï¿½ï¿½Òªï¿½ï¿½ï¿½ØµÄ²ï¿½ï¿½ï¿½(ï¿½Ô¶ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢)");
+//		bean.setId("1(Òµï¿½ï¿½ID)");
 //		bean.setParameter(map);
 //
-//		String json = bean.toString();
-		String aa = "aaaaaa";
-//		System.out.println(json);
-		String result = client.invoke("multiplier", new Object[] { aa }, String.class);
-		System.out.println(result);
+////		String json = bean.toString();
+//		String aa = "aaaaaa";
+////		System.out.println(json);
+//		String result = client.invoke("multiplier", new Object[] { aa }, String.class);
+//		System.out.println(result);
 	}
 }
