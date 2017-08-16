@@ -1,10 +1,12 @@
 package com.senyint.service.impl;
 
+import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Service;
 import com.googlecode.jsonrpc4j.spring.AutoJsonRpcServiceImpl;
 import com.senyint.bean.Tbean;
 import com.senyint.common.bean.JsonBean;
 import com.senyint.common.bean.ResultBean;
+import com.senyint.common.utils.ConstantDefinition;
 import com.senyint.service.JsonRpcService;
 
 @Service
@@ -22,7 +24,7 @@ public class JsonRpcServiceImpl implements JsonRpcService {
 		JsonBean getBean = new JsonBean(json, Tbean.class);
 		Tbean tbean= (Tbean) getBean.getParameter();
 		System.out.println("111");
-		return new ResultBean("aa", tbean);
+		return new ResultBean(ConstantDefinition.SYSTEM_SUCCESS, tbean);
 	}
 
 }
