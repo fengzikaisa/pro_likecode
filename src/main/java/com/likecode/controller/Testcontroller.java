@@ -30,8 +30,8 @@ public class Testcontroller extends BaseController{
 	public String index1(Model model) {
 		ResultBean bean=userStudentServiceImpl.getStudents();
 		log.info(bean);
-		model.addAttribute("bean",bean);
-		return "NewFile";
+		model.addAttribute("hello","666");
+		return "/helloHtml";
 	}
 
 }

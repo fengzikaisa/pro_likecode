@@ -107,8 +107,12 @@
 			<version>2.2.2</version>
 			<classifier>jdk15</classifier>
 		</dependency>
-	</dependencies>
-	<repositories>
+		<dependency>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-thymeleaf</artifactId>
+	</dependency>
+</dependencies>
+<repositories>
 		<repository>
 			<id>alimaven</id>
 			<name>aliyun maven</name>
