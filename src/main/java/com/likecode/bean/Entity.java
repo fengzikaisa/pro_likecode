@@ -1,4 +1,4 @@
-package com.senyint.bean;
+package com.likecode.bean;
 
 import java.io.Serializable;
 import lombok.Data;

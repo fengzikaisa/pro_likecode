@@ -1,4 +1,4 @@
-package com.senyint.common.utils;
+package com.likecode.common.utils;
 
 import javax.annotation.Resource;
 import javax.servlet.ServletContext;

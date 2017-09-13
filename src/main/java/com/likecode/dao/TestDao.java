@@ -1,10 +1,10 @@
-package com.senyint.dao;
+package com.likecode.dao;
 
 import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 
-import com.senyint.bean.TestBean;
+import com.likecode.bean.TestBean;
 
 @Mapper
 public interface TestDao {

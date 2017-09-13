@@ -1,4 +1,4 @@
-package com.senyint.bean;
+package com.likecode.bean;
 
 import org.apache.ibatis.type.Alias;
 import java.io.Serializable;

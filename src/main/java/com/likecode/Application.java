@@ -1,4 +1,4 @@
-package com.senyint;
+package com.likecode;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;

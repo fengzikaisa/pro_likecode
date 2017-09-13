@@ -1,4 +1,4 @@
-package com.senyint.common.utils;
+package com.likecode.common.utils;
 
 public class ConstantDefinition {
 	/** 返回成功 */

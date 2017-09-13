@@ -1,4 +1,4 @@
-package com.senyint.common.config;
+package com.likecode.common.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

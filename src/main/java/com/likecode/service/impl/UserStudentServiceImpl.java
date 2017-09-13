@@ -1,15 +1,12 @@
-package com.senyint.service.impl;
+package com.likecode.service.impl;
 
 import com.googlecode.jsonrpc4j.spring.AutoJsonRpcServiceImpl;
-import com.senyint.bean.UserStudent;
-import com.senyint.common.bean.ResultBean;
-import com.senyint.common.utils.ConstantDefinition;
-import com.senyint.dao.UserStudentDao;
-import com.senyint.service.UserStudentService;
+import com.likecode.common.bean.ResultBean;
+import com.likecode.common.utils.ConstantDefinition;
+import com.likecode.dao.UserStudentDao;
+import com.likecode.service.UserStudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 /**
  * Created by wangkai on 2017/8/16.

@@ -1,7 +1,7 @@
-package com.senyint.service;
+package com.likecode.service;
 
-import com.senyint.common.bean.ParameterBean;
-import com.senyint.common.bean.ResultBean;
+import com.likecode.common.bean.ParameterBean;
+import com.likecode.common.bean.ResultBean;
 
 public interface TestService {
 	public ResultBean queryTest(ParameterBean pb);

@@ -1,4 +1,4 @@
-package com.senyint.common.utils;
+package com.likecode.common.utils;
 import java.io.File;
 import java.io.IOException;
 import java.text.DateFormat;

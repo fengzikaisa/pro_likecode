@@ -1,6 +1,6 @@
-package com.senyint.dao;
+package com.likecode.dao;
 
-import com.senyint.bean.UserStudent;
+import com.likecode.bean.UserStudent;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.senyint.bean;
+package com.likecode.bean;
 
 import lombok.Data;
 import org.apache.ibatis.type.Alias;

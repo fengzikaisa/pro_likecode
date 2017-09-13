@@ -1,4 +1,4 @@
-package com.senyint.common.bean;
+package com.likecode.common.bean;
 
 import lombok.Data;
 
@@ -12,7 +12,7 @@ import net.sf.json.JSONObject;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.senyint.common.Exception.ParameterException;
+import com.likecode.common.Exception.ParameterException;
 
 @Data
 public class JsonBean {
@@ -113,7 +113,7 @@ public class JsonBean {
 		super();
 	}
 
-	public static void main(String args[]) {
+	/*public static void main(String args[]) {
 		JsonBean setdto = new JsonBean();
 		setdto.setId("1");
 		setdto.setSource("source");
@@ -131,5 +131,5 @@ public class JsonBean {
 		} catch (JsonProcessingException e) {
 			e.printStackTrace();
 		}
-	}
+	}*/
 }

@@ -1,6 +1,5 @@
-package com.senyint.scheduled;
+package com.likecode.scheduled;
 
-import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 

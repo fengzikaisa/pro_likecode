@@ -1,7 +1,6 @@
-package com.senyint.service;
+package com.likecode.service;
 
-import com.googlecode.jsonrpc4j.JsonRpcParam;
-import com.senyint.common.bean.ResultBean;
+import com.likecode.common.bean.ResultBean;
 
 @com.googlecode.jsonrpc4j.JsonRpcService("/aaa")
 public interface JsonRpcService {

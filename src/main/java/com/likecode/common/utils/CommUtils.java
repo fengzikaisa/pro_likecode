@@ -1,12 +1,12 @@
-package com.senyint.common.utils;
+package com.likecode.common.utils;
 
 import java.lang.reflect.Method;
 import org.codehaus.jackson.JsonProcessingException;
 import org.springframework.stereotype.Service;
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
-import com.senyint.common.bean.ParameterBean;
-import com.senyint.common.bean.ResultBean;
+import com.likecode.common.bean.ParameterBean;
+import com.likecode.common.bean.ResultBean;
 import lombok.extern.log4j.Log4j;
 
 /***

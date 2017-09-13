@@ -1,13 +1,12 @@
-package com.senyint.service.impl;
+package com.likecode.service.impl;
 
-import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Service;
 import com.googlecode.jsonrpc4j.spring.AutoJsonRpcServiceImpl;
-import com.senyint.bean.Tbean;
-import com.senyint.common.bean.JsonBean;
-import com.senyint.common.bean.ResultBean;
-import com.senyint.common.utils.ConstantDefinition;
-import com.senyint.service.JsonRpcService;
+import com.likecode.bean.Tbean;
+import com.likecode.common.bean.JsonBean;
+import com.likecode.common.bean.ResultBean;
+import com.likecode.common.utils.ConstantDefinition;
+import com.likecode.service.JsonRpcService;
 
 @Service
 @AutoJsonRpcServiceImpl

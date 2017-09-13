@@ -1,9 +1,9 @@
-package com.senyint.common.controller;
+package com.likecode.common.controller;
 
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.senyint.common.bean.ResultBean;
+import com.likecode.common.bean.ResultBean;
 
 import lombok.extern.log4j.Log4j;
 

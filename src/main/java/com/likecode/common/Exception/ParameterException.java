@@ -1,4 +1,4 @@
-package com.senyint.common.Exception;
+package com.likecode.common.Exception;
 
 import org.springframework.dao.DataAccessException;
 

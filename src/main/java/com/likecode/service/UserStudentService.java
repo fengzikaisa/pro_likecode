@@ -1,9 +1,6 @@
-package com.senyint.service;
+package com.likecode.service;
 
-import com.senyint.bean.UserStudent;
-import com.senyint.common.bean.ResultBean;
-
-import java.util.List;
+import com.likecode.common.bean.ResultBean;
 
 /**
  * Created by wangkai on 2017/8/16.

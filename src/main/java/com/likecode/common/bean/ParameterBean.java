@@ -1,4 +1,4 @@
-package com.senyint.common.bean;
+package com.likecode.common.bean;
 
 import java.io.Serializable;
 import java.util.ArrayList;

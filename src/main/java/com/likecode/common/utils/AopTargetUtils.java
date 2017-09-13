@@ -1,4 +1,4 @@
-package com.senyint.common.utils;
+package com.likecode.common.utils;
 
 import java.lang.reflect.Field;
 import org.springframework.aop.framework.AdvisedSupport;
