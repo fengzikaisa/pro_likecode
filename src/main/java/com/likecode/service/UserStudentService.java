@@ -1,6 +1,8 @@
 package com.senyint.service;
 
 import com.senyint.bean.UserStudent;
+import com.senyint.common.bean.ResultBean;
+
 import java.util.List;
 
 /**
@@ -9,7 +11,7 @@ import java.util.List;
 @com.googlecode.jsonrpc4j.JsonRpcService("/userInfo")
 public interface UserStudentService {
 
-    public List<UserStudent> getStudents(String aa);
+    public ResultBean getStudents();
 
     public Integer getCounts(String a);
 }

@@ -2,6 +2,8 @@ package com.senyint.service.impl;
 
 import com.googlecode.jsonrpc4j.spring.AutoJsonRpcServiceImpl;
 import com.senyint.bean.UserStudent;
+import com.senyint.common.bean.ResultBean;
+import com.senyint.common.utils.ConstantDefinition;
 import com.senyint.dao.UserStudentDao;
 import com.senyint.service.UserStudentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,9 +21,12 @@ public class UserStudentServiceImpl implements UserStudentService {
     UserStudentDao userStudentDao;
 
     @Override
-    public List<UserStudent> getStudents(String aa) {
+    public ResultBean getStudents() {
 
-        return userStudentDao.getStudents();
+        ResultBean bean =new ResultBean();
+        bean.setStatus(ConstantDefinition.SYSTEM_SUCCESS);
+        bean.setResult(userStudentDao.getStudents());
+        return bean;
     }
 
     @Override
