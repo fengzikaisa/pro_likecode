@@ -19,19 +19,16 @@ public class Testcontroller extends BaseController{
 	 UserStudentService userStudentServiceImpl;
 
 	 @ResponseBody
-	 @RequestMapping(value="index")
+	 @RequestMapping(value="index1")
 	 public ResultBean index() {
 		 ResultBean bean=userStudentServiceImpl.getStudents();
 		 log.info(bean);
 		 return bean;
 	 }
 
-	@RequestMapping(value="index1")
+	@RequestMapping(value="index")
 	public String index1(Model model) {
-		ResultBean bean=userStudentServiceImpl.getStudents();
-		log.info(bean);
-		model.addAttribute("hello","666");
-		return "/helloHtml";
+		return "/show";
 	}
 
 }
