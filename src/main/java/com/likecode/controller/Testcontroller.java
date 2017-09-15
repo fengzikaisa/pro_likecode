@@ -26,9 +26,10 @@ public class Testcontroller extends BaseController{
 		 return bean;
 	 }
 
-	@RequestMapping(value="index")
-	public String index1(Model model) {
-		return "/show";
+
+	@RequestMapping(value="love")
+	public String love(Model model) {
+		return "/love";
 	}
 
 }
