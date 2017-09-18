@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
-    <title>likecode</title>
+    <title>丰子恺撒</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link href="css/main.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" type="text/css" href="iconfont/iconfont.css">
@@ -18,12 +18,15 @@
     </div>
     <div class="wb-content">
         <div id="wb-icon">
-            <img src="img/tx.jpg" class="icon" />
+            <a th:href="@{/home}"><img src="img/tx.jpg" class="icon" /></a>
         </div>
         <div id="wb-content-site">
             <ul class="site-link">
                 <li class="site">
-                    <a href="http://weibo.com/p/1005051697116600/home?from=page_100505&mod=TAB&is_all=1#place" title="微博" target="_blank"><span class="fa fa-1_5x">微博</span></a>
+                    <a href="http://weibo.com/p/1005051697116600/home?from=page_100505&mod=TAB&is_all=1#place" title="微博" target="_blank">
+                        <span class="fa fa-1_5x">微博</span>
+                        <!--<i class="iconfont icon-w"></i>-->
+                    </a>
                 </li>
                 <li class="site">
                     <a href="http://wkbyb.blog.163.com/" title="博客" target="_blank"><span class="fa fa-1_5x">博客</span></a>
@@ -69,4 +72,3 @@
 
 </html>
 <script src="js/canvas-nest.js"></script>
-<script src="js/home.js"></script>

@@ -1,7 +1,6 @@
-// $(function(){
-//     setTimeout(change_bg(),1000)
-// })
-//
-// function change_bg(){
-//     $(".bg-img").src="";
-// }
+$(function(){
+
+    $(".home_li ").eq(0).click(function(){
+        $(".ds").show();
+    })
+})

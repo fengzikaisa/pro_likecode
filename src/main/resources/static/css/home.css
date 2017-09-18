@@ -1,0 +1,75 @@
+.left_div{
+    /*background-color: red;*/
+    height: 100%;
+    width: 240px;
+    position: absolute;
+    z-index: 99999;
+}
+
+.home_name{
+    float: left;
+    margin-top: 30px;
+    margin-left: 40px;
+    font-size: 20px;
+    color: #c5ab21;
+}
+
+.home_info{
+    float: left;
+    margin-top: 30px;
+    width: 100%;
+    height: 60px;
+    background-color: azure;
+}
+
+.home_list{
+    float: left;
+    margin-top: 10px;
+    width: 100%;
+    height: 100%;
+    /*background-color: blueviolet;*/
+}
+
+.home_list span{
+    float: left;
+    font-size: 23px;
+    margin-top: 10px;
+    margin-left: 25px;
+}
+
+.home_li{
+    float: left;
+    margin-top: 30px;
+    margin-left: 10px;
+    width: 90%;
+    height: 55px;
+    background-color: blanchedalmond;
+}
+
+.home_zym{
+    float: left;
+    margin-top: 10px;
+    margin-left: 35px;
+}
+
+.home_zym p{
+    font-size: 15px;
+    font-style: italic;
+}
+
+.rmb_tip{
+    float: left;
+    margin-left: 18px;
+    margin-top: 5px;
+}
+
+.ds{
+    position: absolute;
+    left: 40%;
+    top: 30%;
+    background: url(/img/ds.jpg) no-repeat;
+    width: 282px;
+    height: 282px;
+    z-index: 11111;
+    border: 10px solid #171616;
+}
