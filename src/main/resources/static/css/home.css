@@ -1,22 +1,56 @@
 .left_div{
-    /*background-color: red;*/
+    background-color: #bd6815;
     height: 100%;
     width: 240px;
     position: absolute;
     z-index: 99999;
+    border-right: 1px solid #151b84;
+    border-bottom: 1px solid #151b84;
 }
+
+.right_div{
+    background-color: rgba(33, 212, 163, 0.27);
+    height: 100%;
+    width: calc(100% - 245px);
+    position: absolute;
+    margin-left: 240px;
+}
+
+/*.right_div .contact{*/
+    /*width: 100%;*/
+    /*height: 100%;*/
+    /*background-color: antiquewhite;*/
+/*}*/
+
+/*.right_div .contact .contact_li{*/
+    /*float: left;*/
+    /*width: 100%;*/
+    /*margin-top: 20%;*/
+    /*padding: 20px;*/
+/*}*/
 
 .home_name{
     float: left;
-    margin-top: 30px;
-    margin-left: 40px;
     font-size: 20px;
-    color: #c5ab21;
+    font-style: oblique;
+    width: 100%;
+    height: 100px;
+}
+
+.home_name img{
+    float: left;
+    width: 100px;
+    height: 100px
+}
+
+.home_name span{
+    color: azure;
+    float: left;
+    margin-top: 35px;
 }
 
 .home_info{
     float: left;
-    margin-top: 30px;
     width: 100%;
     height: 60px;
     background-color: azure;
@@ -57,7 +91,7 @@
     font-style: italic;
 }
 
-.rmb_tip{
+.icon_tip{
     float: left;
     margin-left: 18px;
     margin-top: 5px;
@@ -67,9 +101,30 @@
     position: absolute;
     left: 40%;
     top: 30%;
-    background: url(/img/ds.jpg) no-repeat;
-    width: 282px;
-    height: 282px;
+    width: 300px;
+    height: 360px;
     z-index: 11111;
-    border: 10px solid #171616;
+    border: 23px solid #0099ff;
+    background-color: antiquewhite;
 }
+
+.ds p{
+    font-size: 25px;
+}
+
+.ds button{
+    border-radius: 30px 30px 30px 30px;
+    color: #711d1d;
+    background-color: #b9e563;
+    border-color: #b9e563;
+    text-decoration: none;
+    outline: none;
+    width: 60px;
+    height: 31px;
+}
+
+.iframe_html{
+    height: 100%;
+    width: 100%
+}
+

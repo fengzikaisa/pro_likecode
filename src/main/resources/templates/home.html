@@ -1,7 +1,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
-    <title>丰子恺撒</title>
+    <title>丰子恺撒-主页</title>
+    <meta name="keywords" content="个人站">
+    <meta name="description" content="个人使用"/>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link href="css/main.css" rel="stylesheet" type="text/css" />
     <link href="css/home.css" rel="stylesheet" type="text/css" />
@@ -10,7 +12,10 @@
 
 <body>
     <div class="left_div">
-        <span class="home_name">丰窝欢迎您</span>
+        <div class="home_name">
+            <img src="img/logo_name.png">
+            <span>欢迎您</span>
+        </div>
         <div class="home_info">
             <span class="home_zym">
                 <p>天行健，君子以自强不息</p>
@@ -18,17 +23,29 @@
             </span>
         </div>
         <div class="home_list">
-            <li class="home_li"><i class="iconfont icon-2yen rmb_tip"></i><span>打赏站长</span></li>
-            <li class="home_li"></li>
-            <li class="home_li"></li>
-            <li class="home_li"></li>
+            <li class="home_li cur"><a href="/login" title="login" target="_blank"><i class="iconfont icon-login icon_tip"></i><span>登录|注册</span></a></li>
+            <li class="home_li cur"><i class="iconfont icon-2yen icon_tip"></i><span>打赏站长</span></li>
+            <li class="home_li cur"><a href="mailto:likecode@126.com" title="Mail" target="_blank"><i class="iconfont icon-lianxi icon_tip"></i><span>联系站长</span></a></li>
+            <li class="home_li cur"><i class="iconfont icon-guanyu icon_tip"></i><span>关于此站</span></li>
+            <li class="home_li cur"><i class="iconfont icon-xin icon_tip"></i><span>献给爱丽丝</span></li>
         </div>
     </div>
+    <div class="right_div">
+        <iframe class="jump_cat iframe_html" src="pages/jump_cat.html"></iframe>
+        <iframe class="flower iframe_html" src="pages/flower.html" style="display: none"></iframe>
+        <div class="love"></div>
+    </div>
 
-
+    <div th:replace="fragments/footer"></div>
 </body>
-<div class="ds" style="display: none"></div>
-
+<div class="ds" style="display: none">
+    <p>打开支付宝扫一扫</p>
+    <img src="/img/ds.jpg">
+    <div class="ds_button">
+        <button class="cancel cur">确定</button>
+    </div>
+</div>
+<div id="mask"></div>
 </html>
 <script src="js/jquery.min.js"></script>
 <script src="js/canvas-nest.js"></script>

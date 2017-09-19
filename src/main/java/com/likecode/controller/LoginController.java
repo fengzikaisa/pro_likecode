@@ -6,19 +6,14 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
- * Created by wangkai on 2017/9/15.
+ * Created by wangkai on 2017/9/19.
  */
 @Log4j
 @Controller
-public class IndexController {
+public class LoginController {
 
-    @RequestMapping(value="index")
-    public String index(Model model) {
-        return "/home";
-    }
-
-    @RequestMapping(value="home")
+    @RequestMapping(value="login")
     public String home(Model model) {
-        return "/home";
+        return "/login";
     }
 }
