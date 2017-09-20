@@ -9,7 +9,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>1.8</java.version>
-		<spring-boot.version>1.5.6.RELEASE</spring-boot.version>
+		<spring-boot.version>1.5.7.RELEASE</spring-boot.version>
 		<spring-admin.version>1.3.2</spring-admin.version>
 		<spring-etcd.version>1.0.0.BUILD-SNAPSHOT</spring-etcd.version>
 		<thymeleaf.version>3.0.2.RELEASE</thymeleaf.version>
@@ -18,7 +18,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.5.6.RELEASE</version>
+		<version>1.5.7.RELEASE</version>
 	</parent>
 	<!-- https://mvnrepository.com-->
 	<dependencies>

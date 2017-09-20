@@ -52,8 +52,13 @@
 .home_info{
     float: left;
     width: 100%;
-    height: 60px;
+    height: 160px;
     background-color: azure;
+}
+
+.home_info img{
+    float: left;
+    width: 100%;
 }
 
 .home_list{

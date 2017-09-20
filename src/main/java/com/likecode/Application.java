@@ -1,14 +1,10 @@
 package com.likecode;
 
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.scheduling.annotation.EnableScheduling;
-import org.springframework.stereotype.Controller;
 
-@Controller
 @SpringBootApplication
-@EnableAutoConfiguration
 @EnableScheduling
 public class Application {
 
