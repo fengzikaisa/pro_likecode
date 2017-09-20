@@ -14,6 +14,6 @@ public class LoginController {
 
     @RequestMapping(value="login")
     public String home(Model model) {
-        return "/login";
+        return "login";
     }
 }

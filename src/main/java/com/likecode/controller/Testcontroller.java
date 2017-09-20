@@ -29,7 +29,7 @@ public class Testcontroller extends BaseController{
 
 	@RequestMapping(value="love")
 	public String love(Model model) {
-		return "/love";
+		return "love";
 	}
 
 }
