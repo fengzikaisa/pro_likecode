@@ -17,6 +17,6 @@ public class ScheduledTest {
 	@Scheduled(cron = "0 0/1 8-20 * * ?")
 	public void executeFileDownLoadTask() {
 
-		System.out.println("111");
+//		System.out.println("111");
 	}
 }

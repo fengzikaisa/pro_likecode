@@ -133,17 +133,5 @@
     width: 100%
 }
 
-.index_one {
-    float: left;
-    width: 100%;
-    height: 100%;
-}
-
-#barrage {
-    width: 100%;
-    height: 260px;
-    background: url("/img/qiang.jpg");
-    z-index:9999;
-}
 
 

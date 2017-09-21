@@ -9,3 +9,4 @@ logs/**
 likecode.mwb.
 /.apt_generated/
 /target/
+**/.epoch
