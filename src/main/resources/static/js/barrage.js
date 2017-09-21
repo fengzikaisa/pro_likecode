@@ -80,7 +80,7 @@ function sendMessage(info){
         img:'img/haha.gif', //图片
         info:info, //文字
 //        href:'http://www.jq22.com', //链接
-//         close:true, //显示关闭按钮
+        close:true, //显示关闭按钮
         speed:1, //延迟,单位秒,默认6
 //        bottom:70, //距离底部高度,单位px,默认随机
         color:getRandomColor, //颜色,默认白色
