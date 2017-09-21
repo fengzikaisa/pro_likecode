@@ -45,6 +45,10 @@ $(function(){
         $(".jump_cat").show();
     })
 
+    $("#send_message").on('click',function(){
+
+    })
+
 })
 
 function hide_tip(){
@@ -54,3 +58,4 @@ function hide_tip(){
     $("#mask").hide();
     $(".ds").hide();
 }
+
