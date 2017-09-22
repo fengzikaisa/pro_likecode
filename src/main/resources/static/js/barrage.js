@@ -2,7 +2,7 @@ $(function(){
 
     //加载所有弹幕
     loadBarrage();
-    setInterval('loadBarrage()',30000);
+    // setInterval('loadBarrage()',10000);
 })
 
 function loadBarrage(){
@@ -36,6 +36,10 @@ function keySend(){
         var msg=$("#send_message").val();
         if(msg.trim()=="" || msg==null){
             alert("你特么倒是写点东西呀。");
+            return false;
+        }
+        if(msg.length>100){
+            alert("最多发送100个字符！");
             return false;
         }
         $.ajax({
