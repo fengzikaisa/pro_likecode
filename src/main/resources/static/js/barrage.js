@@ -3,6 +3,11 @@ $(function(){
     //加载所有弹幕
     loadBarrage();
     // setInterval('loadBarrage()',10000);
+
+
+    $(".send_button").on('click',function(){
+        send();
+    })
 })
 
 function loadBarrage(){
@@ -27,50 +32,47 @@ function loadBarrage(){
 }
 
 var time=10;
-function keySend(){
+function send(){
     if(time<10){
         alert("请"+time+"秒后发送");
         return false;
     }
-    if (event.keyCode==13){
-        var msg=$("#send_message").val();
-        if(msg.trim()=="" || msg==null){
-            alert("你特么倒是写点东西呀。");
-            return false;
-        }
-        if(msg.length>100){
-            alert("最多发送100个字符！");
-            return false;
-        }
-        $.ajax({
-            type:"POST",
-            url:"/saveBarrage",
-            data:{
-                content:msg
-            },
-            success:function(data){
-                if(data.status='100000'){
-                    sendMessage("我："+msg);
-                    $("#send_message").val("");
-                    var djs=setInterval(daojishi,1000);
-                    function daojishi(){
-                        time--;
-                        if(time<=0){
-                            time=10;
-                            clearInterval(djs);
-                        }
-                    }
-                }else{
-                    alert("加载出错，错误码："+data.status);
-                }
-
-            },
-            error:function(data){
-                console.log("加载失败");
-            }
-        })
-
+    var msg=$("#send_message").val();
+    if(msg.trim()=="" || msg==null){
+        alert("你特么倒是写点东西呀。");
+        return false;
     }
+    if(msg.length>100){
+        alert("最多发送100个字符！");
+        return false;
+    }
+    $.ajax({
+        type:"POST",
+        url:"/saveBarrage",
+        data:{
+            content:msg
+        },
+        success:function(data){
+            if(data.status=='100000'){
+                sendMessage("我："+msg);
+                $("#send_message").val("");
+                var djs=setInterval(daojishi,1000);
+                function daojishi(){
+                    time--;
+                    if(time<=0){
+                        time=10;
+                        clearInterval(djs);
+                    }
+                }
+            }else{
+                alert(data.result);
+            }
+
+        },
+        error:function(data){
+            console.log("加载失败");
+        }
+    })
 }
 
 function sendMessage(info){

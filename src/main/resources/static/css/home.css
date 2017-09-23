@@ -38,9 +38,10 @@
 }
 
 .home_name img{
+    background-color: antiquewhite;
     float: left;
-    width: 100px;
-    height: 100px
+    width: 100%;
+    height: 100%;
 }
 
 .home_name span{

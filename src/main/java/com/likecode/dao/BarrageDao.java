@@ -4,6 +4,7 @@ import com.likecode.bean.Barrage;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -14,5 +15,7 @@ public interface BarrageDao {
 
     public List<Barrage> getBarrages();
 
-    public Barrage insertBarrage(@Param("barrage") Barrage barrage);
+    public int insertBarrage(@Param("barrage") Barrage barrage);
+
+    public int getBarrageCount(@Param("ip") String ip,@Param("startTime") Date startTime,@Param("endTime")Date endTime);
 }

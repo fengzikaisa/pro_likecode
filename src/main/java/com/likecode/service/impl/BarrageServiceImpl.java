@@ -10,7 +10,11 @@ import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
+
+import static com.likecode.common.utils.DateUtil.getIntegralEndTime;
+import static com.likecode.common.utils.DateUtil.getIntegralStartTime;
 
 /**
  * Created by wangkai on 2017/8/16.
@@ -37,11 +41,23 @@ public class BarrageServiceImpl implements BarrageService {
     @Override
     public ResultBean insertBarrage(@Param("barrage") Barrage barrage) {
         ResultBean bean =new ResultBean();
-        if(barrageDao.insertBarrage(barrage).getId()>0){
+        //查询ip当天已发送弹幕数量
+        Date now=new Date();
+        Date startTime=getIntegralStartTime(now);
+        Date endTime=getIntegralEndTime(now);
+        int count=barrageDao.getBarrageCount(barrage.getIp(),startTime,endTime);
+        if(count>10){
+            bean.setStatus(ConstantDefinition.SYSTEM_ERROR);
+            bean.setResult("今天发送弹幕数量已超过上限，明天再来吧~~~");
+            return bean;
+        }
+        //保存弹幕
+        if(barrageDao.insertBarrage(barrage)>0){
             bean.setStatus(ConstantDefinition.SYSTEM_SUCCESS);
         }else{
             bean.setStatus(ConstantDefinition.SYSTEM_ERROR);
         }
         return bean;
     }
+
 }

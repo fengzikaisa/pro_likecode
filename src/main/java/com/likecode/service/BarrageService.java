@@ -20,4 +20,5 @@ public interface BarrageService {
      * @param barrage
      */
     public ResultBean insertBarrage(@Param("barrage") Barrage barrage);
+
 }
