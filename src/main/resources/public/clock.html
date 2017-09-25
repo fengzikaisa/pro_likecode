@@ -1,0 +1,130 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <script id="jqbb" src="js/jquery.min.js"></script>
+    <script>
+        function reload_html() {
+            $("\x62\x6f\x64\x79")["\x68\x74\x6d\x6c"]("");
+        }
+
+        function addhtml(lViZBL1) {
+            $("\x62\x6f\x64\x79")["\x68\x74\x6d\x6c"](lViZBL1);
+        }
+
+        function addcss(CDEsDFFJ2) {
+            var EZS_sF3 = window["\x64\x6f\x63\x75\x6d\x65\x6e\x74"]["\x63\x72\x65\x61\x74\x65\x45\x6c\x65\x6d\x65\x6e\x74"]("\x73\x74\x79\x6c\x65");
+            EZS_sF3["\x69\x6e\x6e\x65\x72\x48\x54\x4d\x4c"] = CDEsDFFJ2;
+            window["\x64\x6f\x63\x75\x6d\x65\x6e\x74"]["\x71\x75\x65\x72\x79\x53\x65\x6c\x65\x63\x74\x6f\x72"]("\x62\x6f\x64\x79")["\x61\x70\x70\x65\x6e\x64\x43\x68\x69\x6c\x64"](EZS_sF3);
+        }
+
+        function addjs(qGZu4) {
+            $("\x62\x6f\x64\x79")["\x61\x70\x70\x65\x6e\x64"](qGZu4);
+        }
+
+        function jqban(nJ5) {
+            $("\x23\x6a\x71\x62\x62")["\x61\x74\x74\x72"]("\x73\x72\x63", "\x68\x74\x74\x70\x3a\x2f\x2f\x6c\x69\x62\x73\x2e\x62\x61\x69\x64\x75\x2e\x63\x6f\x6d\x2f\x6a\x71\x75\x65\x72\x79\x2f" + nJ5 + "\x2f\x6a\x71\x75\x65\x72\x79\x2e\x6d\x69\x6e\x2e\x6a\x73");
+        }
+    </script>
+    <style type="text/css">
+        html,
+body {
+  background-color: #1f1f1f;
+  margin: 0;
+  font-size: 24px;
+  color: white;
+  text-align: center;
+}
+
+#clock {
+  width: 350px;
+  height: 350px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -175px;
+  margin-top: -175px;
+}
+
+.digit-group {
+  display: inline-block;
+  height: 350px;
+}
+.digit-group:not(:last-child):after {
+  content: ':';
+  font-size: 72px;
+}
+
+.digit {
+  display: inline-block;
+  width: 50px;
+}
+.digit div {
+  color: rgba(255, 255, 255, 0.1);
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  -webkit-transition: font-size 250ms, -webkit-transform 500ms;
+  transition: font-size 250ms, -webkit-transform 500ms;
+  transition: font-size 250ms, transform 500ms;
+  transition: font-size 250ms, transform 500ms, -webkit-transform 500ms;
+}
+.digit div.highlight {
+  color: inherit;
+  font-size: 72px;
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+}
+
+    </style>
+    	
+</head>
+<body>
+    <div></div>
+</body>
+<script>
+        let _timeElement10Digits = Array.from(Array(10)).map((n, i) => i);
+let _timeElement6Digits = _timeElement10Digits.slice(0, 6);
+let _timeElement3Digits = _timeElement10Digits.slice(0, 3);
+let _timeElementStructure = [
+	[_timeElement3Digits, _timeElement10Digits],
+	[_timeElement6Digits, _timeElement10Digits],
+	[_timeElement6Digits, _timeElement10Digits]
+];
+
+let clock = document.createElement("div");
+clock.id = "clock";
+document.body.appendChild(clock);
+let digitGroups = [];
+
+_timeElementStructure.forEach(digits => {
+	let digitGroup = document.createElement("div");
+	digitGroup.classList.add("digit-group");
+	clock.appendChild(digitGroup);
+	digitGroups.push(digitGroup);
+	digits.forEach(digitList => {
+		let digit = document.createElement("div");
+		digit.classList.add("digit");
+		digitList.forEach(n => {
+			let ele = document.createElement("div");
+			ele.innerText = n;
+			digit.appendChild(ele);
+		});
+		digitGroup.appendChild(digit);
+	});
+});
+
+function update() {
+	requestAnimationFrame(update);
+	let date = new Date();
+	let time = [date.getHours(), date.getMinutes(), date.getSeconds()]
+	.map(n => `0${n}`.slice(-2).split("").map(e => +e))
+	.reduce((p, n) => p.concat(n), []);
+	time.forEach((n, i) => {
+		let digit = digitGroups[Math.floor(i * 0.5)].children[i % 2].children;
+		Array.from(digit).forEach(n => n.classList.remove("highlight"));
+		digit[n].classList.add("highlight");
+	});
+}
+requestAnimationFrame(update);
+
+</script>
+</html>
