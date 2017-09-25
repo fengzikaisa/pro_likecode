@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.likecode.dao.BlogDao">
+    <insert id="insertBlog">
+        INSERT INTO t_blog
+        (user_id,title,author,type,load_url,label,description,img,status,create_time,update_time)
+        VALUES
+        (#{userId},#{title},#{author},#{type},#{loadUrl},#{label},#{description},#{img},#{status}},now(),now())
+    </insert>
+    <update id="updateBlog">
+            update t_blog
+            <set >
+                <if test="userId != null" >
+                    user_id = #{userId},
+                </if>
+                <if test="title != null" >
+                    title = #{title},
+                </if>
+                <if test="author != null" >
+                    author = #{author},
+                </if>
+                <if test="type != null" >
+                    type = #{type},
+                </if>
+                <if test="loadUrl != null" >
+                    load_url = #{loadUrl},
+                </if>
+                <if test="label != null" >
+                    label = #{label},
+                </if>
+                <if test="description != null" >
+                    description = #{description},
+                </if>
+                <if test="img != null" >
+                    img = #{img},
+                </if>
+                <if test="status != null" >
+                    status = #{status},
+                </if>
+                <if test="createTime != null" >
+                    create_time = #{createTime},
+                </if>
+                <if test="updateTime != null" >
+                    update_time = #{updateTime},
+                </if>
+            </set>
+            where id = #{id}
+    </update>
+
+    <select id="getBlogs" resultType="com.likecode.bean.Blog">
+          SELECT * FROM t_blog b
+    </select>
+    <select id="selectBlog" resultType="com.likecode.bean.Blog">
+          SELECT * from t_blog b where b.id=#{id}
+    </select>
+</mapper>

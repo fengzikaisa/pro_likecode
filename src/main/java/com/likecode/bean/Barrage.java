@@ -8,6 +8,7 @@ import java.util.Date;
 
 /**
  * Created by wangkai on 2017/9/21.
+ * 弹幕实体
  */
 @Alias("barrage")
 @Data

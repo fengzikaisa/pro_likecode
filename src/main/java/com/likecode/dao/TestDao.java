@@ -8,6 +8,6 @@ import com.likecode.bean.TestBean;
 
 @Mapper
 public interface TestDao {
-	public List<TestBean> queryTest();
+	List<TestBean> queryTest();
 
 }

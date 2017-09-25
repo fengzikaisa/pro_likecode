@@ -13,9 +13,9 @@ import java.util.List;
 @Mapper
 public interface BarrageDao {
 
-    public List<Barrage> getBarrages();
+    List<Barrage> getBarrages();
 
-    public int insertBarrage(@Param("barrage") Barrage barrage);
+    int insertBarrage(@Param("barrage") Barrage barrage);
 
-    public int getBarrageCount(@Param("ip") String ip,@Param("startTime") Date startTime,@Param("endTime")Date endTime);
+    int getBarrageCount(@Param("ip") String ip,@Param("startTime") Date startTime,@Param("endTime")Date endTime);
 }

@@ -15,7 +15,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
-
+/**
+ * Created by wangkai on 2017/9/19.
+ * 弹幕控制器
+ */
 @Log4j
 @Controller
 public class BarrageController extends BaseController{

@@ -10,7 +10,7 @@ import java.util.List;
  */
 @Mapper
 public interface UserStudentDao {
-    public List<UserStudent> getStudents();
+    List<UserStudent> getStudents();
 
-    public Integer getCounts();
+    Integer getCounts();
 }
