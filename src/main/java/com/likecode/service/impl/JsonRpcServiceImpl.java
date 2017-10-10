@@ -23,7 +23,7 @@ public class JsonRpcServiceImpl implements JsonRpcService {
 		JsonBean getBean = new JsonBean(json, Tbean.class);
 		Tbean tbean= (Tbean) getBean.getParameter();
 		System.out.println("111");
-		return new ResultBean(ConstantDefinition.SYSTEM_SUCCESS, tbean);
+		return new ResultBean(ConstantDefinition.SYSTEM_SUCCESS, tbean,"");
 	}
 
 }

@@ -16,9 +16,9 @@ public interface BlogDao {
 
     List<Blog> getBlogs();
 
-    int insertBlog(@Param("barrage") Blog blog);
+    int insertBlog(@Param("blog") Blog blog);
 
-    int updateBlog (@Param("barrage") Blog blog);
+    int updateBlog (@Param("blog") Blog blog);
 
     Blog selectBlog(int bid);
 }

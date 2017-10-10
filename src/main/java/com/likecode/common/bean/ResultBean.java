@@ -16,15 +16,20 @@ public class ResultBean implements Serializable {
 	private String status;
 	/** 返回值 */
 	private Object result;
+	/**
+	 * 返回信息
+	 */
+	private String msg;
 
 	public ResultBean() {
 		super();
 	}
 
-	public ResultBean(String status, Object result) {
+	public ResultBean(String status, Object result,String msg) {
 		super();
 		this.status = status;
 		this.result = result;
+		this.msg=msg;
 	}
 
 	@Override

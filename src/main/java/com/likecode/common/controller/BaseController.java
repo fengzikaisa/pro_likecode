@@ -18,6 +18,6 @@ public class BaseController {
 	@ExceptionHandler(Exception.class)
 	public @ResponseBody ResultBean handlerException(Exception e) {
 		log.error("ExceptionHandler:", e);
-		return new ResultBean("", null);
+		return new ResultBean("", null,"");
 	}
 }

@@ -19,6 +19,6 @@ public class TestServiceImpl implements TestService {
 	@Override
 	public ResultBean queryTest(ParameterBean pb) {
 		List<TestBean> list = this.TestDao.queryTest();
-		return new ResultBean(ConstantDefinition.SYSTEM_SUCCESS, list);
+		return new ResultBean(ConstantDefinition.SYSTEM_SUCCESS, list,"");
 	}
 }
