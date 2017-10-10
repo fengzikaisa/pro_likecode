@@ -1,9 +1,5 @@
 $(function(){
 
-    // $(".home_li ").eq(0).click(function(){
-    //     location.href="/login";
-    // })
-
     $(".home_li ").eq(1).click(function(){
         hide_tip();
         $("#mask").show();
