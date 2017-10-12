@@ -3117,7 +3117,7 @@
   padding: 20px;
   overflow: auto;
   width: 100%;
-  background-color: #fff;
+  /*background-color: #fff;*/
 }
 .editormd-preview-container blockquote, .editormd-html-preview blockquote {
   color: #666;

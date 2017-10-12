@@ -17,8 +17,8 @@ public class IndexController {
         return "home";
     }
 
-//    @RequestMapping(value="home")
-//    public String home(Model model) {
-//        return "/home";
-//    }
+    @RequestMapping(value="index")
+    public String home(Model model) {
+        return "/index";
+    }
 }

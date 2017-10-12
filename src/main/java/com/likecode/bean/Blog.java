@@ -27,5 +27,8 @@ public class Blog implements Serializable {
     private String status;//文章状态（10:可用、20:不可用）
     private Date createTime;
     private Date updateTime;
+    private String blogAbstract;//摘要
+
+
 
 }

@@ -3,9 +3,9 @@
 <mapper namespace="com.likecode.dao.BlogDao">
     <insert id="insertBlog">
         INSERT INTO t_blog
-        (user_id,title,author,type,load_url,label,description,img,status,create_time,update_time)
+        (user_id,title,author,type,load_url,label,description,blog_abstract,img,status,create_time,update_time)
         VALUES
-        (#{userId},#{title},#{author},#{type},#{loadUrl},#{label},#{description},#{img},#{status}},now(),now())
+        (#{blog.userId},#{blog.title},#{blog.author},#{blog.type},#{blog.loadUrl},#{blog.label},#{blog.description},#{blog.blogAbstract},#{blog.img},10,now(),now())
     </insert>
     <update id="updateBlog">
             update t_blog
@@ -30,6 +30,9 @@
                 </if>
                 <if test="description != null" >
                     description = #{description},
+                </if>
+                <if test="blogAbstract != null" >
+                    blog_abstract = #{blogAbstract},
                 </if>
                 <if test="img != null" >
                     img = #{img},
