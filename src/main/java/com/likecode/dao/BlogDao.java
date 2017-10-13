@@ -2,6 +2,7 @@ package com.likecode.dao;
 
 import com.likecode.bean.Barrage;
 import com.likecode.bean.Blog;
+import com.likecode.bean.ext.BlogExt;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
@@ -14,11 +15,15 @@ import java.util.List;
 @Mapper
 public interface BlogDao {
 
-    List<Blog> getBlogs();
+    List<BlogExt> getBlogs();
 
-    int insertBlog(@Param("blog") Blog blog);
+    int insertBlog(Blog blog);
 
-    int updateBlog (@Param("blog") Blog blog);
+    int updateBlog (Blog blog);
 
-    Blog selectBlog(int bid);
+    BlogExt selectBlog(int bid);
+
+    int initBlogStat(int bid);
+
+    int updateBlogStat(@Param("id") int id,@Param("str") String str);
 }

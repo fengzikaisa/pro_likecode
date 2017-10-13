@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.likecode.dao.BlogDao">
-    <insert id="insertBlog">
+    <insert id="insertBlog" keyProperty="id" parameterType="com.likecode.bean.Blog">
         INSERT INTO t_blog
         (user_id,title,author,type,load_url,label,description,blog_abstract,img,status,create_time,update_time)
         VALUES
-        (#{blog.userId},#{blog.title},#{blog.author},#{blog.type},#{blog.loadUrl},#{blog.label},#{blog.description},#{blog.blogAbstract},#{blog.img},10,now(),now())
+        (#{userId},#{title},#{author},#{type},#{loadUrl},#{label},#{description},#{blogAbstract},#{img},10,now(),now())
+    </insert>
+    <insert id="initBlogStat">
+        INSERT INTO t_blog_stat (blog_id)VALUES(#{bid})
     </insert>
     <update id="updateBlog">
             update t_blog
@@ -49,11 +52,41 @@
             </set>
             where id = #{id}
     </update>
+    <update id="updateBlogStat">
+        update t_blog_stat
+        <set >
+            <if test="str == 'readCount'" >
+                read_count=read_count+1
+            </if>
+            <if test="str == 'upvote'" >
+                upvote=upvote+1
+            </if>
+            <if test="str == 'commentCount'" >
+                comment_count=comment_count+1
+            </if>
+        </set>
+        where blog_id=#{id}
+    </update>
 
-    <select id="getBlogs" resultType="com.likecode.bean.Blog">
-          SELECT * FROM t_blog b
+    <select id="getBlogs" resultType="com.likecode.bean.ext.BlogExt">
+         SELECT
+            b.*,
+            bs.comment_count as commentCount,
+            bs.read_count as readCount,
+            bs.upvote as upvote
+        FROM
+            t_blog b
+        LEFT JOIN t_blog_stat bs ON b.id = bs.blog_id
     </select>
-    <select id="selectBlog" resultType="com.likecode.bean.Blog">
-          SELECT * from t_blog b where b.id=#{id}
+    <select id="selectBlog" resultType="com.likecode.bean.ext.BlogExt">
+          SELECT
+            b.*,
+            bs.comment_count as commentCount,
+            bs.read_count as readCount,
+            bs.upvote as upvote
+          FROM
+            t_blog b
+          LEFT JOIN t_blog_stat bs ON b.id = bs.blog_id
+          where b.id=#{id}
     </select>
 </mapper>

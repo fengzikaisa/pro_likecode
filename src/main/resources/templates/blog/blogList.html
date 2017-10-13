@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>我的博客</title>
+<title>丰子恺撒-博客主页</title>
 <meta name="keywords" content="博客" />
 <meta name="description" content="博客" />
 <link href="blog/css/base.css" rel="stylesheet">
@@ -17,7 +17,7 @@
   <header>
     <div class="headtop"></div>
     <div class="contenttop">
-      <div class="logo f_l">我的博客</div>
+      <div class="logo f_l">丰子恺撒-博客主页</div>
       <!--<div class="search f_r">
         <form action="/e/search/index.php" method="post" name="searchform" id="searchform">
           <input name="keyboard" id="keyboard" class="input_text" value="请输入关键字" style="color: rgb(153, 153, 153);" onfocus="if(value=='请输入关键字'){this.style.color='#000';value=''}" onblur="if(value==''){this.style.color='#999';value='请输入关键字'}" type="text">
@@ -67,17 +67,18 @@
     <div class="bloglist f_l">
 
       <div th:each="blog : ${blogList}">
-        <h3><a th:href="@{/blog/{id}(id=${blog.id})}" th:text="${blog.title}">【心路历程】请不要在设计这条路上徘徊啦</a></h3>
-        <figure><img th:src="${blog.img}" alt="【心路历程】请不要在设计这条路上徘徊啦"></figure>
+        <h3><a th:href="@{/blog/detail/{id}(id=${blog.id})}" th:text="${blog.title}"></a></h3>
+        <figure><img th:src="${blog.img}" alt=""></figure>
         <ul>
           <p th:text="${#strings.abbreviate(blog.blogAbstract,100)}"></p>
-          <a th:title="${blog.title}" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank" class="readmore">阅读全文&gt;&gt;</a>
+          <a th:title="${blog.title}" th:href="@{/blog/detail/{id}(id=${blog.id})}" target="_blank" class="readmore">阅读全文&gt;&gt;</a>
         </ul>
         <p class="dateview">
           <span th:text="${#dates.format(blog.createTime,'yyyy-MM-dd')}"></span>
           <span th:text="|作者：${blog.author}|"></span>
           <span th:text="|标签：${blog.label}|"></span>
           <span th:text="${blog.type==10} ? '类型：原创':'类型：转载'"></span>
+          <span th:text="|浏览：${blog.readCount}次|"></span>
         </p>
       </div>
 
@@ -87,7 +88,7 @@
         <h3 class="tit">关注我</h3>
         <div class="gzwm">
           <ul>
-            <li><a class="email" title="38a97c69f">我的电话</a></li>
+            <li><a class="email" title="15210104479">我的电话</a></li>
             <li><a class="qq" href="mailto:likecode@126.com" target="_blank" title="likecode@126.com">我的邮箱</a></li>
             <li><a class="tel" title="769549158">我的QQ</a></li>
             <li><a class="prize" href="" title="feng-zi-kai">我的微信</a></li>
@@ -139,7 +140,16 @@
           <li><a href="/jstt/bj/2014-11-06/732.html" title="分享我的个人博客访问量如何做到IP从10到600的(图文)" target="_blank">分享我的个人博客访问量如何做到IP从10到600的(图文)</a></li>
         </ul>
       </div>-->
-      <div class="ad"> <img src="blog/images/03.jpg"> </div>
+      <div class="ad"><img src="http://oxp9goqe4.bkt.clouddn.com/%E5%8F%A4%E8%A3%85_%E5%A5%B3.jpg"></div>
+      <div class="ad"><img src="http://oxp9goqe4.bkt.clouddn.com/%E5%8F%A4%E8%A3%85_%E7%94%B7.jpg"></div>
+      <div class="tuwen">
+        <h3 class="tit">友情链接</h3>
+        <ul>
+          <li><a href="http://www.baidu.com"><img src=""><b>百度</b></a></li>
+          <li><a href="http://www.google.com"><img src=""><b>谷歌</b></a></li>
+        </ul>
+      </div>
+      <!--<div class="ad"> <img src="blog/images/03.jpg"> </div>-->
     </div>
   </div>
   <!-- container代码 结束 -->

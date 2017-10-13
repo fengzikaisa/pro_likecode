@@ -1,6 +1,7 @@
 package com.likecode.service.impl;
 
 import com.likecode.bean.Blog;
+import com.likecode.bean.ext.BlogExt;
 import com.likecode.common.bean.ResultBean;
 import com.likecode.common.utils.ConstantDefinition;
 import com.likecode.dao.BlogDao;
@@ -20,13 +21,15 @@ public class BlogServiceImpl implements BlogService {
     BlogDao blogDao;
 
     @Override
-    public List<Blog> getBlogs() {
+    public List<BlogExt> getBlogs() {
         return blogDao.getBlogs();
     }
 
     @Override
     public ResultBean insertBlog(Blog blog) {
         if(blogDao.insertBlog(blog)>0){
+            //初始化博客统计记录
+            blogDao.initBlogStat(blog.getId());
             return new ResultBean(ConstantDefinition.SYSTEM_SUCCESS,blog,"");
         }
         return new ResultBean(ConstantDefinition.SYSTEM_ERROR,blog,"添加失败");
@@ -41,7 +44,16 @@ public class BlogServiceImpl implements BlogService {
     }
 
     @Override
-    public Blog selectBlog(int bid) {
+    public BlogExt selectBlog(int bid) {
         return blogDao.selectBlog(bid);
     }
+
+    @Override
+    public ResultBean updateBlogStat(int id, String str) {
+        if(blogDao.updateBlogStat(id,str)>0){
+            return new ResultBean(ConstantDefinition.SYSTEM_SUCCESS,id,"");
+        }
+        return new ResultBean(ConstantDefinition.SYSTEM_ERROR,id,"博客统计更新失败");
+    }
+
 }

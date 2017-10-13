@@ -1,6 +1,8 @@
 package com.likecode.controller;
 
 import com.likecode.bean.Blog;
+import com.likecode.bean.ext.BlogExt;
+import com.likecode.bean.ext.UserExt;
 import com.likecode.common.bean.ResultBean;
 import com.likecode.common.controller.BaseController;
 import com.likecode.service.BlogService;
@@ -22,6 +24,7 @@ import java.util.List;
  */
 @Log4j
 @Controller
+@RequestMapping("blog")
 public class BlogController extends BaseController {
 
     @Autowired
@@ -32,9 +35,14 @@ public class BlogController extends BaseController {
      * @param model
      * @return
      */
-    @RequestMapping(value="addBlogPage")
-    public String addBlogPage(Model model) {
-        return "blog/addBlogPage";
+    @RequestMapping(value="addPage")
+    public String addBlogPage(Model model,HttpSession session) {
+        UserExt user=(UserExt) session.getAttribute("user");
+        if(user!=null && user.getRoleName().equals("root")){
+            return "blog/addBlogPage";
+        }
+        return "redirect:/blog";
+
     }
 
     /**
@@ -45,11 +53,15 @@ public class BlogController extends BaseController {
      * @return
      */
     @ResponseBody
-    @RequestMapping(value="addBlog",method = RequestMethod.POST)
+    @RequestMapping(value="add",method = RequestMethod.POST)
     public ResultBean addBlog(Model model, Blog blog, HttpSession session) {
-        int userId=session.getAttribute("userId")==null ? 0:Integer.valueOf(session.getAttribute("userId").toString());
-        blog.setUserId(userId);
-        return blogService.insertBlog(blog);
+        Integer userId=(Integer)session.getAttribute("userId");
+        if(userId!=null && userId==1){
+            blog.setUserId(userId);
+            return blogService.insertBlog(blog);
+        }else{
+            return new ResultBean();
+        }
     }
 
     /**
@@ -57,9 +69,9 @@ public class BlogController extends BaseController {
      * @param model
      * @return
      */
-    @RequestMapping("/blogList")
+    @RequestMapping("")
     public String blogList(Model model) {
-        List<Blog> blogList=blogService.getBlogs();
+        List<BlogExt> blogList=blogService.getBlogs();
         model.addAttribute("blogList",blogList);
         return "blog/blogList";
     }
@@ -70,9 +82,10 @@ public class BlogController extends BaseController {
      * @param id
      * @return
      */
-    @RequestMapping("blog/{id}")
+    @RequestMapping("detail/{id}")
     public String detail(Model model,@PathVariable("id") int id) {
-        Blog blog=blogService.selectBlog(id);
+        log.info("详情id:"+id);
+        BlogExt blog=blogService.selectBlog(id);
         model.addAttribute("blog",blog);
         return "blog/blogDetail";
     }

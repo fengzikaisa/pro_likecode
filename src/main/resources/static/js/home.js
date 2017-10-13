@@ -12,11 +12,6 @@ $(function(){
 
     $(".home_li ").eq(3).click(function(){
         hide_tip();
-        $(".flower").show();
-    })
-
-    $(".home_li ").eq(4).click(function(){
-        hide_tip();
         $.ajax({
             type: "GET",
             url:"love",

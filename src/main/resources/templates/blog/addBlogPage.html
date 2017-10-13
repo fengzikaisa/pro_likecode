@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>添加博客</title>
-    <link rel="stylesheet"href="editormd/css/editormd.css" />
-    <script src="js/jquery.min.js"></script>
-    <script src="editormd/editormd.js"></script>
+    <link rel="stylesheet"href="/editormd/css/editormd.css" />
+    <script src="/js/jquery.min.js"></script>
+    <script src="/editormd/editormd.js"></script>
 </head>
 <body>
 <form id="blog">
@@ -40,7 +40,7 @@
     $("#save").on('click',function(){
         $.ajax({
             type:"POST",
-            url:"/addBlog",
+            url:"/blog/add",
             data:$('#blog').serialize(),
             success:function(data){
                 if(data.status='100000'){
