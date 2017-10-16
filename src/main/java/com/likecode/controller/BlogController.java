@@ -1,11 +1,13 @@
 package com.likecode.controller;
 
 import com.likecode.bean.Blog;
+import com.likecode.bean.FriendshipLink;
 import com.likecode.bean.ext.BlogExt;
 import com.likecode.bean.ext.UserExt;
 import com.likecode.common.bean.ResultBean;
 import com.likecode.common.controller.BaseController;
 import com.likecode.service.BlogService;
+import com.likecode.service.FriendshipLinkService;
 import lombok.extern.log4j.Log4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -29,6 +31,9 @@ public class BlogController extends BaseController {
 
     @Autowired
     BlogService blogService;
+
+    @Autowired
+    FriendshipLinkService friendshipLinkService;
 
     /**
      * 添加博客页面
@@ -72,7 +77,11 @@ public class BlogController extends BaseController {
     @RequestMapping("")
     public String blogList(Model model) {
         List<BlogExt> blogList=blogService.getBlogs();
+        List<FriendshipLink> friend10= friendshipLinkService.getFriendshipLinkList("10");
+        List<FriendshipLink> friend20= friendshipLinkService.getFriendshipLinkList("20");
         model.addAttribute("blogList",blogList);
+        model.addAttribute("friend10",friend10);
+        model.addAttribute("friend20",friend20);
         return "blog/blogList";
     }
 

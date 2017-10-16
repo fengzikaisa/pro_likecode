@@ -34,9 +34,14 @@ public class LoginController {
         if(vo!=null && vo.getPassword().equals(user.getPassword())){
             session.setAttribute("user",vo);
             session.setAttribute("userId",vo.getId());
-            return "redirect:/blog/addPage";
+            return "redirect:/loginSuccess";
 
         }
         return "redirect:/loginPage";
+    }
+
+    @RequestMapping(value="loginSuccess")
+    public String loginSuccess(Model model) {
+        return "loginSuccess";
     }
 }

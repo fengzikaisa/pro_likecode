@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.likecode.dao.FriendshipLinkDao">
+    <insert id="insertFriendshipLink">
+        INSERT INTO t_friendship_link (url,name,type) VALUES (#{url},#{name},#{type})
+    </insert>
+    <select id="getFriendshipLinkList" resultType="com.likecode.bean.FriendshipLink">
+        SELECT * from t_friendship_link f WHERE f.is_del=10 AND  f.type=#{type}
+    </select>
+
+
+</mapper>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>添加友链</title>
+    <script src="/js/jquery.min.js"></script>
+</head>
+<body>
+<form id="friendshipLink">
+    <div>
+        <span>网站名称:</span>&nbsp;&nbsp;<input id="name" name="name" ><p>
+        <span>网站地址:</span>&nbsp;&nbsp;<input id="url" name="url" ><p>
+        <span>链接类型:</span><select id="type" name="type"><option value="10">友链</option><option value="20">其他</option></select><p>
+        <input type="button" value="保存" id="save">
+    </div>
+</form>
+</body>
+<script type="text/javascript">
+    $(function() {
+
+
+    $("#save").on('click',function(){
+        $.ajax({
+            type:"POST",
+            url:"/friendshipLink/add",
+            data:$('#friendshipLink').serialize(),
+            success:function(data){
+                if(data.status='100000'){
+                    alert("成功")
+                }else{
+                    alert("失败："+data.msg);
+                }
+            },
+            error:function(data){
+                alert("加载失败");
+            }
+        })
+    })
+
+    });
+</script>
+</html>
