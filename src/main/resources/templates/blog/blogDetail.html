@@ -14,47 +14,15 @@
 </head>
 <body>
 <div id="wrapper">
-  <header>
-    <div class="headtop"></div>
-    <div class="contenttop">
-      <div class="logo f_l">博客详情</div>
-      <!--<div class="search f_r">
-        <form action="/e/search/index.php" method="post" name="searchform" id="searchform">
-          <input name="keyboard" id="keyboard" class="input_text" value="请输入关键字" style="color: rgb(153, 153, 153);" onfocus="if(value=='请输入关键字'){this.style.color='#000';value=''}" onblur="if(value==''){this.style.color='#999';value='请输入关键字'}" type="text">
-          <input name="show" value="title" type="hidden">
-          <input name="tempid" value="1" type="hidden">
-          <input name="tbname" value="news" type="hidden">
-          <input name="Submit" class="input_submit" value="搜索" type="submit">
-        </form>
-      </div>-->
-      <div class="blank"></div>
-      <nav>
-        <div  class="navigation">
-          <ul class="menu">
-            <li><a href="/">网站首页</a></li>
-            <li><a href="">关于我</a>
-              <ul>
-                <li><a href="">个人简介</a></li>
-                <li><a href="">个人相册</a></li>
-              </ul>
-            </li>
-            <li><a href="#">我的日记</a>
-              <ul>
-                <li><a href="">个人日记</a></li>
-                <li><a href="">学习笔记</a></li>
-              </ul>
-            </li>
-            <li><a href="">技术文章</a> </li>
-            <li><a href="">给我留言</a> </li>
-          </ul>
-        </div>
-      </nav>
-    </div>
-  </header>
+
+  <!--header-->
+  <div th:replace="blog/header"></div>
+
   <div class="container">
     <div class="con_content">
       <div class="about_box">
         <h2 class="nh1"><span>您现在的位置是：<a href="/blog">博客列表</a>>><a th:text="${blog.title}"></a></span><b>详情</b></h2>
+
         <div class="f_box">
           <p class="a_title" th:text="${blog.title}"></p>
           <p class="p_title"></p>
@@ -63,17 +31,30 @@
               <span th:text="|作者：${blog.author}|"></span>
               <span th:text="${blog.type==10} ? '类型：原创':'类型：转载'"></span>
               <span th:text="|浏览：${blog.readCount}次|"></span>
+              <span>评论：<a href="#SOHUCS" id="changyan_count_unit"></a>次</span>
             </p>
-          <!-- 可用于内容模板 --> 
         </div>
+
         <ul class="about_content">
           <div id="doc-content">
             <textarea style="display:none;" th:text="${blog.description}"></textarea>
           </div>
         </ul>
-        <!-- 可用于内容模板 -->
-        
-        <!-- container代码 结束 --> 
+
+
+        <!--畅言评论系统开始-->
+        <div>
+          <!--PC和WAP自适应版-->
+          <div id="SOHUCS" th:sid="${blog.id}" ></div>
+          <script type="text/javascript">
+              (function(){
+                  var appid = 'cytgHqoc6';
+                  var conf = 'prod_df73546692e03d89fc60c4b42adcf582';
+                  var width = window.innerWidth || document.documentElement.clientWidth;
+                  if (width < 960) {
+                      window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="http://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("http://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+        </div>
+        <!--畅言评论系统结束-->
       </div>
     </div>
     <div class="blank"></div>
@@ -101,16 +82,10 @@
 <script src="/editormd/lib/flowchart.min.js"></script>
 <script src="/editormd/lib/jquery.flowchart.min.js"></script>
 <script src="/editormd/editormd.min.js"></script>
+<script type="text/javascript" src="https://assets.changyan.sohu.com/upload/plugins/plugins.count.js"></script>
 <script type="text/javascript">
     var testEditor;
     $(function () {
-        $(".menu ul").css({display: "none"}); // Opera Fix
-        $(".menu li").hover(function(){
-            $(this).find('ul:first').css({visibility: "visible",display: "none"}).slideDown("normal");
-        },function(){
-            $(this).find('ul:first').css({visibility: "hidden"});
-        });
-
         testEditor = editormd.markdownToHTML("doc-content", {//注意：这里是上面DIV的id
             htmlDecode: "style,script,iframe",
             emoji: true,
@@ -120,8 +95,6 @@
             sequenceDiagram: true, // 默认不解析
             codeFold: true,
         });
-
-
     })
 </script>
 </html>

@@ -16,11 +16,24 @@ function loadBarrage(){
         url:"/barrages",
         success:function(data){
             if(data.status='100000'){
+                var arr = new Array();
                 for(var i=0; i<data.result.length; i++)
                 {
-                    // alert(data.result[i].id+" " + data.result[i].content)
-                    sendMessage(data.result[i].content);
+                    arr[i]=data.result[i].content;
+                    // sendMessage(data.result[i].content);
                 }
+
+                var i = 0;
+                var yanshi=setInterval(
+                    function(){
+
+                        sendMessage(arr[i]);
+                        if(arr[i]==null){
+                            clearInterval(yanshi);
+                        }
+                        i++;
+                    },1000);
+
             }else{
                 alert("加载出错，错误码："+data.status);
             }
@@ -83,7 +96,7 @@ function sendMessage(info){
         })(Math,'0123456789abcdef',5)
     }
     var item={
-        img:'img/haha.gif', //图片
+        img:'img/avatar.jpg', //图片
         info:info, //文字
 //        href:'http://www.jq22.com', //链接
         close:true, //显示关闭按钮

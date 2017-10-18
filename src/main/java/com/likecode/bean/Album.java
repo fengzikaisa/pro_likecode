@@ -8,12 +8,15 @@ import java.io.Serializable;
 /**
  * Created by wangkai on 2017/10/17.
  */
-@Alias("picture")
+@Alias("album")
 @Data
-public class Picture implements Serializable{
+public class Album implements Serializable{
 
     private static final long serialVersionUID = 1L;
 
     private int id;
-    private String 
+    private String name;
+    private String url;
+    private String type;//10:保密  20:其他
+    private String isDel;//10:可用  20:不可用;
 }

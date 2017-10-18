@@ -1,24 +1,27 @@
 package com.likecode.service.impl;
 
-import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import com.likecode.bean.Album;
 import com.likecode.bean.TestBean;
 import com.likecode.common.bean.ParameterBean;
 import com.likecode.common.bean.ResultBean;
 import com.likecode.common.utils.ConstantDefinition;
+import com.likecode.dao.AlbumDao;
 import com.likecode.dao.TestDao;
+import com.likecode.service.AlbumService;
 import com.likecode.service.TestService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
-public class TestServiceImpl implements TestService {
+public class AlbumServiceImpl implements AlbumService {
+
 	@Autowired
-	TestDao TestDao;
+	AlbumDao albumDao;
 
 	@Override
-	public ResultBean queryTest(ParameterBean pb) {
-		List<TestBean> list = this.TestDao.queryTest();
-		return new ResultBean(ConstantDefinition.SYSTEM_SUCCESS, list,"");
+	public List<Album> getAlbumByType(String type) {
+		return albumDao.getAlbumByType(type);
 	}
 }

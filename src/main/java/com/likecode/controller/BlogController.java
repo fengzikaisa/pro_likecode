@@ -1,11 +1,13 @@
 package com.likecode.controller;
 
+import com.likecode.bean.Album;
 import com.likecode.bean.Blog;
 import com.likecode.bean.FriendshipLink;
 import com.likecode.bean.ext.BlogExt;
 import com.likecode.bean.ext.UserExt;
 import com.likecode.common.bean.ResultBean;
 import com.likecode.common.controller.BaseController;
+import com.likecode.service.AlbumService;
 import com.likecode.service.BlogService;
 import com.likecode.service.FriendshipLinkService;
 import lombok.extern.log4j.Log4j;
@@ -34,6 +36,9 @@ public class BlogController extends BaseController {
 
     @Autowired
     FriendshipLinkService friendshipLinkService;
+
+    @Autowired
+    AlbumService albumService;
 
     /**
      * 添加博客页面
@@ -97,5 +102,45 @@ public class BlogController extends BaseController {
         BlogExt blog=blogService.selectBlog(id);
         model.addAttribute("blog",blog);
         return "blog/blogDetail";
+    }
+
+    /**
+     * 我的图片
+     * @param model
+     * @return
+     */
+    @RequestMapping("myPicture")
+    public String myPicture(Model model) {
+        List<Album> albums20=albumService.getAlbumByType("20");
+        model.addAttribute("albums20",albums20);
+        return "blog/myPicture";
+    }
+
+    /**
+     * 留言板
+     * @param model
+     * @return
+     */
+    @RequestMapping("msgBoard")
+    public String msgBoard(Model model) {
+        return "blog/messageBoard";
+    }
+
+    /**
+     * 加密相册
+     * @param model
+     * @param pwd
+     * @param session
+     * @return
+     */
+    @ResponseBody
+    @RequestMapping(value="secrecyPicture",method = RequestMethod.POST)
+    public ResultBean secrecyPicture(Model model, String pwd, HttpSession session) {
+        if("520".equals(pwd)){
+            List<Album> albums10=albumService.getAlbumByType("10");
+            return new ResultBean("10000",albums10,"请求成功");
+        }else{
+            return new ResultBean("10001",null,"请求失败");
+        }
     }
 }

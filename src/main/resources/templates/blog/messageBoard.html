@@ -1,105 +1,61 @@
-<!doctype html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
-<meta charset="gb2312">
-<title>¸öÈË²©¿ÍÄ£°å¹ÅµäÏµÁĞÖ®¡ª¡ª½­ÄÏÄ«¾í</title>
-<meta name="keywords" content="¸öÈË²©¿ÍÄ£°å¹ÅµäÏµÁĞÖ®¡ª¡ª½­ÄÏÄ«¾í" />
-<meta name="description" content="¸öÈË²©¿ÍÄ£°å¹ÅµäÏµÁĞÖ®¡ª¡ª½­ÄÏÄ«¾í" />
-<link href="css/base.css" rel="stylesheet">
-<link href="css/main.css" rel="stylesheet">
-<!--[if lt IE 9]>
-<script src="js/modernizr.js"></script>
-<![endif]-->
-<script type="text/javascript" src="js/jquery.js"></script>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>ä¸°å­æºæ’’-åšå®¢ä¸»é¡µ</title>
+  <meta name="keywords" content="åšå®¢" />
+  <meta name="description" content="åšå®¢" />
+  <link href="/blog/css/base.css" rel="stylesheet">
+  <link href="/blog/css/main.css" rel="stylesheet">
+  <!--[if lt IE 9]>
+  <script src="/blog/js/modernizr.js"></script>
+  <![endif]-->
+  <script type="text/javascript" src="/blog/js/jquery.js"></script>
 </head>
 <body>
 <div id="wrapper">
-  <header>
-    <div class="headtop"></div>
-    <div class="contenttop">
-      <div class="logo f_l">¸öÈË²©¿ÍÄ£°å¹ÅµäÏµÁĞÖ®¡ª¡ª½­ÄÏÄ«¾í</div>
-      <div class="search f_r">
-        <form action="/e/search/index.php" method="post" name="searchform" id="searchform">
-          <input name="keyboard" id="keyboard" class="input_text" value="ÇëÊäÈë¹Ø¼ü×Ö" style="color: rgb(153, 153, 153);" onfocus="if(value=='ÇëÊäÈë¹Ø¼ü×Ö'){this.style.color='#000';value=''}" onblur="if(value==''){this.style.color='#999';value='ÇëÊäÈë¹Ø¼ü×Ö'}" type="text">
-          <input name="show" value="title" type="hidden">
-          <input name="tempid" value="1" type="hidden">
-          <input name="tbname" value="news" type="hidden">
-          <input name="Submit" class="input_submit" value="ËÑË÷" type="submit">
-        </form>
-      </div>
-      <div class="blank"></div>
-      <nav>
-        <div  class="navigation">
-          <ul class="menu">
-            <li><a href="index.html">ÍøÕ¾Ê×Ò³</a></li>
-            <li><a href="#">¹ØÓÚÎÒ</a>
-              <ul>
-                <li><a href="about.html">¸öÈË¼ò½é</a></li>
-                <li><a href="listpic.html">¸öÈËÏà²á</a></li>
-              </ul>
-            </li>
-            <li><a href="#">ÎÒµÄÈÕ¼Ç</a>
-              <ul>
-                <li><a href="newslistpic.html">¸öÈËÈÕ¼Ç</a></li>
-                <li><a href="newslistpic.html">Ñ§Ï°±Ê¼Ç</a></li>
-              </ul>
-            </li>
-            <li><a href="newslistpic.html">¼¼ÊõÎÄÕÂ</a> </li>
-            <li><a href="#">¸øÎÒÁôÑÔ</a> </li>
-          </ul>
-        </div>
-      </nav>
-      <SCRIPT type=text/javascript>
-	// Navigation Menu
-	$(function() {
-		$(".menu ul").css({display: "none"}); // Opera Fix
-		$(".menu li").hover(function(){
-			$(this).find('ul:first').css({visibility: "visible",display: "none"}).slideDown("normal");
-		},function(){
-			$(this).find('ul:first').css({visibility: "hidden"});
-		});
-	});
-</SCRIPT> 
-    </div>
-  </header>
+  <div th:replace="blog/header"></div>
   <div class="container">
     <div class="con_content">
       <div class="about_box">
-        <h2 class="nh1"><span>ÄúÏÖÔÚµÄÎ»ÖÃÊÇ£º<a href="/" target="_blank">ÍøÕ¾Ê×Ò³</a>>><a href="#" target="_blank">ĞÅÏ¢ä¯ÀÀ</a></span><b>¸öÈË¼ò½é</b></h2>
+        <h2 class="nh1"><span>æ‚¨ç°åœ¨çš„ä½ç½®æ˜¯ï¼š<a href="/blog">åšå®¢é¦–é¡µ</a>>><a>ç•™è¨€æ¿</a></span><b>ç•™è¨€</b></h2>
         <div class="f_box">
-          <p class="a_title">¸öÈË¼ò½é</p>
+          <p class="a_title">ç•™ä¸ªè¨€å†èµ°å§</p>
           <p class="p_title"></p>
-          <!--  <p class="box_p"><span>·¢²¼Ê±¼ä£º2017-07-07 15:12:42</span><span>×÷Õß£ºÌÆĞ¢ÎÄ</span><span>À´Ô´£º»ü²éÖ§¶Ó</span><span>µã»÷£º111056</span></p>--> 
-          <!-- ¿ÉÓÃÓÚÄÚÈİÄ£°å --> 
+          <!--  <p class="box_p"><span>å‘å¸ƒæ—¶é—´ï¼š2017-07-07 15:12:42</span><span>ä½œè€…ï¼šå”å­æ–‡</span><span>æ¥æºï¼šç¨½æŸ¥æ”¯é˜Ÿ</span><span>ç‚¹å‡»ï¼š111056</span></p>--> 
+          <!-- å¯ç”¨äºå†…å®¹æ¨¡æ¿ --> 
         </div>
         <ul class="about_content">
-          <p> ÈËÉú¾ÍÊÇÒ»¸öµÃÓëÊ§µÄ¹ı³Ì£¬¶øÎÒÈ´ÊÇÒ»¸öĞÒÔËÕß£¬µÃµ½µÄÓÀÔ¶±ÈÊ§È¥µÄ¶à¡£Éú»îµÄÑ¹Á¦ÆÈÊ¹ÎÒ·ÅÆúÁËÇáËÉµÄÇ°Ì¨½Ó´ı£¬·ÅÆúÁËÌåÃæµÄ±à¼­£¬»»À´ËäÓĞĞ©ÅîÍ·¹¸ÃæµÄ¹¤×÷£¬µ«ÊÇÎÒÈÔÈ»ºÜÏíÊÜÄÇĞ©°¾µÃÖ»Ê£ÏÂºÚÑÛÈ¦µÄÈÕ×Ó£¬ÒòÎªÎÒÔÚÑ§Ï°Ê¹ÓÃPhotoshop¡¢Flash¡¢Dreamweaver¡¢ASP¡¢PHP¡¢JSP...ÖĞ¼¤·¢ÁËĞËÈ¤£¬È»ºóÔ½×ßÔ½Ô¶....</p>
-          <p><img src="images/01.jpg"></p>
-          <p>¡°Ú¤Ú¤ÖĞ¸ÃÀ´ÔòÀ´£¬ÎŞ´¦¿ÉÌÓ¡±¡£ </p>
+          <!--ç•…è¨€è¯„è®ºç³»ç»Ÿå¼€å§‹-->
+          <div>
+            <!--PCå’ŒWAPè‡ªé€‚åº”ç‰ˆ-->
+            <div id="SOHUCS" sid="0" ></div>
+            <script type="text/javascript">
+                (function(){
+                    var appid = 'cytgHqoc6';
+                    var conf = 'prod_df73546692e03d89fc60c4b42adcf582';
+                    var width = window.innerWidth || document.documentElement.clientWidth;
+                    if (width < 960) {
+                        window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="http://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("http://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+          </div>
+          <!--ç•…è¨€è¯„è®ºç³»ç»Ÿç»“æŸ-->
         </ul>
-        <!--    <div class="nextinfos">
-      <p>ÉÏÒ»Æª£º<a href="/">ÇøÖĞÒ½Ò½Ôº¿ªÕ¹Ö¾Ô¸·şÎñ»î¶¯</a></p>
-      <p>ÏÂÒ»Æª£º<a href="/">¹ã°²ÇøÅú×¼¡°µ¥¶ÀÁ½º¢¡±500Àı</a></p>
-    </div>--> 
-        <!-- ¿ÉÓÃÓÚÄÚÈİÄ£°å --> 
-        
-        <!-- container´úÂë ½áÊø --> 
       </div>
     </div>
     <div class="blank"></div>
   </div>
-  <!-- container´úÂë ½áÊø -->
-  
+
   <footer>
     <div class="footer">
       <div class="f_l">
-        <p>All Rights Reserved °æÈ¨ËùÓĞ£º<a href="http://www.yangqq.com">ÑîÇà¸öÈË²©¿Í</a> ±¸°¸ºÅ£ºÊñICP±¸00000000ºÅ</p>
+        <p>Copyright Â© 2017 - wangkai</p>
       </div>
-      <div class="f_r textr">
-        <p>Design by DanceSmile</p>
-      </div>
+      <!--<div class="f_r textr">-->
+      <!--<p>Design by DanceSmile</p>-->
+      <!--</div>-->
     </div>
   </footer>
 </div>
 </body>
+<script type="text/javascript" src="https://assets.changyan.sohu.com/upload/plugins/plugins.count.js"></script>
 </html>

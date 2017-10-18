@@ -349,14 +349,14 @@ a.readmore {
 .lispic li img {
 	display: block;
 	margin: auto;
-	height: 160px;
+	height: 170px;
 	width: auto;
 	-webkit-transition: all 0.5s;
 	-moz-transition: all 0.5s;
 	-o-transition: all 0.5s;
 }
 .lispic li span {
-	padding: 10px 0;
+	padding: 5px 0;
 	display: block;
 	position: absolute;
 	overflow: hidden;

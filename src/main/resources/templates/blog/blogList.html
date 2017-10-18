@@ -5,70 +5,18 @@
 <title>丰子恺撒-博客主页</title>
 <meta name="keywords" content="博客" />
 <meta name="description" content="博客" />
-<link href="blog/css/base.css" rel="stylesheet">
-<link href="blog/css/index.css" rel="stylesheet">
+<link href="/blog/css/base.css" rel="stylesheet">
+<link href="/blog/css/index.css" rel="stylesheet">
 <!--[if lt IE 9]>
-<script src="blog/js/modernizr.js"></script>
+<script src="/blog/js/modernizr.js"></script>
 <![endif]-->
-<script type="text/javascript" src="blog/js/jquery.js"></script>
+<script type="text/javascript" src="/blog/js/jquery.js"></script>
 </head>
 <body>
 <div id="wrapper">
-  <header>
-    <div class="headtop"></div>
-    <div class="contenttop">
-      <div class="logo f_l">丰子恺撒-博客主页</div>
-      <!--<div class="search f_r">
-        <form action="/e/search/index.php" method="post" name="searchform" id="searchform">
-          <input name="keyboard" id="keyboard" class="input_text" value="请输入关键字" style="color: rgb(153, 153, 153);" onfocus="if(value=='请输入关键字'){this.style.color='#000';value=''}" onblur="if(value==''){this.style.color='#999';value='请输入关键字'}" type="text">
-          <input name="show" value="title" type="hidden">
-          <input name="tempid" value="1" type="hidden">
-          <input name="tbname" value="news" type="hidden">
-          <input name="Submit" class="input_submit" value="搜索" type="submit">
-        </form>
-      </div>-->
+  <!--header-->
+  <div th:replace="blog/header"></div>
 
-      <div class="search f_r">
-        <h1>不为谁而作的歌--JJ林俊杰</h1>
-        <audio src="http://oxp9goqe4.bkt.clouddn.com/jj.mp3" controls="controls"></audio>
-      </div>
-
-
-      <div class="blank"></div>
-      <nav>
-        <div  class="navigation">
-          <ul class="menu">
-            <li><a href="/">网站首页</a></li>
-            <li><a href="">关于我</a>
-              <ul>
-                <li><a href="">个人简介</a></li>
-                <li><a href="">个人相册</a></li>
-              </ul>
-            </li>
-            <li><a href="#">我的日记</a>
-              <ul>
-                <li><a href="">个人日记</a></li>
-                <li><a href="">学习笔记</a></li>
-              </ul>
-            </li>
-            <li><a href="">技术文章</a> </li>
-            <li><a href="">给我留言</a> </li>
-          </ul>
-        </div>
-      </nav>
-      <SCRIPT type=text/javascript>
-	// Navigation Menu
-	$(function() {
-		$(".menu ul").css({display: "none"}); // Opera Fix
-		$(".menu li").hover(function(){
-			$(this).find('ul:first').css({visibility: "visible",display: "none"}).slideDown("normal");
-		},function(){
-			$(this).find('ul:first').css({visibility: "hidden"});
-		});
-	});
-</SCRIPT> 
-    </div>
-  </header>
   <div class="jztop"></div>
   <div class="container">
     <div class="bloglist f_l">
@@ -102,7 +50,6 @@
           </ul>
         </div>
       </div>
-
 
 
 
