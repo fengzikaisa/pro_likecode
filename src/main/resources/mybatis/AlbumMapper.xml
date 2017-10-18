@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.likecode.dao.BarrageDao">
+    <insert id="insertBarrage">
+        INSERT INTO t_barrage (content,ip,create_time)VALUES(#{barrage.content},#{barrage.ip},NOW())
+    </insert>
+
+    <select id="getBarrages" resultType="com.likecode.bean.Barrage">
+        select * from t_barrage
+    </select>
+
+    <select id="getBarrageCount" resultType="java.lang.Integer">
+        select count(*) from t_barrage b where b.ip=#{ip} AND b.create_time>#{startTime} AND #{endTime} > b.create_time
+    </select>
+</mapper>
