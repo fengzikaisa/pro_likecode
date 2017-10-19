@@ -37,8 +37,6 @@ public class BlogController extends BaseController {
     @Autowired
     FriendshipLinkService friendshipLinkService;
 
-    @Autowired
-    AlbumService albumService;
 
     /**
      * 添加博客页面
@@ -104,17 +102,7 @@ public class BlogController extends BaseController {
         return "blog/blogDetail";
     }
 
-    /**
-     * 我的图片
-     * @param model
-     * @return
-     */
-    @RequestMapping("myPicture")
-    public String myPicture(Model model) {
-        List<Album> albums20=albumService.getAlbumByType("20");
-        model.addAttribute("albums20",albums20);
-        return "blog/myPicture";
-    }
+
 
     /**
      * 留言板
@@ -126,21 +114,5 @@ public class BlogController extends BaseController {
         return "blog/messageBoard";
     }
 
-    /**
-     * 加密相册
-     * @param model
-     * @param pwd
-     * @param session
-     * @return
-     */
-    @ResponseBody
-    @RequestMapping(value="secrecyPicture",method = RequestMethod.POST)
-    public ResultBean secrecyPicture(Model model, String pwd, HttpSession session) {
-        if("520".equals(pwd)){
-            List<Album> albums10=albumService.getAlbumByType("10");
-            return new ResultBean("10000",albums10,"请求成功");
-        }else{
-            return new ResultBean("10001",null,"请求失败");
-        }
-    }
+
 }

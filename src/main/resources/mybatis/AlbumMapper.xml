@@ -2,7 +2,23 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.likecode.dao.AlbumDao">
 
-    <select id="getAlbumByType" resultType="com.likecode.bean.Album">
-        SELECT * from t_album a WHERE a.type=#{type} AND a.is_del='10'
+    <select id="getAlbumsAndPhoto" resultType="java.util.Map">
+        SELECT
+            p.id as photoId,
+            p.photo_name as photoName,
+            p.album_id as albumId,
+            p.url as url,
+            a.album_name AS albumName,
+            a.type
+        FROM
+            t_photo p
+        LEFT JOIN t_album a ON p.album_id = a.id
+        WHERE p.is_del=10 AND a.is_del=10
+    </select>
+    <select id="getAlbumById" resultType="com.likecode.bean.Album">
+        select * from t_album a where a.is_del=10 AND a.id=#{id}
+    </select>
+    <select id="getPhotosByAlbumId" resultType="com.likecode.bean.Photo">
+        select * from t_photo p where p.is_del=10 AND p.album_id=#{albumId}
     </select>
 </mapper>

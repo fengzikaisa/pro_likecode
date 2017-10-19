@@ -23,7 +23,7 @@
 
       <div th:each="blog : ${blogList}">
         <h3><a th:href="@{/blog/detail/{id}(id=${blog.id})}" th:text="${blog.title}"></a></h3>
-        <figure><img th:src="${blog.img}" alt=""></figure>
+        <figure><img th:data-original="${blog.img}" alt="" class="lazy"></figure>
         <ul>
           <p th:text="${#strings.abbreviate(blog.blogAbstract,100)}"></p>
           <a th:title="${blog.title}" th:href="@{/blog/detail/{id}(id=${blog.id})}" target="_blank" class="readmore">阅读全文&gt;&gt;</a>
@@ -68,23 +68,22 @@
         </ul>
       </div>
 
-      <div class="ad"><img src="http://oxp9goqe4.bkt.clouddn.com/%E5%8F%A4%E8%A3%85_%E5%A5%B3.jpg"></div>
-      <div class="ad"><img src="http://oxp9goqe4.bkt.clouddn.com/%E5%8F%A4%E8%A3%85_%E7%94%B7.jpg"></div>
+      <div class="ad"><img data-original="http://oxp9goqe4.bkt.clouddn.com/%E5%8F%A4%E8%A3%85_%E5%A5%B3.jpg" class="lazy"></div>
+      <div class="ad"><img data-original="http://oxp9goqe4.bkt.clouddn.com/%E5%8F%A4%E8%A3%85_%E7%94%B7.jpg" class="lazy"></div>
 
 
     </div>
   </div>
 
-  <footer>
-    <div class="footer">
-      <div class="f_l">
-        <p>Copyright © 2017 - wangkai</p>
-      </div>
-      <!--<div class="f_r textr">-->
-        <!--<p>Design by DanceSmile</p>-->
-      <!--</div>-->
-    </div>
-  </footer>
+  <!--底部-->
+  <div th:replace="blog/footer"></div>
 </div>
+<script type="text/javascript" src="/js/jquery.lazyload.js"></script>
+<script type="text/javascript">
+  $(function(){
+      //图片懒加载
+      $("img.lazy").lazyload({effect: "fadeIn"});
+  })
+</script>
 </body>
 </html>

@@ -8,14 +8,6 @@
   <link href="/blog/css/picture.css" rel="stylesheet" type="text/css">
   <link href="/blog/css/base.css" rel="stylesheet">
   <link href="/blog/css/main.css" rel="stylesheet">
-
-
-  <script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
-  <script type="text/javascript" src="http://www.jq22.com/demo/jQuery3Dlbt201703302245/js/jquery.fancybox.pack.js"></script>
-
-  <!--[if lt IE 9]>
-  <script src="/blog/js/modernizr.js"></script>
-  <![endif]-->
   <script type="text/javascript" src="/js/jquery.min.js"></script>
 </head>
 <body>
@@ -26,51 +18,46 @@
     <div class="con_content">
       <div class="about_box">
         <h2 class="nh1"><span>您现在的位置是：<a href="/blog">博客首页</a>>><a href="#" target="_blank">个人相册</a></span><b>相册</b></h2>
-
-
-        <div class="lispic">
+        <!--相册开始-->
+        <div class="lispic" th:each="album : ${albums}" >
           <div class="in exhibition_hall">
-            <span style="font-size: initial;color: black;">非加密相册，可自由查看。</span>
+            <span style="font-size: initial;color: black;" th:if="${album.type=='10'}">加密相册《<span th:text="${album.albumName}"></span>》，回答问题可见。密码：<input type="text" class="pwd" name="" placeholder="点击此处输入密码">
+              <button class="sure" th:albumid="${album.id}">确定</button>
+            </span>
+            <span style="font-size: initial;color: black;" th:if="${album.type=='20'}">非加密相册《<span th:text="${album.albumName}"></span>》，可自由查看。</span>
             <div  class="roundabout_box">
-              <ul>
-                <li><a href="/blog/images/01.jpg" target="_blank"><img src="/blog/images/01.jpg" alt=""><span class="text">Picture 1</span></a></li>
-                <li><a href="/blog/images/02.jpg" target="_blank"><img src="/blog/images/02.jpg" alt=""><span class="text">Picture 2</span></a></li>
-                <li><a href="/blog/images/03.jpg" target="_blank"><img src="/blog/images/03.jpg" alt=""><span class="text">Picture 3</span></a></li>
-                <li><a href="/blog/images/04.jpg" target="_blank"><img src="/blog/images/04.jpg" alt=""><span class="text">Picture 4</span></a></li>
-                <li><a href="/blog/images/06.jpg" target="_blank"><img src="/blog/images/06.jpg" alt=""><span class="text">Picture 6</span></a></li>
+              <ul class="secrecyPicture">
+
+                <li th:if="${album.type=='20'}" th:each="photo : ${album.photos}">
+                  <a th:href="|/blog/images/${photo.url}|" target="_blank">
+                    <img th:data-original="|/blog/images/${photo.url}|" alt="" class="lazy">
+                    <span class="text" th:text="${photo.photoName}"></span>
+                  </a>
+                </li>
+
+                <li th:if="${album.type=='10'}">
+                  <a>
+                    <img data-original="/blog/images/mimi.jpg" class="lazy">
+                    <span class="text">保密相册</span>
+                  </a>
+                </li>
+
               </ul>
             </div>
             <div class="clear"></div>
           </div>
         </div>
-
-        <div class="lispic">
-          <div class="in exhibition_hall">
-            <span style="font-size: initial;color: black;">加密相册，回答问题可见。密码：<input type="text" id="pwd" name="" placeholder="点击此处输入密码"><button id="sure">确定</button></span>
-            <div class="roundabout_box">
-              <ul id="secrecyPicture">
-                <li><a><img src="/blog/images/mimi.jpg"><span class="text">保密相册</span></a></li>
-              </ul>
-            </div>
-            <div class="clear"></div>
-          </div>
-        </div>
-
+        <!--相册结束-->
       </div>
     </div>
     <div class="blank"></div>
   </div>
-    <footer>
-      <div class="footer">
-        <div class="f_l">
-          <p>Copyright © 2017 - wangkai</p>
-        </div>
-        <!--<div class="f_r textr">-->
-        <!--<p>Design by DanceSmile</p>-->
-        <!--</div>-->
-      </div>
-    </footer>
+  <!--底部-->
+  <div th:replace="blog/footer"></div>
   </div>
+<script type="text/javascript" src="http://www.jq22.com/demo/jQuery3Dlbt201703302245/js/jquery.fancybox.pack.js"></script>
+<script src="/blog/js/modernizr.js"></script>
+<script type="text/javascript" src="/js/jquery.lazyload.js"></script>
 <script src="http://www.jq22.com/demo/jQuery3Dlbt201703302245/js/jquery.roundabout.min.js"></script>
 <script type="text/javascript">
     $(document).ready(function(){
@@ -88,17 +75,20 @@
             enableDrag: false
         });
 
-        $("#sure").on('click',function(){
-            var pwd=$("#pwd").val();
+        $(".sure").on('click',function(){
+            var $this=$(this);
+            var pwd=$this.parent('span').find('.pwd').val();
+            var albumId=$this.attr('albumid');
             if(""==pwd || null ==pwd){
                 alert("密码不可为空");
                 return false;
             }
             $.ajax({
                 type: "POST",
-                url:"/blog/secrecyPicture",
+                url:"/album/secrecyPicture",
                 data:{
-                    pwd:pwd
+                    pwd:pwd,
+                    albumId:albumId
                 },
                 error: function(request) {
                     window.location.href="error";
@@ -106,20 +96,22 @@
                 success: function(result) {
                     if(result.status==10000){
                         var len = result.result.length;
-                        $("#secrecyPicture").html("");
+                        $this.parents('.lispic').find('.secrecyPicture').html('');
                         for (var i = 0; i < len; i++) {
-                            var name=result.result[i].name;
+                            var name=result.result[i].photoName;
                             var url=result.result[i].url;
                             var li='<li><a href="/blog/images/'+url+'" target="_blank"><img src="/blog/images/'+url+'" alt=""><span class="text">'+name+'</span></a></li>';
-                            $("#secrecyPicture").append(li);
+                            $this.parents('.lispic').find('.secrecyPicture').append(li);
                         }
-
                     }else{
                         alert("密码错误!");
                     }
                 }
             });
-        })
+        });
+
+        //图片懒加载
+        $("img.lazy").lazyload({effect: "fadeIn"});
     });
 </script>
 
