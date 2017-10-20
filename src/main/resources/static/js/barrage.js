@@ -100,9 +100,9 @@ function sendMessage(info){
         info:info, //文字
 //        href:'http://www.jq22.com', //链接
         close:true, //显示关闭按钮
-        speed:1, //延迟,单位秒,默认6
-//        bottom:70, //距离底部高度,单位px,默认随机
-        color:getRandomColor, //颜色,默认白色
+        speed:0, //延迟,单位秒,默认6
+       // bottom:70, //距离底部高度,单位px,默认随机
+       //  color:getRandomColor, //颜色,默认白色
         old_ie_color:'#000000', //ie低版兼容色,不能与网页背景相同,默认黑色
     }
     $('body').barrager(item);

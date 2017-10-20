@@ -13,12 +13,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class IndexController {
 
     @RequestMapping(value="/")
-    public String index(Model model) {
-        return "home";
+    public String netindex(Model model) {
+        return "redirect:/blog";
     }
 
     @RequestMapping(value="index")
-    public String home(Model model) {
+    public String index(Model model) {
         return "/index";
+    }
+
+    @RequestMapping(value="home")
+    public String home(Model model) {
+        return "/home";
     }
 }

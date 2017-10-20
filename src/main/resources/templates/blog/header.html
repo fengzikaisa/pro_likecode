@@ -18,6 +18,7 @@
                     <li><a href="/">网站首页</a></li>
                     <li><a href="/album/myPicture">我的相册</a></li>
                     <li><a href="/blog/msgBoard">留言板</a></li>
+                    <li><a href="/home">满屏弹幕</a></li>
                     <!--<li><a href="">关于我</a>-->
                         <!--<ul>-->
                             <!--<li><a href="">个人简介</a></li>-->
@@ -45,5 +46,22 @@
         },function(){
             $(this).find('ul:first').css({visibility: "hidden"});
         });
+
+
+        var hiddenProperty = 'hidden' in document ? 'hidden' :
+            'webkitHidden' in document ? 'webkitHidden' :
+                'mozHidden' in document ? 'mozHidden' :
+                    null;
+        var visibilityChangeEvent = hiddenProperty.replace(/hidden/i, 'visibilitychange');
+        var onVisibilityChange = function(){
+            if (!document[hiddenProperty]) {
+                $("title").html("丰子恺撒-博客主页");
+            }else{
+                $("title").html("来不及解释了，快上车！");
+                alert("进来就别想走了,哈哈");
+            }
+        }
+        document.addEventListener(visibilityChangeEvent, onVisibilityChange);
+
     })
 </script>
