@@ -19,11 +19,11 @@ public class IndexController {
 
     @RequestMapping(value="index")
     public String index(Model model) {
-        return "/index";
+        return "index";
     }
 
     @RequestMapping(value="home")
     public String home(Model model) {
-        return "/home";
+        return "home";
     }
 }
