@@ -35,7 +35,11 @@
             height  : 640,
             syncScrolling : "single",
             path    : "/editormd/lib/",//注意2：你的路径
-            saveHTMLToTextarea : true//注意3：这个配置，方便post提交表单
+            saveHTMLToTextarea : true,//注意3：这个配置，方便post提交表单
+            /**上传图片相关配置如下*/
+            imageUpload : true,
+            imageFormats : ["jpg", "jpeg", "gif", "png", "bmp", "webp"],
+            imageUploadURL : "/uploadImg/editormdPic/"//注意你后端的上传图片服务地址
         });
 
     $("#save").on('click',function(){

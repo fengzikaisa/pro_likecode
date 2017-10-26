@@ -1,16 +1,23 @@
 package com.likecode;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.embedded.EmbeddedServletContainerCustomizer;
 import org.springframework.boot.web.servlet.ErrorPage;
+import org.springframework.boot.web.servlet.MultipartConfigFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpStatus;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
+import javax.servlet.MultipartConfigElement;
+
 @SpringBootApplication
 @EnableScheduling
 public class Application {
+
+	@Value("${upload.path}")
+	private String uploadPath;
 
 	public static void main(String[] args) {
 //		SpringApplication app = new SpringApplication(Application.class);
@@ -33,4 +40,14 @@ public class Application {
 			container.addErrorPages(error401Page, error404Page, error500Page);
 		});
 	}
+
+	/**
+	 * 文件上传临时路径
+	 */
+//	@Bean
+//	MultipartConfigElement multipartConfigElement() {
+//		MultipartConfigFactory factory = new MultipartConfigFactory();
+//		factory.setLocation(uploadPath);
+//		return factory.createMultipartConfig();
+//	}
 }

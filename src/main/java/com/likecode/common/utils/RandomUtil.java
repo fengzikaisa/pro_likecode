@@ -6,7 +6,7 @@ import java.util.Random;
 
 public class RandomUtil {
     //公共头
-    private static String commonName = "cinyi";
+    private static String commonName = "likecode";
 
     public static String getRandomString(int length) {
         StringBuffer buffer = new StringBuffer("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ");
