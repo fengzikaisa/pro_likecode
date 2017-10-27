@@ -1,23 +1,22 @@
 package com.likecode;
 
+import lombok.extern.log4j.Log4j;
+import org.apache.log4j.PropertyConfigurator;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.embedded.EmbeddedServletContainerCustomizer;
 import org.springframework.boot.web.servlet.ErrorPage;
-import org.springframework.boot.web.servlet.MultipartConfigFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpStatus;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
-import javax.servlet.MultipartConfigElement;
-
+@Log4j
 @SpringBootApplication
 @EnableScheduling
 public class Application {
 
-	@Value("${upload.path}")
-	private String uploadPath;
+
 
 	public static void main(String[] args) {
 //		SpringApplication app = new SpringApplication(Application.class);
@@ -50,4 +49,6 @@ public class Application {
 //		factory.setLocation(uploadPath);
 //		return factory.createMultipartConfig();
 //	}
+
+
 }

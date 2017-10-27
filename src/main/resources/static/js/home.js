@@ -26,8 +26,7 @@ $(function(){
     })
 
     $(".home_name").click(function(){
-        hide_tip();
-        $(".jump_cat").show();
+        location.href="/home"
     })
 
     $(".ds_button .cancel").click(function(){
@@ -43,8 +42,7 @@ $(function(){
 })
 
 function hide_tip(){
-    $(".jump_cat").hide();
-    $(".flower").hide();
+    $(".danmu").hide();
     $(".love").hide();
     $("#mask").hide();
     $(".ds").hide();
