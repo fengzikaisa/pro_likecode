@@ -4,9 +4,11 @@
     <meta name="keywords" content="王恺、丰子恺撒、恺撒、小撒" />
     <meta name="description" content="王恺的个人博客，学习笔记，生活记录，感想随笔等。" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="css/bulma.css" rel="stylesheet" type="text/css" />
     <link href="css/main.css" rel="stylesheet" type="text/css" />
     <link href="css/home.css" rel="stylesheet" type="text/css" />
     <link href="css/barrager.css" rel="stylesheet" type="text/css" />
+
     <link rel="stylesheet" type="text/css" href="iconfont/iconfont.css">
     <script type="text/javascript" src="/js/baidutj.js"></script>
     <style type="text/css">
@@ -25,19 +27,14 @@
 
         .send_message .msg{
             font-size: 30px;
-            height: 70px;
-            margin-top: 5px;
-            margin-left: 5px;
+            height: 100%;
             width: 190px;
             border: 0px;
             background-color: gainsboro
         }
 
         .send_message .send_button{
-            padding-top: 14px;
-            line-height: 43px;
-            font-size: 25px;
-            background-color: antiquewhite;
+            height: 80px;
         }
     </style>
 </head>
@@ -52,9 +49,9 @@
         <!--</div>-->
         <div class="home_list">
             <li class="home_li cur"><a href="/blog" title="博客" ><i class="iconfont icon-login icon_tip"></i><span>我的博客</span></a></li>
-            <li class="home_li cur"><i class="iconfont icon-2yen icon_tip"></i><span>打赏站长</span></li>
+            <li class="home_li cur"><a title="打赏站长" ><i class="iconfont icon-2yen icon_tip"></i><span>打赏站长</span></a></li>
             <li class="home_li cur"><a href="mailto:likecode@126.com" title="Mail" target="_blank"><i class="iconfont icon-lianxi icon_tip"></i><span>联系站长</span></a></li>
-            <li class="home_li cur"><i class="iconfont icon-xin icon_tip"></i><span>献给爱丽丝</span></li>
+            <li class="home_li cur"><a title="献给爱丽丝" ><i class="iconfont icon-xin icon_tip"></i><span>献给爱丽丝</span></a></li>
         </div>
     </div>
     <div class="right_div">
@@ -62,7 +59,7 @@
             <div class="send_message">
                 <img src="/img/doutu1.jpg">
                 <input class="msg" type="text" id="send_message" value="" placeholder="留弹幕"/>
-                <button class="send_button">发射</button>
+                <button class="button is-primary is-medium send_button">发射</button>
             </div>
         </div>
         <div class="love"></div>
