@@ -54,6 +54,7 @@ public class BarrageServiceImpl implements BarrageService {
         //保存弹幕
         if(barrageDao.insertBarrage(barrage)>0){
             bean.setStatus(ConstantDefinition.SYSTEM_SUCCESS);
+            bean.setResult(barrage);
         }else{
             bean.setStatus(ConstantDefinition.SYSTEM_ERROR);
         }

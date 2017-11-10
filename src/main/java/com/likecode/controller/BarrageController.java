@@ -8,10 +8,13 @@ import com.likecode.common.utils.IpUtil;
 import com.likecode.service.BarrageService;
 import lombok.extern.log4j.Log4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.messaging.handler.annotation.MessageMapping;
+import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
@@ -39,6 +42,13 @@ public class BarrageController extends BaseController{
 		barrage.setContent(content);
 		barrage.setIp(IpUtil.getIP4(request));
 		ResultBean bean=barrageServiceImpl.insertBarrage(barrage);
+		return bean;
+	}
+
+	@MessageMapping("/websocketBarrage")
+	@SendTo("/topic/getResponse")
+	public ResultBean say(String message) {
+		ResultBean bean=new ResultBean("100000",null,message);
 		return bean;
 	}
 
