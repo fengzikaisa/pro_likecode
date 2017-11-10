@@ -21,20 +21,19 @@ function loadBarrage(){
                 for(var i=0; i<data.result.length; i++)
                 {
                     arr[i]=data.result[i].content;
-                    // sendMessage(data.result[i].content);
                 }
-
+                if(arr.length==0){
+                   return false;
+                }
                 var i = 0;
                 var yanshi=setInterval(
                     function(){
-
                         sendMessage(arr[i]);
-                        if(arr[i]==null){
+                        if(i==arr.length-1){
                             clearInterval(yanshi);
                         }
                         i++;
                     },1000);
-
             }else{
                 alert("加载出错，错误码："+data.status);
             }
