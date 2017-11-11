@@ -2,9 +2,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>丰子恺撒-博客主页</title>
-<meta name="keywords" content="博客" />
-<meta name="description" content="博客" />
+<title>王恺的博客</title>
+  <meta name="keywords" content="王恺、丰子恺撒、恺撒、小撒" />
+<meta name="description" content="王恺的个人博客，学习笔记，生活记录，感想随笔等。" />
 <link href="/blog/css/base.css" rel="stylesheet">
 <link href="/blog/css/index.css" rel="stylesheet">
 <!--[if lt IE 9]>
@@ -69,8 +69,12 @@
         </ul>
       </div>
 
-      <div class="ad"><img data-original="http://oxp9goqe4.bkt.clouddn.com/%E5%8F%A4%E8%A3%85_%E5%A5%B3.jpg" class="lazy"></div>
-      <div class="ad"><img data-original="http://oxp9goqe4.bkt.clouddn.com/%E5%8F%A4%E8%A3%85_%E7%94%B7.jpg" class="lazy"></div>
+      <div class="ad"><img src="http://oxp9goqe4.bkt.clouddn.com/%E5%8F%A4%E8%A3%85_%E5%A5%B3.jpg"></div>
+      <div class="ad"><img src="http://oxp9goqe4.bkt.clouddn.com/%E5%8F%A4%E8%A3%85_%E7%94%B7.jpg"></div>
+
+      <!--延迟加载示例-->
+      <!--<div class="ad"><img data-original="http://oxp9goqe4.bkt.clouddn.com/%E5%8F%A4%E8%A3%85_%E5%A5%B3.jpg" class="lazy"></div>
+      <div class="ad"><img data-original="http://oxp9goqe4.bkt.clouddn.com/%E5%8F%A4%E8%A3%85_%E7%94%B7.jpg" class="lazy"></div>-->
 
 
     </div>
@@ -79,6 +83,7 @@
   <!--底部-->
   <div th:replace="blog/footer"></div>
 </div>
+<script src="/js/canvas-nest.js"></script>
 <script type="text/javascript" src="/js/jquery.lazyload.js"></script>
 <script type="text/javascript">
   $(function(){

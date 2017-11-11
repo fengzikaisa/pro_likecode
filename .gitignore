@@ -6,6 +6,7 @@
 **/.idea
 logs/**
 *.iml
+*.properties
 likecode.mwb.
 /.apt_generated/
 /target/

@@ -13,8 +13,8 @@ function() {
 		return {
 			l: w,
 			z: o(v, "zIndex", -1),
-			o: o(v, "opacity", 0.5),
-			c: o(v, "color", "0,255,0"),
+			o: o(v, "opacity", 100),
+			c: o(v, "color", "64,64,64"),
 			n: o(v, "count", 99)
 		}
 	}

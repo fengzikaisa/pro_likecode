@@ -3,7 +3,8 @@ $(function(){
     //加载所有弹幕
     loadBarrage();
     // setInterval('loadBarrage()',10000);
-
+    //打开连接
+    connect();
 
     $(".send_button").on('click',function(){
         send();
@@ -20,20 +21,19 @@ function loadBarrage(){
                 for(var i=0; i<data.result.length; i++)
                 {
                     arr[i]=data.result[i].content;
-                    // sendMessage(data.result[i].content);
                 }
-
+                if(arr.length==0){
+                   return false;
+                }
                 var i = 0;
                 var yanshi=setInterval(
                     function(){
-
                         sendMessage(arr[i]);
-                        if(arr[i]==null){
+                        if(i==arr.length-1){
                             clearInterval(yanshi);
                         }
                         i++;
                     },1000);
-
             }else{
                 alert("加载出错，错误码："+data.status);
             }
@@ -59,6 +59,8 @@ function send(){
         alert("最多发送100个字符！");
         return false;
     }
+    //调用stomp 发送到后台弹幕
+    stompClient.send("/websocketBarrage", {},msg);
     $.ajax({
         type:"POST",
         url:"/saveBarrage",
@@ -67,7 +69,6 @@ function send(){
         },
         success:function(data){
             if(data.status=='100000'){
-                sendMessage("我："+msg);
                 $("#send_message").val("");
                 var djs=setInterval(daojishi,1000);
                 function daojishi(){
@@ -87,7 +88,6 @@ function send(){
         }
     })
 }
-
 function sendMessage(info){
     var getRandomColor = function(){
         return (function(m,s,c){
@@ -106,4 +106,20 @@ function sendMessage(info){
         old_ie_color:'#000000', //ie低版兼容色,不能与网页背景相同,默认黑色
     }
     $('body').barrager(item);
+}
+
+var stompClient = null;
+//打开连接
+function connect() {
+    var socket = new SockJS('/endpointDan');
+    stompClient = Stomp.over(socket);
+    stompClient.connect({}, function (frame) {
+        console.log('Connected:' + frame);
+        stompClient.subscribe('/topic/getResponse', function (response) {
+            showResponse(JSON.parse(response.body));
+        })
+    });
+}
+function showResponse(data) {
+    sendMessage(data.msg);
 }
