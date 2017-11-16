@@ -16,7 +16,7 @@ public class UserServiceImpl implements UserService {
     UserDao userDao;
 
     @Override
-    public UserExt getUser(String userName) {
-        return userDao.getUser(userName);
+    public UserExt getUser(String username) {
+        return userDao.getUser(username);
     }
 }

@@ -23,25 +23,35 @@ public class LoginController {
     @Autowired
     UserService userService;
 
-    @RequestMapping(value="loginPage")
+    @RequestMapping(value="login")
     public String loginPage(Model model) {
         return "loginPage";
     }
 
-    @RequestMapping(value="login",method = RequestMethod.POST)
-    public String login(Model model, User user, HttpSession session) {
-        UserExt vo=userService.getUser(user.getName());
-        if(vo!=null && vo.getPassword().equals(user.getPassword())){
-            session.setAttribute("user",vo);
-            session.setAttribute("userId",vo.getId());
-            return "redirect:/loginSuccess";
-
-        }
-        return "redirect:/loginPage";
-    }
+//    @RequestMapping(value="login",method = RequestMethod.POST)
+//    public String login(Model model, User user, HttpSession session) {
+//        UserExt vo=userService.getUser(user.getUsername());
+//        if(vo!=null && vo.getPassword().equals(user.getPassword())){
+//            session.setAttribute("user",vo);
+//            session.setAttribute("userId",vo.getId());
+//            return "redirect:/loginSuccess";
+//
+//        }
+//        return "redirect:/loginPage";
+//    }
 
     @RequestMapping(value="loginSuccess")
     public String loginSuccess(Model model) {
         return "loginSuccess";
     }
+
+    @RequestMapping(value="loginFail")
+    public String loginFail(Model model) {
+        return "loginFail";
+    }
+//
+//    @RequestMapping(value="logout")
+//    public String logout(Model model) {
+//        return "redirect:/blog";
+//    }
 }
