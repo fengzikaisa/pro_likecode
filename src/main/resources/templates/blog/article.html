@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>王恺的博客</title>
+  <meta name="keywords" content="王恺、丰子恺撒、恺撒、小撒" />
+  <meta name="description" content="王恺的个人博客，学习笔记，生活记录，感想随笔等。" />
+<link href="/blog/css/base.css" rel="stylesheet">
+<link href="/blog/css/main.css" rel="stylesheet">
+<script type="text/javascript" src="/js/jquery.min.js"></script>
+<script type="text/javascript" src="/js/baidutj.js"></script>
+</head>
+<body>
+<div id="wrapper">
+
+  <!--header-->
+  <div th:replace="blog/header"></div>
+
+<div class="container">
+  <div class="con_content">
+    <div class="about_box">
+      <h2 class="nh1"><span>您现在的位置是：<a href="/blog">博客首页</a>>><a>文章</a></span><button id="hot">最热文章</button>&nbsp;<button id="new">最新文章</button></h2>
+      <div class="dtxw box">
+
+      </div>
+
+    </div>
+  </div>
+  <div class="blank"></div>
+
+  <!--底部-->
+  <div th:replace="blog/footer"></div>
+</div>
+</div>
+<script>
+$(function () {
+
+    var url='/v2ex/data';
+    //默认加载最热文章
+    loadData(url,'hot');
+
+    $('#hot').click(function(){
+        loadData(url,'hot');
+    });
+
+    $('#new').click(function(){
+        loadData(url,'new');
+    });
+
+})
+
+  function loadData(url,type){
+    $.ajax({
+        type:'GET',
+        url:url,
+        data:{
+            type:type
+        },
+        success:function(result){
+            $('.dtxw').html("");
+            $.each(result, function(i, item){
+                var li= '<li>'+
+                        '<div class="dttext f_l" style="width: 85%">'+
+                        '<ul>'+
+                        '<h2><a href="'+item.url+'" target="_blank">'+item.title+'</a></h2>'+
+                        '<p>'+item.content+'</p>'+
+                        '</ul>'+
+                        '</div>'+
+                        '</li>';
+
+                $('.dtxw').append(li);
+            });
+        },
+        error:function(){
+            alert("错误");
+        }
+    })
+  }
+</script>
+</body>
+</html>

@@ -1,8 +1,6 @@
 package com.likecode;
 
 import lombok.extern.log4j.Log4j;
-import org.apache.log4j.PropertyConfigurator;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.embedded.EmbeddedServletContainerCustomizer;
@@ -19,10 +17,6 @@ public class Application {
 
 
 	public static void main(String[] args) {
-//		SpringApplication app = new SpringApplication(Application.class);
-//		app.setShowBanner(false);
-//		app.run(args);
-
 		SpringApplication.run(Application.class, args);
 	}
 
@@ -39,16 +33,5 @@ public class Application {
 			container.addErrorPages(error401Page, error404Page, error500Page);
 		});
 	}
-
-	/**
-	 * 文件上传临时路径
-	 */
-//	@Bean
-//	MultipartConfigElement multipartConfigElement() {
-//		MultipartConfigFactory factory = new MultipartConfigFactory();
-//		factory.setLocation(uploadPath);
-//		return factory.createMultipartConfig();
-//	}
-
 
 }
