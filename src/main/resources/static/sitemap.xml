@@ -1,61 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+  <!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
 
 <url>
   <loc>http://www.likecode.top/blog</loc>
-  <changefreq>daily</changefreq>
+  <priority>1.00</priority>
 </url>
 <url>
   <loc>http://www.likecode.top/album/myPicture</loc>
-  <changefreq>daily</changefreq>
+  <priority>0.80</priority>
 </url>
 <url>
   <loc>http://www.likecode.top/blog/msgBoard</loc>
-  <changefreq>daily</changefreq>
+  <priority>0.80</priority>
 </url>
 <url>
   <loc>http://www.likecode.top/home</loc>
-  <changefreq>daily</changefreq>
+  <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://www.likecode.top/blog/detail/6</loc>
-  <changefreq>daily</changefreq>
+  <loc>http://www.likecode.top/v2ex</loc>
+  <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://www.likecode.top/blog/detail/7</loc>
-  <changefreq>daily</changefreq>
+  <loc>http://www.likecode.top/blog/detail/34</loc>
+  <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://www.likecode.top/blog/detail/8</loc>
-  <changefreq>daily</changefreq>
+  <loc>http://www.likecode.top/blog/detail/33</loc>
+  <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://www.likecode.top/blog/detail/24</loc>
-  <changefreq>daily</changefreq>
+  <loc>http://www.likecode.top/blog/detail/32</loc>
+  <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://www.likecode.top/blog/detail/25</loc>
-  <changefreq>daily</changefreq>
-</url>
-<url>
-  <loc>http://www.likecode.top/blog/detail/27</loc>
-  <changefreq>daily</changefreq>
-</url>
-<url>
-  <loc>http://www.likecode.top/blog/detail/28</loc>
-  <changefreq>daily</changefreq>
-</url>
-<url>
-  <loc>http://www.likecode.top/blog/detail/29</loc>
-  <changefreq>daily</changefreq>
+  <loc>http://www.likecode.top/blog/detail/31</loc>
+  <priority>0.80</priority>
 </url>
 <url>
   <loc>http://www.likecode.top/blog/detail/30</loc>
-  <changefreq>daily</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.likecode.top/blog/detail/29</loc>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.likecode.top/blog/detail/28</loc>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.likecode.top/blog/detail/27</loc>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.likecode.top/blog/detail/25</loc>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.likecode.top/blog/detail/24</loc>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.likecode.top/blog/detail/8</loc>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.likecode.top/blog/detail/7</loc>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.likecode.top/blog/detail/6</loc>
+  <priority>0.80</priority>
 </url>
 </urlset>
