@@ -4,78 +4,77 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-  <!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
 
 <url>
-  <loc>http://www.likecode.top/blog</loc>
+  <loc>http://www.likecode.club/blog</loc>
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>http://www.likecode.top/album/myPicture</loc>
+  <loc>http://www.likecode.club/album/myPicture</loc>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://www.likecode.top/blog/msgBoard</loc>
+  <loc>http://www.likecode.club/blog/msgBoard</loc>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://www.likecode.top/home</loc>
+  <loc>http://www.likecode.club/home</loc>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://www.likecode.top/v2ex</loc>
+  <loc>http://www.likecode.club/v2ex</loc>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://www.likecode.top/blog/detail/34</loc>
+  <loc>http://www.likecode.club/blog/detail/34</loc>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://www.likecode.top/blog/detail/33</loc>
+  <loc>http://www.likecode.club/blog/detail/33</loc>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://www.likecode.top/blog/detail/32</loc>
+  <loc>http://www.likecode.club/blog/detail/32</loc>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://www.likecode.top/blog/detail/31</loc>
+  <loc>http://www.likecode.club/blog/detail/31</loc>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://www.likecode.top/blog/detail/30</loc>
+  <loc>http://www.likecode.club/blog/detail/30</loc>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://www.likecode.top/blog/detail/29</loc>
+  <loc>http://www.likecode.club/blog/detail/29</loc>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://www.likecode.top/blog/detail/28</loc>
+  <loc>http://www.likecode.club/blog/detail/28</loc>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://www.likecode.top/blog/detail/27</loc>
+  <loc>http://www.likecode.club/blog/detail/27</loc>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://www.likecode.top/blog/detail/25</loc>
+  <loc>http://www.likecode.club/blog/detail/25</loc>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://www.likecode.top/blog/detail/24</loc>
+  <loc>http://www.likecode.club/blog/detail/24</loc>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://www.likecode.top/blog/detail/8</loc>
+  <loc>http://www.likecode.club/blog/detail/8</loc>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://www.likecode.top/blog/detail/7</loc>
+  <loc>http://www.likecode.club/blog/detail/7</loc>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://www.likecode.top/blog/detail/6</loc>
+  <loc>http://www.likecode.club/blog/detail/6</loc>
   <priority>0.80</priority>
 </url>
 </urlset>
