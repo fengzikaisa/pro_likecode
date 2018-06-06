@@ -5,6 +5,7 @@ import com.likecode.bean.Blog;
 import com.likecode.bean.FriendshipLink;
 import com.likecode.bean.ext.BlogExt;
 import com.likecode.bean.ext.UserExt;
+import com.likecode.common.SystemHelper;
 import com.likecode.common.bean.ResultBean;
 import com.likecode.common.controller.BaseController;
 import com.likecode.service.AlbumService;
@@ -45,8 +46,8 @@ public class BlogController extends BaseController {
      */
     @RequestMapping(value="addPage")
     public String addBlogPage(Model model,HttpSession session) {
-        UserExt user=(UserExt) session.getAttribute("user");
-        if(user!=null && user.getRoleName().equals("root")){
+        if(SystemHelper.isLogin()){
+            log.info("user:"+SystemHelper.userDetails().getUser().toString());
             return "blog/addBlogPage";
         }
         return "redirect:/blog";
@@ -63,7 +64,7 @@ public class BlogController extends BaseController {
     @ResponseBody
     @RequestMapping(value="add",method = RequestMethod.POST)
     public ResultBean addBlog(Model model, Blog blog, HttpSession session) {
-        Integer userId=(Integer)session.getAttribute("userId");
+        Integer userId=SystemHelper.currUserId();
         if(userId!=null && userId==1){
             blog.setUserId(userId);
             return blogService.insertBlog(blog);
