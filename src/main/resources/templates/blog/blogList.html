@@ -23,11 +23,11 @@
     <div class="bloglist f_l">
 
       <div th:each="blog : ${blogList}">
-        <h3><a th:href="@{/blog/detail/{id}(id=${blog.id})}" th:text="${blog.title}"></a></h3>
+        <h3><a th:href="@{/blog/{id}(id=${blog.id})}" th:text="${blog.title}"></a></h3>
         <figure><img th:data-original="${blog.img}" alt="" class="lazy"></figure>
         <ul>
           <p th:text="${#strings.abbreviate(blog.blogAbstract,100)}"></p>
-          <a th:title="${blog.title}" th:href="@{/blog/detail/{id}(id=${blog.id})}" target="_blank" class="readmore">阅读全文&gt;&gt;</a>
+          <a th:title="${blog.title}" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank" class="readmore">阅读全文&gt;&gt;</a>
         </ul>
         <p class="dateview">
           <span th:text="${#dates.format(blog.createTime,'yyyy-MM-dd')}"></span>

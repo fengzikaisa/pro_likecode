@@ -35,27 +35,17 @@ public class FriendshipLinkController extends BaseController {
      */
     @RequestMapping(value="addPage")
     public String addPage(Model model,HttpSession session) {
-        if(SystemHelper.isLogin()){
-            return "friendshipLink/addPage";
-        }
-        return "redirect:/blog";
-
+        return "friendshipLink/addPage";
     }
 
     /**
      * 添加
      * @param model
-     * @param session
      * @return
      */
     @ResponseBody
     @RequestMapping(value="add",method = RequestMethod.POST)
-    public ResultBean add(Model model, FriendshipLink vo, HttpSession session) {
-        Integer userId=SystemHelper.currUserId();
-        if(userId!=null && userId==1){
-            return friendshipLinkService.insertFriendshipLink(vo);
-        }else{
-            return new ResultBean();
-        }
+    public ResultBean add(Model model, FriendshipLink vo) {
+        return friendshipLinkService.insertFriendshipLink(vo);
     }
 }

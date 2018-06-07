@@ -45,32 +45,22 @@ public class BlogController extends BaseController {
      * @return
      */
     @RequestMapping(value="addPage")
-    public String addBlogPage(Model model,HttpSession session) {
-        if(SystemHelper.isLogin()){
-            log.info("user:"+SystemHelper.userDetails().getUser().toString());
-            return "blog/addBlogPage";
-        }
-        return "redirect:/blog";
+    public String addBlogPage(Model model) {
+        return "blog/addBlogPage";
 
     }
 
     /**
      * 添加博客
-     * @param model
      * @param blog
-     * @param session
      * @return
      */
     @ResponseBody
     @RequestMapping(value="add",method = RequestMethod.POST)
-    public ResultBean addBlog(Model model, Blog blog, HttpSession session) {
+    public ResultBean addBlog(Blog blog) {
         Integer userId=SystemHelper.currUserId();
-        if(userId!=null && userId==1){
-            blog.setUserId(userId);
-            return blogService.insertBlog(blog);
-        }else{
-            return new ResultBean();
-        }
+        blog.setUserId(userId);
+        return blogService.insertBlog(blog);
     }
 
     /**
@@ -95,7 +85,7 @@ public class BlogController extends BaseController {
      * @param id
      * @return
      */
-    @RequestMapping("detail/{id}")
+    @RequestMapping("{id}")
     public String detail(Model model,@PathVariable("id") int id) {
         log.info("详情id:"+id);
         BlogExt blog=blogService.selectBlog(id);
