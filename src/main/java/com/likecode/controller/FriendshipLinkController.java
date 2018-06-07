@@ -2,6 +2,7 @@ package com.likecode.controller;
 
 import com.likecode.bean.FriendshipLink;
 import com.likecode.bean.ext.UserExt;
+import com.likecode.common.SystemHelper;
 import com.likecode.common.bean.ResultBean;
 import com.likecode.common.controller.BaseController;
 import com.likecode.service.FriendshipLinkService;
@@ -34,8 +35,7 @@ public class FriendshipLinkController extends BaseController {
      */
     @RequestMapping(value="addPage")
     public String addPage(Model model,HttpSession session) {
-        UserExt user=(UserExt) session.getAttribute("user");
-        if(user!=null && user.getRoleName().equals("root")){
+        if(SystemHelper.isLogin()){
             return "friendshipLink/addPage";
         }
         return "redirect:/blog";
@@ -51,7 +51,7 @@ public class FriendshipLinkController extends BaseController {
     @ResponseBody
     @RequestMapping(value="add",method = RequestMethod.POST)
     public ResultBean add(Model model, FriendshipLink vo, HttpSession session) {
-        Integer userId=(Integer)session.getAttribute("userId");
+        Integer userId=SystemHelper.currUserId();
         if(userId!=null && userId==1){
             return friendshipLinkService.insertFriendshipLink(vo);
         }else{
