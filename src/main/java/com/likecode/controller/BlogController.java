@@ -90,7 +90,7 @@ public class BlogController extends BaseController {
         log.info("详情id:"+id);
         BlogExt blog=blogService.selectBlog(id);
         if("20".equals(blog.getStatus())){
-            return"/404";
+            return"404";
         }
         model.addAttribute("blog",blog);
         return "blog/blogDetail";
