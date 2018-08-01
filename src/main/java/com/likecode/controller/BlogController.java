@@ -89,6 +89,9 @@ public class BlogController extends BaseController {
     public String detail(Model model,@PathVariable("id") int id) {
         log.info("详情id:"+id);
         BlogExt blog=blogService.selectBlog(id);
+        if("20".equals(blog.getStatus())){
+            return"/404";
+        }
         model.addAttribute("blog",blog);
         return "blog/blogDetail";
     }
