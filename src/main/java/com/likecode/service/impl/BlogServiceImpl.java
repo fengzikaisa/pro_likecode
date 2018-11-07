@@ -21,12 +21,15 @@ public class BlogServiceImpl implements BlogService {
     BlogDao blogDao;
 
     @Override
-    public List<BlogExt> getBlogs() {
-        return blogDao.getBlogs();
+    public List<BlogExt> getBlogs(String status) {
+        return blogDao.getBlogs(status);
     }
 
     @Override
     public ResultBean insertBlog(Blog blog) {
+        if(!blog.getStatus().equals("20")){
+            blog.setStatus("10");
+        }
         if(blogDao.insertBlog(blog)>0){
             //初始化博客统计记录
             blogDao.initBlogStat(blog.getId());

@@ -5,7 +5,7 @@
         INSERT INTO t_blog
         (user_id,title,author,type,load_url,label,description,blog_abstract,img,status,create_time,update_time)
         VALUES
-        (#{userId},#{title},#{author},#{type},#{loadUrl},#{label},#{description},#{blogAbstract},#{img},10,now(),now())
+        (#{userId},#{title},#{author},#{type},#{loadUrl},#{label},#{description},#{blogAbstract},#{img},#{status},now(),now())
     </insert>
     <insert id="initBlogStat">
         INSERT INTO t_blog_stat (blog_id)VALUES(#{bid})
@@ -77,7 +77,11 @@
         FROM
             t_blog b
         LEFT JOIN t_blog_stat bs ON b.id = bs.blog_id
-        WHERE b.`status`='10'
+        <where>
+            <if test="status!=null and  status != '' " >
+                b.`status`='10'
+            </if>
+        </where>
         ORDER BY b.create_time DESC
     </select>
     <select id="selectBlog" resultType="com.likecode.bean.ext.BlogExt">

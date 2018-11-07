@@ -17,7 +17,7 @@ public interface BlogService {
      * 获取博客列表
      * @return
      */
-    List<BlogExt> getBlogs();
+    List<BlogExt> getBlogs(String status);
 
     /**
      * 添加博客

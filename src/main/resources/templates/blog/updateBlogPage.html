@@ -1,8 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>添加博客</title>
+    <title>更新博客</title>
     <link rel="stylesheet"href="/editormd/css/editormd.css" />
     <script src="/js/jquery.min.js"></script>
     <script src="/editormd/editormd.js"></script>
@@ -11,21 +11,22 @@
 <body>
 <form id="blog">
     <div>
-        <span>博客标题:</span>&nbsp;&nbsp;<input id="title" name="title" ><p>
-        <span>作者:</span>&nbsp;&nbsp;<input id="author" name="author" ><p>
+        <span>博客标题:</span>&nbsp;&nbsp;<input id="title" name="title" th:value="${blog.title}"><p>
+        <span>作者:</span>&nbsp;&nbsp;<input id="author" name="author" th:value="${blog.author}"><p>
         <span>文章类型:</span><select id="type" name="type"><option value="10">原创</option><option value="20">转载</option></select><p>
-        <span>转载地址:</span><input id="loadUrl" name="loadUrl"><p>
-        <span>文章标签:</span><input id="label" name="label"><p>
-        <span>文章摘要:</span><input id="blogAbstract" name="blogAbstract"><p>
-        <span>缩略图地址:</span><input id="img" name="img"><p>
+        <span>转载地址:</span><input id="loadUrl" name="loadUrl" th:value="${blog.loadUrl}"><p>
+        <span>文章标签:</span><input id="label" name="label" th:value="${blog.label}"><p>
+        <span>文章摘要:</span><input id="blogAbstract" name="blogAbstract" th:value="${blog.author}"><p>
+        <span>缩略图地址:</span><input id="img" name="img" th:value="${blog.img}"><p>
         <span>内容:</span>
         <div id="my-editormd" >
-            <textarea id="description" name="description" style="display:none;"></textarea>
+            <textarea id="description" name="description" style="display:block;" th:utext="${blog.description}"></textarea>
             <!-- 注意：name属性的值-->
-            <textarea id="my-editormd-html-code" name="my-editormd-html-code" style="display:none;"></textarea>
+            <textarea id="my-editormd-html-code" name="my-editormd-html-code" style="display:block;"></textarea>
         </div>
         <input type="button" value="发布" id="save">
         <input type="button" value="保留" id="save1">
+        <input type="hidden"  name="id" th:value="${blog.id}">
         <input type="hidden"  id="status" name="status">
     </div>
 </form>
@@ -45,9 +46,10 @@
         });
 
         $("#save").on('click',function(){
+            $("#status").val("10");
             $.ajax({
                 type:"POST",
-                url:"/blog/add",
+                url:"/blog/update",
                 data:$('#blog').serialize(),
                 success:function(data){
                     if(data.status='100000'){
@@ -66,7 +68,7 @@
             $("#status").val("20");
             $.ajax({
                 type:"POST",
-                url:"/blog/add",
+                url:"/blog/update",
                 data:$('#blog').serialize(),
                 success:function(data){
                     if(data.status='100000'){

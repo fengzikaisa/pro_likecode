@@ -64,13 +64,39 @@ public class BlogController extends BaseController {
     }
 
     /**
+     * 更新博客页面
+     * @param model
+     * @return
+     */
+    @RequestMapping(value="updatePage/{id}")
+    public String updatePage(Model model,@PathVariable("id") Integer id) {
+        Blog blog=blogService.selectBlog(id);
+        model.addAttribute("blog",blog);
+        return "blog/updateBlogPage";
+
+    }
+
+    /**
+     * 更新博客
+     * @param blog
+     * @return
+     */
+    @ResponseBody
+    @RequestMapping(value="update",method = RequestMethod.POST)
+    public ResultBean update(Blog blog) {
+        Integer userId=SystemHelper.currUserId();
+        blog.setUserId(userId);
+        return blogService.updateBlog(blog);
+    }
+
+    /**
      * 博客列表
      * @param model
      * @return
      */
     @RequestMapping("")
     public String blogList(Model model) {
-        List<BlogExt> blogList=blogService.getBlogs();
+        List<BlogExt> blogList=blogService.getBlogs("10");
         List<FriendshipLink> friend10= friendshipLinkService.getFriendshipLinkList("10");
         List<FriendshipLink> friend20= friendshipLinkService.getFriendshipLinkList("20");
         model.addAttribute("blogList",blogList);

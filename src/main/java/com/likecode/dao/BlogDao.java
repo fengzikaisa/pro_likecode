@@ -15,7 +15,7 @@ import java.util.List;
 @Mapper
 public interface BlogDao {
 
-    List<BlogExt> getBlogs();
+    List<BlogExt> getBlogs(@Param("status") String status);
 
     int insertBlog(Blog blog);
 
