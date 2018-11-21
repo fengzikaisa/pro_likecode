@@ -10,6 +10,7 @@
   <link href="/editormd/css/editormd.preview.css" rel="stylesheet">
   <script src="/blog/js/modernizr.js"></script>
   <script type="text/javascript" src="/js/baidutj.js"></script>
+  <script src="/js/jquery.min.js"></script>
 </head>
 <body>
 <div id="wrapper">
@@ -30,7 +31,7 @@
               <span th:text="|作者：${blog.author}|"></span>
               <span th:text="${blog.type==10} ? '类型：原创':'类型：转载'"></span>
               <span th:text="|浏览：${blog.readCount}次|"></span>
-              <span>评论：<a href="#SOHUCS" id="changyan_count_unit"></a>次</span>
+              <!--<span>评论：<a href="#SOHUCS" id="changyan_count_unit"></a>次</span>-->
             </p>
         </div>
 
@@ -39,21 +40,6 @@
             <textarea style="display:none;" th:text="${blog.description}"></textarea>
           </div>
         </ul>
-
-
-        <!--畅言评论系统开始-->
-        <div>
-          <!--PC和WAP自适应版-->
-          <div id="SOHUCS" th:sid="${blog.id}" ></div>
-          <script type="text/javascript">
-              (function(){
-                  var appid = 'cytEkJkov';
-                  var conf = 'prod_ccfc318e01f076c9021108ce4d5c888c';
-                  var width = window.innerWidth || document.documentElement.clientWidth;
-                  if (width < 960) {
-                      window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="http://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("http://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
-        </div>
-        <!--畅言评论系统结束-->
       </div>
     </div>
     <div class="blank"></div>
@@ -64,7 +50,7 @@
   <div th:replace="blog/footer"></div>
 </div>
 </body>
-<script src="/js/jquery.min.js"></script>
+
 <script src="/editormd/lib/marked.min.js"></script>
 <script src="/editormd/lib/prettify.min.js"></script>
 <script src="/editormd/lib/raphael.min.js"></script>
@@ -73,7 +59,7 @@
 <script src="/editormd/lib/flowchart.min.js"></script>
 <script src="/editormd/lib/jquery.flowchart.min.js"></script>
 <script src="/editormd/editormd.min.js"></script>
-<script type="text/javascript" src="https://assets.changyan.sohu.com/upload/plugins/plugins.count.js"></script>
+<!--<script type="text/javascript" src="https://assets.changyan.sohu.com/upload/plugins/plugins.count.js"></script>-->
 <script type="text/javascript" src="/js/biegaowo.js"></script>
 <script type="text/javascript">
     var testEditor;
