@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>王恺的博客</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="keywords" content="王恺、丰子恺撒、恺撒、小撒"/>
+    <meta name="description" content="王恺的个人博客，学习笔记，生活记录，感想随笔等。"/>
+    <!-- Fonts-->
+    <link rel="stylesheet" type="text/css" href="/mobile/assets/fonts/fontawesome/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/mobile/assets/fonts/pe-icon/pe-icon.css">
+    <!-- Vendors-->
+    <link rel="stylesheet" type="text/css" href="/mobile/assets/vendors/bootstrap/grid.css">
+    <link rel="stylesheet" type="text/css" href="/mobile/assets/vendors/magnific-popup/magnific-popup.min.css">
+    <link rel="stylesheet" type="text/css" href="/mobile/assets/vendors/swiper/swiper.css">
+    <!-- App & fonts-->
+    <link rel="stylesheet" type="text/css"
+          href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700|Open+Sans:400,700">
+    <link rel="stylesheet" type="text/css" id="app-stylesheet" href="/mobile/assets/css/main.css">
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+<div class="page-wrap" id="root">
+
+    <!-- header -->
+   <!-- <header class="header header&#45;&#45;fixed">
+        <div class="header__inner">
+            <div class="header__logo"><a href="index.html"><img src="/mobile/assets/img/logo.png" alt="" style="width: 122px;"/></a>
+            </div>
+            <div class="navbar-toggle" id="fs-button">
+                <div class="navbar-icon"><span></span></div>
+            </div>
+        </div>
+
+        &lt;!&ndash; fullscreenmenu__module &ndash;&gt;
+        <div class="fullscreenmenu__module" trigger="#fs-button">
+
+            &lt;!&ndash; overlay-menu &ndash;&gt;
+            <nav class="overlay-menu">
+
+                &lt;!&ndash;  &ndash;&gt;
+                <ul class="wil-menu-list">
+                    <li><a href="index.html">Home</a>
+                    </li>
+                    <li><a href="about.html">About</a>
+                    </li>
+                    <li><a href="work.html">Work</a>
+                    </li>
+                    <li class="current-menu-item"><a href="blog.html">Blog</a>
+                    </li>
+                    <li><a href="contact.html">Contact</a>
+                    </li>
+                </ul>&lt;!&ndash;  &ndash;&gt;
+
+            </nav>&lt;!&ndash; End / overlay-menu &ndash;&gt;
+
+        </div>&lt;!&ndash; End / fullscreenmenu__module &ndash;&gt;
+
+    </header>--><!-- End / header -->
+
+    <!-- Content-->
+    <div class="wil-content">
+
+        <!-- Section -->
+        <section class="awe-section">
+            <div class="container">
+
+                <!-- page-title -->
+                <div class="page-title pb-40">
+                    <h2 class="page-title__title">Hello World</h2>
+                    <p class="page-title__text">Welcome to my website. -- kai</p>
+                    <div class="page-title__divider"></div>
+                </div><!-- End / page-title -->
+
+            </div>
+        </section>
+        <!-- End / Section -->
+
+
+        <!-- Section -->
+        <section class="awe-section bg-gray">
+            <div class="container">
+                <div class="grid-css grid-css--masonry" data-col-lg="3" data-col-md="2" data-col-sm="2" data-col-xs="1"
+                     data-gap="30">
+                    <div class="grid__inner">
+                        <div class="grid-sizer"></div>
+                        <div class="grid-item" th:each="blog : ${blogList}">
+                            <div class="grid-item__inner">
+                                <div class="grid-item__content-wrapper">
+
+                                    <!-- post -->
+                                    <div class="post">
+                                        <div class="post__media">
+                                            <a th:href="@{/blog/{id}(id=${blog.id})}">
+                                                <img th:src="${blog.img}" alt=""/>
+                                            </a>
+                                        </div>
+                                        <div class="post__body">
+                                            <div class="post__meta"><span class="date" th:text="${#dates.format(blog.createTime,'yyyy-MM-dd')}">Nov 26, 2017</span><span
+                                                    class="author"><a href="#" th:text="|by ${blog.author}|">by Maria Gutierrez</a></span></div>
+                                            <h2 class="post__title"><a th:href="@{/blog/{id}(id=${blog.id})}" th:text="${blog.title}">Is UX Really That Important?</a></h2>
+                                            <p class="post__text" th:text="${#strings.abbreviate(blog.blogAbstract,100)}">Duis</p>
+                                            <a class="md-btn md-btn--outline-primary" th:href="@{/blog/{id}(id=${blog.id})}">read more
+                                            </a>
+                                        </div>
+                                    </div><!-- End / post -->
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End / Section -->
+
+    </div>
+    <!-- End / Content-->
+
+</div>
+<!-- Vendors-->
+<script type="text/javascript" src="/mobile/assets/vendors/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="/mobile/assets/vendors/imagesloaded/imagesloaded.pkgd.js"></script>
+<script type="text/javascript" src="/mobile/assets/vendors/isotope-layout/isotope.pkgd.js"></script>
+<script type="text/javascript" src="/mobile/assets/vendors/jquery-one-page/jquery.nav.min.js"></script>
+<script type="text/javascript" src="/mobile/assets/vendors/jquery.easing/jquery.easing.min.js"></script>
+<script type="text/javascript" src="/mobile/assets/vendors/jquery.matchHeight/jquery.matchHeight.min.js"></script>
+<script type="text/javascript" src="/mobile/assets/vendors/magnific-popup/jquery.magnific-popup.min.js"></script>
+<script type="text/javascript" src="/mobile/assets/vendors/masonry-layout/masonry.pkgd.js"></script>
+<script type="text/javascript" src="/mobile/assets/vendors/jquery.waypoints/jquery.waypoints.min.js"></script>
+<script type="text/javascript" src="/mobile/assets/vendors/swiper/swiper.jquery.js"></script>
+<script type="text/javascript" src="/mobile/assets/vendors/menu/menu.js"></script>
+<script type="text/javascript" src="/mobile/assets/vendors/typed/typed.min.js"></script>
+<!-- App-->
+<script type="text/javascript" src="/mobile/assets/js/main.js"></script>
+</body>
+</html>

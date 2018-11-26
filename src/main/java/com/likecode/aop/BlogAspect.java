@@ -35,7 +35,7 @@ public class BlogAspect {
     }
 
     @AfterReturning(pointcut="readCount()",returning="returnValue")
-    public void doAfterReturning(JoinPoint point, Object returnValue) {
+    public void doAfterReturning(JoinPoint point, Object returnValue) throws Exception{
         log.info("@AfterReturning：开始");
         log.info("@AfterReturning：目标方法为：" + point.getSignature().getDeclaringTypeName() + "." + point.getSignature().getName());
         log.info("@AfterReturning：参数为：" + Arrays.toString(point.getArgs()));
@@ -43,7 +43,11 @@ public class BlogAspect {
         log.info("@AfterReturning：被织入的目标对象为：" + point.getTarget());
         String  id=point.getArgs()[point.getArgs().length-1].toString();
         log.info("id:"+id);
-        ResultBean result=blogService.updateBlogStat(Integer.parseInt(id),"readCount");
-        log.info("@AfterReturning：结束  result:"+result);
+        log.info(returnValue.toString().indexOf("mobile"));
+        /*if(!(returnValue.toString().indexOf("mobile") > -1)){
+            ResultBean result=blogService.updateBlogStat(Integer.parseInt(id),"readCount");
+            log.info("@AfterReturning：结束  result:"+result);
+        }*/
+
     }
 }

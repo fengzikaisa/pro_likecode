@@ -30,7 +30,7 @@
               <span th:text="|发布时间：${#dates.format(blog.createTime,'yyyy-MM-dd HH:mm:ss')}|"></span>
               <span th:text="|作者：${blog.author}|"></span>
               <span th:text="${blog.type==10} ? '类型：原创':'类型：转载'"></span>
-              <span th:text="|浏览：${blog.readCount}次|"></span>
+              <!--<span th:text="|浏览：${blog.readCount}次|"></span>-->
               <!--<span>评论：<a href="#SOHUCS" id="changyan_count_unit"></a>次</span>-->
             </p>
         </div>

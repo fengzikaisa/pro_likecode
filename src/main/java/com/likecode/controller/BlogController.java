@@ -8,6 +8,7 @@ import com.likecode.bean.ext.UserExt;
 import com.likecode.common.SystemHelper;
 import com.likecode.common.bean.ResultBean;
 import com.likecode.common.controller.BaseController;
+import com.likecode.common.utils.UserAgentUtils;
 import com.likecode.service.AlbumService;
 import com.likecode.service.BlogService;
 import com.likecode.service.FriendshipLinkService;
@@ -20,6 +21,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.List;
 
@@ -95,13 +97,16 @@ public class BlogController extends BaseController {
      * @return
      */
     @RequestMapping("")
-    public String blogList(Model model) {
+    public String blogList(Model model,HttpServletRequest request) {
         List<BlogExt> blogList=blogService.getBlogs("10");
         List<FriendshipLink> friend10= friendshipLinkService.getFriendshipLinkList("10");
         List<FriendshipLink> friend20= friendshipLinkService.getFriendshipLinkList("20");
         model.addAttribute("blogList",blogList);
         model.addAttribute("friend10",friend10);
         model.addAttribute("friend20",friend20);
+        if(UserAgentUtils.isMobile(request)){
+            return "mobile/blog";
+        }
         return "blog/blogList";
     }
 
@@ -112,13 +117,16 @@ public class BlogController extends BaseController {
      * @return
      */
     @RequestMapping("{id}")
-    public String detail(Model model,@PathVariable("id") int id) {
+    public String detail(Model model,@PathVariable("id") int id,HttpServletRequest request) {
         log.info("详情id:"+id);
         BlogExt blog=blogService.selectBlog(id);
         if("20".equals(blog.getStatus())){
             return"404";
         }
         model.addAttribute("blog",blog);
+        if(UserAgentUtils.isMobile(request)){
+            return "mobile/blogDetail";
+        }
         return "blog/blogDetail";
     }
 
