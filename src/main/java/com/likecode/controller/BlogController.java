@@ -142,5 +142,15 @@ public class BlogController extends BaseController {
         return "blog/messageBoard";
     }
 
+    /**
+     * 留言板
+     * @param model
+     * @return
+     */
+    @RequestMapping("about")
+    public String about(Model model) {
+        return "mobile/about";
+    }
+
 
 }
