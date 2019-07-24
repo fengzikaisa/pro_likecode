@@ -1,0 +1,148 @@
+.container, .container .title {
+    background-color: #fff
+}
+
+#app{
+     margin-top: 40px;
+ }
+.container .title {
+    position: fixed;
+    height: 50px;
+    font-size: 20px;
+    line-height: 50px;
+    text-align: center;
+    width: 100%;
+    font-weight: 700;
+    z-index: 30
+}
+
+.container .content {
+    max-width: 960px;
+    margin: 0 auto;
+    padding-top: 60px
+}
+
+.container .content .cat-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    font-size: 15px;
+    margin-bottom: 30px;
+    background-color: transparent;
+    border-color: transparent
+}
+
+.container .content .cat-wrapper .cat.current {
+    background-color: #ff6f61;
+    border-radius: 2px;
+    color: #fff
+}
+
+.cat{
+    margin: 5px;
+}
+
+.container .content .info-wrapper {
+    text-align: left;
+    border: 1px solid #e8e8e8
+}
+
+.container .content .info-wrapper .info {
+    padding: 12px 24px;
+    font-size: 15px;
+    border-bottom: 1px solid #e8e8e8
+}
+
+.container .content .info-wrapper .info a {
+    text-decoration: none
+}
+
+.container .content .info-wrapper .info a:link {
+    color: #0a0a0a
+}
+
+.container .content .info-wrapper .info a:visited {
+    color: grey
+}
+
+.container .content .info-wrapper .info a:hover {
+    color: #ff6f61
+}
+
+.container .content .info-wrapper .info a:active {
+    color: #8b0000
+}
+
+blockquote, body, button, dd, dl, dt, fieldset, form, h1, h2, h3, h4, h5, h6, hr, input, legend, li, ol, p, pre, td, textarea, th, ul {
+    margin: 0;
+    padding: 0
+}
+
+body, button, input, select, textarea {
+    font: 12px/1.5 tahoma, arial, \5b8b\4f53
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%
+}
+
+address, cite, dfn, em, var {
+    font-style: normal
+}
+
+code, kbd, pre, samp {
+    font-family: couriernew, courier, monospace
+}
+
+small {
+    font-size: 12px
+}
+
+ol, ul {
+    list-style: none
+}
+
+a {
+    text-decoration: none
+}
+
+a:hover {
+    text-decoration: underline
+}
+
+sup {
+    vertical-align: text-top
+}
+
+sub {
+    vertical-align: text-bottom
+}
+
+legend {
+    color: #000
+}
+
+fieldset, img {
+    border: 0
+}
+
+button, input, select, textarea {
+    font-size: 100%
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+
+#app {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    background-color: #f5f5f5
+}
