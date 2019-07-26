@@ -10,7 +10,7 @@
 var _hmt = _hmt || [];
 (function() {
     var hm = document.createElement("script");
-    hm.src = "https://hm.baidu.com/hm.js?e55262211f1df7b6717941c0be651895";
+    hm.src = "https://hm.baidu.com/hm.js?383c5c5ae509b84a83f7cde89f35ae03";
     var s = document.getElementsByTagName("script")[0];
     s.parentNode.insertBefore(hm, s);
 })();
