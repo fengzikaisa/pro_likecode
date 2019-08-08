@@ -1,0 +1,849 @@
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+    <title>丰窝导航</title>
+    <meta name="keywords" content="王恺、丰子恺撒、恺撒、小撒"/>
+    <meta name="description" content="王恺的个人博客，学习笔记，生活记录，感想随笔等。"/>
+    <meta name="share-data" share-title="丰窝导航" share-desc="上网冲浪，从这里开始。" share-img="/img/plant.png"/>
+    <link href="/navigation/style.css" rel="stylesheet">
+    <link rel="stylesheet" id="awesome-css" href="/navigation/font-awesome.min.css" type="text/css"
+          media="all">
+
+</head>
+
+<body>
+<div class="center search">
+    <form id="form" class="form" action="https://www.baidu.com/s" method="get" onsubmit="return formCheck()"
+          target="_blank">
+        <div class="search-go">
+            <input id="searchCenter" type="text" class="form-control" name="wd" baidusug="2" placeholder="输入内容，百度一下！">
+            <input id="inputBottom" type="hidden">
+            <span id="searchRight" class="search-button">百度一下</span>
+        </div>
+        <div class="hidden" style="display: none">
+            <input type="submit" id="searchSubmit">
+        </div>
+        <div class="clear"></div>
+        <div id="submit" class="other">
+            <input type="submit" value="百度" id="baidu" class="btn btn-primary">
+            <input type="submit" value="谷歌" id="google" class="btn btn-primary">
+            <input type="submit" value="搜狗" id="sogou" class="btn btn-primary">
+            <input type="submit" value="必应" id="bing" class="btn btn-primary">
+            <input type="submit" value="淘宝" id="taobao" class="btn btn-primary">
+            <input type="submit" value="优惠券" id="zzzquan" class="btn btn-primary">
+            <input type="submit" value="京东" id="jd" class="btn btn-primary">
+            <input type="submit" value="视频" id="youku" class="btn btn-primary">
+            <input type="submit" value="音乐" id="yqq" class="btn btn-primary">
+            <input type="submit" value="知乎" id="zhihu" class="btn btn-primary">
+            <input type="submit" value="微信" id="sogouweixin" class="btn btn-primary">
+            <input type="submit" value="微博" id="weibo" class="btn btn-primary">
+            <input type="submit" value="网盘" id="pansou" class="btn btn-primary">
+            <input type="submit" value="字典" id="dict" class="btn btn-primary">
+            <input type="submit" value="IP地址" id="ip138" class="btn btn-primary">
+            <input type="submit" value="360" id="so" class="btn btn-primary">
+            <input type="submit" value="GitHub" id="github" class="btn btn-primary">
+        </div>
+    </form>
+</div>
+<div class="like">
+    <div class="like-top">
+        <ul>
+            <li><a href="http://www.baidu.com/" target="_blank" rel="nofollow"><i
+                    class="baidu"></i>百度</a>&nbsp;•&nbsp;<a href="https://tieba.baidu.com/" target="_blank"
+                                                            rel="nofollow">贴吧</a></li>
+            <li>
+                <a href="https://s.click.taobao.com/t?e=m%3D2%26s%3DIWnKpTAqMWocQipKwQzePCperVdZeJvipRe%2F8jaAHci5VBFTL4hn2WgwthAjvrJdNGaA%2Fv7qa0QUcZ8wTwmpm4%2FJAuTWvO1FHg5SsHUvHcaPHKydedhr13yKwiqD2WK0Bmf7LSR66agQLxFAAKVhYxb3kPS3do6KXaMPXfzA%2Fl0%3D"
+                   target="_blank" rel="nofollow"><i class="tianmao"></i>天　猫</a></li>
+            <li><a href="https://www.taobao.com/" target="_blank" rel="nofollow"><i class="taobao"></i>淘　宝</a></li>
+            <li><a href="https://www.amazon.cn/" target="_blank" rel="nofollow"><i class="amazon"></i>亚马逊</a></li>
+            <li><a href="https://www.jd.com/" target="_blank" rel="nofollow"><i class="jd"></i>京　东</a></li>
+            <li><a href="http://www.qq.com/" target="_blank" rel="nofollow"><i class="qq"></i>腾　讯</a></li>
+            <li><a href="http://www.163.com/" target="_blank" rel="nofollow"><i class="wangyi"></i>网　易</a></li>
+            <li><a href="http://www.sina.com.cn/" target="_blank" rel="nofollow"><i class="sina"></i>新浪</a>&nbsp;•&nbsp;<a
+                    href="https://weibo.com/" target="_blank" rel="nofollow">微博</a></li>
+            <li><a href="http://www.toutiao.com/" target="_blank" rel="nofollow"><i class="toutiao"></i>今日头条</a></li>
+            <li><a href="https://www.meituan.com/" target="_blank" rel="nofollow"><i class="meituan"></i>美　团</a></li>
+            <li><a href="https://www.youku.com/" target="_blank" rel="nofollow"><i class="youku"></i>优　酷</a></li>
+            <li><a href="https://www.youku.com/" target="_blank" rel="nofollow"><i class="tudou"></i>土　豆</a></li>
+            <li><a href="http://www.iqiyi.com/" target="_blank" rel="nofollow"><i class="iqiyi"></i>爱奇艺</a></li>
+            <li><a href="http://www.douyu.com/" target="_blank" rel="nofollow"><i class="douyu"></i>斗鱼直播</a></li>
+            <li><a href="http://www.sohu.com/" target="_blank" rel="nofollow"><i class="sohu"></i>搜狐</a>&nbsp;•&nbsp;<a
+                    href="http://tv.sohu.com/" target="_blank" rel="nofollow">视频</a></li>
+            <li><a href="https://v.qq.com/" target="_blank" rel="nofollow"><i class="v_qq"></i>腾讯视频</a></li>
+            <li><a href="http://www.ifeng.com/" target="_blank" rel="nofollow"><i class="ifeng"></i>凤凰网</a></li>
+            <li><a href="http://www.4399.com/" target="_blank" rel="nofollow"><i class="xgame"></i>小游戏</a></li>
+            <li><a href="http://www.58.com/" target="_blank" rel="nofollow"><i class="tc_58"></i>58同城</a></li>
+            <li><a href="http://www.hupu.com/" target="_blank" rel="nofollow"><i class="hupu"></i>虎扑体育</a></li>
+            <li><a href="http://www.autohome.com.cn/" target="_blank" rel="nofollow"><i class="autohome"></i>汽车之家</a>
+            </li>
+            <div class="clear"></div>
+            <div class="line"></div>
+            <li><a href="http://www.cctv.com/" target="_blank" rel="nofollow">央视网</a></li>
+            <li><a href="http://tv.sogou.com/vc/live" target="_blank" rel="nofollow">电视直播</a></li>
+            <li><a href="http://www.zaobao.com/" target="_blank" rel="nofollow">联合早报</a></li>
+            <li><a href="http://www.bilibili.com/" target="_blank" rel="nofollow">哔哩哔哩</a></li>
+            <li><a href="http://www.ctrip.com/" target="_blank" rel="nofollow">携程旅行网</a></li>
+            <li><a href="http://www.ganji.com/" target="_blank" rel="nofollow">赶集网</a></li>
+            <li><a href="http://www.tuniu.com/" target="_blank" rel="nofollow">途牛旅游网</a></li>
+            <li><a href="http://www.jiayuan.com/" target="_blank" rel="nofollow">世纪佳缘</a></li>
+            <li><a href="http://military.china.com/zh_cn/" target="_blank" rel="nofollow">中华军事</a></li>
+            <li><a href="http://www.eastmoney.com/" target="_blank" rel="nofollow">东方财富</a></li>
+            <li><a href="http://www.fang.com/" target="_blank" rel="nofollow">房天下</a></li>
+            <li><a href="http://caipiao.hao123.com/" target="_blank" rel="nofollow">彩票开奖</a></li>
+            <li><a href="http://www.pconline.com.cn/" target="_blank" rel="nofollow">太平洋电脑</a></li>
+            <li><a href="https://wx.qq.com/" target="_blank" rel="nofollow">微信网页版</a></li>
+        </ul>
+    </div>
+    <div class="all-user" style="min-height: 300px;">
+        <div class="user" id="user-js">
+            <ul>
+                <li><span class="on">默认</span></li>
+                <li class="user-2"><span>购物狂</span></li>
+                <li class="user-3"><span>爱电影</span></li>
+            </ul>
+        </div>
+        <div class="hd-wrap" id="hd-1">
+            <div class="like-left">
+                <h2>「 日常生活类 」</h2>
+                <ul>
+                    <h3 class="more"><i class="fa fa-shopping-cart"></i>购 物</h3>
+                    <div class="like-list">
+                        <li><a href="https://www.amazon.cn/" target="_blank" rel="nofollow">亚马逊</a></li>
+                        <li><a href="https://s.click.taobao.com/GGQ4nAx" target="_blank" rel="nofollow">聚划算</a></li>
+                        <li><a href="http://www.dangdang.com/" target="_blank" rel="nofollow">当当网</a></li>
+                        <li><a href="http://www.vip.com/" target="_blank" rel="nofollow">唯品会</a></li>
+                        <li><a href="https://ai.taobao.com/?pid=mm_17056287_74950118_109239050065" target="_blank"
+                               rel="nofollow" class="hidden-xs">爱淘宝</a></li>
+                    </div>
+                    <!--弹出-->
+                    <div class="tool_tc">
+                        <ul>
+                            <h4><i class="fa fa-shopping-cart"></i>「 购物 」网站推荐</h4>
+                            <li><a href="https://www.taobao.com/" target="_blank" rel="nofollow">淘宝网</a></li>
+                            <li><a href="http://www.jd.com/" target="_blank" rel="nofollow">京东</a></li>
+                            <li>
+                                <a href="https://s.click.taobao.com/t?e=m%3D2%26s%3DIWnKpTAqMWocQipKwQzePCperVdZeJvipRe%2F8jaAHci5VBFTL4hn2WgwthAjvrJdNGaA%2Fv7qa0QUcZ8wTwmpm4%2FJAuTWvO1FHg5SsHUvHcaPHKydedhr13yKwiqD2WK0Bmf7LSR66agQLxFAAKVhYxb3kPS3do6KXaMPXfzA%2Fl0%3D"
+                                   target="_blank" rel="nofollow">天猫</a></li>
+                            <li><a href="http://www.suning.com/" target="_blank" rel="nofollow">苏宁易购</a></li>
+                            <li><a href="https://www.1688.com/" target="_blank" rel="nofollow">阿里巴巴</a></li>
+                            <li><a href="http://www.yougou.com/" target="_blank" rel="nofollow">优购</a></li>
+                            <li><a href="http://www.gome.com.cn/" target="_blank" rel="nofollow">国美在线</a></li>
+                        </ul>
+                    </div>
+                    <!--弹出 end-->
+                </ul>
+                <ul>
+                    <h3 class="more"><i class="fa fa-video-camera"></i>视 频</h3>
+                    <div class="like-list">
+                        <li><a href="http://open.163.com/" target="_blank" rel="nofollow">网易公开课</a></li>
+                        <li><a href="http://www.mgtv.com/" target="_blank" rel="nofollow">芒果TV</a></li>
+                        <li><a href="http://www.panda.tv/" target="_blank" rel="nofollow">熊猫直播</a></li>
+                        <li><a href="http://video.sina.com.cn/" target="_blank" rel="nofollow">新浪视频</a></li>
+                        <li><a href="http://www.iqiyi.com/" target="_blank" rel="nofollow">爱奇艺</a></li>
+                    </div>
+                    <!--弹出-->
+                    <div class="tool_tc">
+                        <ul>
+                            <h4><i class="fa fa-video-camera"></i>「 视频 」网站推荐</h4>
+                            <li><a href="http://v.qq.com/" target="_blank" rel="nofollow">腾讯视频</a></li>
+                            <li><a href="http://www.6.cn/" target="_blank" rel="nofollow">六间房秀场</a></li>
+                            <li><a href="http://www.youku.com/" target="_blank" rel="nofollow">优酷网</a></li>
+                            <li><a href="http://www.tudou.com/" target="_blank" rel="nofollow">土豆网</a></li>
+                            <li><a href="http://www.douyu.com/" target="_blank" rel="nofollow">斗鱼 TV</a></li>
+                        </ul>
+                    </div>
+                    <!--弹出 end-->
+                </ul>
+                <ul>
+                    <h3 class="more"><i class="fa fa-music"></i>音 乐</h3>
+                    <div class="like-list">
+                        <li><a href="http://www.xiami.com/" target="_blank" rel="nofollow">虾米音乐</a></li>
+                        <li><a href="https://y.qq.com/" target="_blank" rel="nofollow">QQ音乐</a></li>
+                        <li><a href="http://music.163.com/" target="_blank" rel="nofollow">网易云音乐</a></li>
+                        <li><a href="http://www.kugou.com/" target="_blank" rel="nofollow" title="酷狗音乐">酷狗</a></li>
+                        <li><a href="http://www.app-echo.com/" target="_blank" rel="nofollow">echo回声</a></li>
+                    </div>
+                    <!--弹出-->
+                    <div class="tool_tc">
+                        <ul>
+                            <h4><i class="fa fa-music"></i>「 音乐 」网站推荐</h4>
+                            <li><a href="http://music.taihe.com/" target="_blank" rel="nofollow">千千音乐</a></li>
+                        </ul>
+                    </div>
+                    <!--弹出 end-->
+                </ul>
+                <ul>
+                    <h3 class="more"><i class="fa fa-futbol-o"></i>体 育</h3>
+                    <div class="like-list">
+                        <li><a href="https://www.hupu.com/" target="_blank" rel="nofollow">虎扑体育</a></li>
+                        <li><a href="http://www.dongqiudi.com/" target="_blank" rel="nofollow">懂球帝</a></li>
+                        <li><a href="http://sports.sina.com.cn/" target="_blank" rel="nofollow">新浪体育</a></li>
+                        <li><a href="http://sports.sohu.com/" target="_blank" rel="nofollow">搜狐体育</a></li>
+                        <li><a href="http://sports.163.com/" target="_blank" rel="nofollow">网易体育</a></li>
+                    </div>
+                    <!--弹出-->
+                    <div class="tool_tc">
+                        <ul>
+                            <h4><i class="fa fa-music"></i>「 体育 」网站推荐</h4>
+                            <li><a href="http://sports.qq.com/" target="_blank" rel="nofollow">腾讯体育</a></li>
+                        </ul>
+                    </div>
+                    <!--弹出 end-->
+                </ul>
+                <ul>
+                    <h3 class="more"><i class="fa fa-users"></i>社 区</h3>
+                    <div class="like-list">
+                        <li><a href="https://www.zhihu.com/" target="_blank" rel="nofollow" id="lianjie1">知乎</a></li>
+                        <li><a href="https://www.douban.com/" target="_blank" rel="nofollow">豆瓣</a></li>
+                        <li><a href="https://www.v2ex.com/" target="_blank" rel="nofollow">V2EX</a></li>
+                        <li><a href="http://www.tianya.cn/" target="_blank" rel="nofollow" title="天涯社区">天涯</a></li>
+                        <li><a href="http://bbs.nga.cn/" target="_blank" rel="nofollow">NGA玩家社区</a></li>
+                        <li><a href="https://www.chiphell.com/" target="_blank" rel="nofollow">Chiphell</a></li>
+
+                    </div>
+                    <!--弹出-->
+                    <div class="tool_tc">
+                        <ul>
+                            <h4><i class="fa fa-video-camera"></i>「 社交 」网站推荐</h4>
+                            <li><a href="http://www.mop.com/" target="_blank" rel="nofollow">猫扑</a></li>
+                            <li><a href="http://qzone.qq.com/" target="_blank" rel="nofollow">QQ空间</a></li>
+                            <li><a href="http://bbs.taobao.com/" target="_blank" rel="nofollow">淘宝论坛</a></li>
+                            <li><a href="http://www.xici.net/" target="_blank" rel="nofollow">西祠胡同</a></li>
+                            <li><a href="http://bbs.tiexue.net/" target="_blank" rel="nofollow">铁血社区</a></li>
+                        </ul>
+                    </div>
+                    <!--弹出 end-->
+                </ul>
+                <ul>
+                    <h3 class="more"><i class="fa fa-google-plus-square"></i>其 它</h3>
+                    <div class="like-list">
+                        <li><a href="https://pan.baidu.com/" target="_blank" rel="nofollow">百度云</a></li>
+                        <li><a href="https://www.weiyun.com/" target="_blank" rel="nofollow">微云</a></li>
+                        <li><a href="https://app.yinxiang.com/Login.action" target="_blank" rel="nofollow">印象笔记</a></li>
+                        <li><a href="http://360kan.letv.com/live" target="_blank" rel="nofollow">电视直播</a></li>
+                    </div>
+                    <!--弹出-->
+                    <div class="tool_tc">
+                        <ul>
+                            <h4><i class="fa fa-google-plus-square"></i>「 其它 」网站推荐</h4>
+                        </ul>
+                    </div>
+                    <!--弹出 end-->
+                </ul>
+                <ul>
+                    <h3 class="more"><i class="fa fa-database"></i>软 件</h3>
+                    <div class="like-list">
+                        <li><a href="http://rj.baidu.com/" target="_blank" rel="nofollow">百度软件</a></li>
+                        <li><a href="http://www.iplaysoft.com/" target="_blank" rel="nofollow">异次元</a></li>
+                        <li><a href="http://www.appinn.com/" target="_blank" rel="nofollow">小众软件</a></li>
+                        <li><a href="http://sspai.com/" target="_blank" rel="nofollow">少数派</a></li>
+                    </div>
+                    <!--弹出-->
+                    <div class="tool_tc">
+                        <ul>
+                            <h4><i class="fa fa-database"></i>「 软件 」网站推荐</h4>
+                        </ul>
+                    </div>
+                    <!--弹出 end-->
+                </ul>
+                <ul>
+                    <h3 class="more"><i class="fa fa-edit"></i>资 讯</h3>
+                    <div class="like-list">
+                        <li><a href="http://news.163.com/" target="_blank" rel="nofollow">网易新闻</a></li>
+                        <li><a href="http://news.qq.com/" target="_blank" rel="nofollow">腾讯新闻</a></li>
+                        <li><a href="http://www.toutiao.com/" target="_blank" rel="nofollow">今日头条</a></li>
+                        <li><a href="http://weixin.sogou.com/" target="_blank" rel="nofollow">微信热门</a></li>
+                    </div>
+                    <!--弹出-->
+                    <div class="tool_tc">
+                        <ul>
+                            <h4><i class="fa fa-edit"></i>「 资讯 」网站推荐</h4>
+                        </ul>
+                    </div>
+                    <!--弹出 end-->
+                </ul>
+                <ul>
+                    <h3 class="more"><i class="fa fa-thumbs-up"></i>推 荐</h3>
+                    <div class="like-list">
+                        <li><a href="http://www.julihudong.com/" target="_blank">聚力互动</a></li>
+                        <li><a href="http://www.xdism.com/" target="_blank">秀点主义</a></li>
+                        <li><a href="https://www.banwangzhan.com/" target="_blank">办网站</a></li>
+                        <li><a href="http://www.julicms.com/" target="_blank">巨力CMS</a></li>
+                        <li><a href="http://www.bijimoban.com/" target="_blank">笔记模板</a></li>
+                    </div>
+                    <!--弹出-->
+                    <div class="tool_tc">
+                        <ul>
+                            <h4><i class="fa fa-thumbs-up"></i>「 推荐 」网站推荐</h4>
+                            <li><a href="http://www.ku8.com/" target="_blank" rel="nofollow">ku8</a></li>
+                        </ul>
+                    </div>
+                    <!--弹出 end-->
+                </ul>
+                <ul>
+                    <h3 class="more"><i class="fa fa-star"></i>无 名</h3>
+                    <div class="like-list">
+                        <li><a href="https://movie.douban.com/chart" target="_blank" rel="nofollow">高分电影</a></li>
+                        <li><a href="https://zhuanlan.zhihu.com/appsos" target="_blank" rel="nofollow">应用推荐</a></li>
+                        <li><a href="http://www.wandafilm.com/" target="_blank" rel="nofollow">万达电影</a></li>
+                    </div>
+                    <!--弹出-->
+                    <div class="tool_tc">
+                        <ul>
+                            <h4><i class="fa fa-star"></i>「 无名 」网站推荐</h4>
+                        </ul>
+                    </div>
+                    <!--弹出 end-->
+                </ul>
+                <ul>
+                    <h3 class="more"><i class="fa fa-bar-chart-o"></i>指 数</h3>
+                    <div class="like-list">
+                        <li><a href="http://top.baidu.com/" target="_blank" rel="nofollow">百度热搜</a></li>
+                        <li><a href="http://s.weibo.com/top/summary" target="_blank" rel="nofollow">微博热搜</a></li>
+                        <li><a href="http://www.cbooo.cn/" target="_blank" rel="nofollow">票房指数</a></li>
+                        <li><a href="https://top.taobao.com/" target="_blank" rel="nofollow">淘宝指数</a></li>
+                    </div>
+                    <!--弹出-->
+                    <div class="tool_tc">
+                        <ul>
+                            <h4><i class="fa fa-bar-chart-o"></i>「 指数 」网站推荐</h4>
+                            <li><a href="http://top.baidu.com/" target="_blank" rel="nofollow">百度热搜</a></li>
+                            <li><a href="http://s.weibo.com/top/summary" target="_blank" rel="nofollow">微博热搜</a></li>
+                            <li><a href="http://www.cbooo.cn/" target="_blank" rel="nofollow">票房指数</a></li>
+                            <li><a href="https://top.taobao.com/" target="_blank" rel="nofollow">淘宝指数</a></li>
+                        </ul>
+                    </div>
+                    <!--弹出 end-->
+                </ul>
+            </div>
+            <div class="like-c">
+                <h2>「 快速查询类 」</h2>
+                <ul>
+                    <h3><i class="fa fa-calendar-check-o"></i>办 公</h3>
+                    <div class="like-list">
+                        <li><a href="http://www.kuaidi100.com/" target="_blank" rel="nofollow">快递查询</a></li>
+                        <li id="rmd_zh"><a>中文数字大小写转换</a></li>
+                        <li><a href="http://www.tianqi.com/index.php?mycity=1" target="_blank" rel="nofollow">天气</a>
+                        </li>
+                        <li><a href="http://fanyi.youdao.com/" target="_blank" rel="nofollow">有道翻译</a></li>
+                        <li><a href="https://translate.google.cn/" target="_blank" rel="nofollow">谷歌翻译</a></li>
+                        <li><a href="http://hao.360.cn/huafei.html" target="_blank" rel="nofollow">网上营业厅</a></li>
+                        <li><a href="http://www.speedtest.cn/" target="_blank" rel="nofollow">网速测试</a></li>
+                        <li><a href="http://qq.ip138.com/converter8.htm" target="_blank" rel="nofollow">长度换算</a></li>
+                    </div>
+                </ul>
+                <ul>
+                    <h3><i class="fa fa-bus"></i>交 通</h3>
+                    <div class="like-list">
+                        <li><a href="http://bus.mapbar.com/" target="_blank" rel="nofollow">公交查询</a></li>
+                        <li><a href="http://cp.360.cn/kj/kaijiang.html" target="_blank" rel="nofollow">彩票开奖</a></li>
+                        <li><a href="http://hao.360.cn/ditu.html" target="_blank" rel="nofollow">地图交通</a></li>
+                    </div>
+                </ul>
+            </div>
+            <div class="like-right">
+                <h2>「 快捷服务类 」</h2>
+                <ul>
+                    <h3 class="more"><i class="fa fa-rocket"></i>旅 游</h3>
+                    <div class="like-list">
+                        <li><a href="https://kyfw.12306.cn/otn/" target="_blank" rel="nofollow" id="lianjie1">火车票</a>
+                        </li>
+                        <li><a href="http://flights.ctrip.com/" target="_blank" rel="nofollow" id="lianjie1">机票</a></li>
+                        <li><a href="http://www.ctrip.com/" target="_blank" rel="nofollow">携程</a></li>
+                        <li><a href="https://www.qunar.com/" target="_blank" rel="nofollow">去哪儿</a></li>
+                        <li><a href="http://www.qyer.com/" target="_blank" rel="nofollow">穷游网</a></li>
+                        <li><a href="http://www.mafengwo.cn/" target="_blank" rel="nofollow">蚂蜂窝</a></li>
+                    </div>
+                    <!--弹出-->
+                    <div class="tool_tc">
+                        <ul>
+                            <h4><i class="fa fa-rocket"></i>「 旅游 」网站推荐</h4>
+
+                        </ul>
+                    </div>
+                    <!--弹出 end-->
+                </ul>
+                <ul>
+                    <h3 class="more"><i class="fa fa-envelope-o"></i>邮 箱</h3>
+                    <div class="like-list">
+                        <li><a href="https://exmail.qq.com/cgi-bin/loginpage" target="_blank" rel="nofollow">腾讯企业邮</a>
+                        </li>
+                        <li><a href="http://email.163.com/" target="_blank" rel="nofollow">163邮箱</a></li>
+                        <li><a href="http://www.126.com/" target="_blank" rel="nofollow">126邮箱</a></li>
+                        <li><a href="http://mail.sohu.com/" target="_blank" rel="nofollow">搜狐邮箱</a></li>
+                        <li><a href="http://mail.qq.com/" target="_blank" rel="nofollow">QQ邮箱</a></li>
+                    </div>
+                    <!--弹出-->
+                    <div class="tool_tc">
+                        <ul>
+                            <h4><i class="fa fa-envelope-o"></i>邮箱</h4>
+                            <li><a href="http://mail.sina.com.cn/" target="_blank" rel="nofollow">新浪邮箱</a></li>
+                            <li><a href="http://mail.aliyun.com/" target="_blank" rel="nofollow">阿里云邮箱</a></li>
+                            <li><a href="http://web.mail.tom.com/" target="_blank" rel="nofollow">TOM邮箱</a></li>
+                            <li><a href="http://www.outlook.com/" target="_blank" rel="nofollow">Outlook</a></li>
+                            <li><a href="http://mail.10086.cn/" target="_blank" rel="nofollow">139邮箱</a></li>
+                            <li><a href="http://webmail1.189.cn/webmail/" target="_blank" rel="nofollow">189邮箱</a></li>
+                            <li><a href="http://mail.wo.com.cn/mail/login.action" target="_blank" rel="nofollow">沃邮箱</a>
+                            </li>
+                            <li><a href="http://mail.21cn.com/" target="_blank" rel="nofollow">21CN邮箱</a></li>
+                            <li><a href="http://www.263.net/" target="_blank" rel="nofollow">263邮箱</a></li>
+                            <li><a href="http://www.188.com/" target="_blank" rel="nofollow">188财富邮</a></li>
+                            <li><a href="http://www.foxmail.com/" target="_blank" rel="nofollow">foxmail</a></li>
+                            <li><a href="http://eyou.com/" target="_blank" rel="nofollow">亿邮</a></li>
+                            <li><a href="http://www.hotmail.com/" target="_blank" rel="nofollow">Hotmail</a></li>
+                        </ul>
+                    </div>
+                    <!--弹出 end-->
+                </ul>
+                <ul>
+                    <h3 class="more"><i class="fa fa-folder"></i>求 职</h3>
+                    <div class="like-list">
+                        <li><a href="https://www.linkedin.com/" target="_blank" rel="nofollow">领英</a></li>
+                        <li><a href="http://www.lagou.com/" target="_blank" rel="nofollow">拉勾</a></li>
+                        <li><a href="http://zhaopin.com/" target="_blank" rel="nofollow">智联招聘</a></li>
+                        <li><a href="http://www.51job.com/" target="_blank" rel="nofollow">前程无忧</a></li>
+                        <li><a href="http://www.yingjiesheng.com/" target="_blank" rel="nofollow">应届生</a></li>
+                        <li><a href="http://www.wealink.com/" target="_blank" rel="nofollow">若邻网</a></li>
+                    </div>
+                    <!--弹出-->
+                    <div class="tool_tc">
+                        <ul>
+                            <h4><i class="fa fa-folder"></i>「 求职 」网站推荐</h4>
+                            <li><a href="http://www.chinahr.com/" target="_blank" rel="nofollow">中华英才网</a></li>
+                            <li><a href="http://www.lietou.com/event/landingpage/brand.shtml?mscid=t_d_004"
+                                   target="_blank" rel="nofollow">猎聘网</a></li>
+                            <li><a href="http://job.dajie.com/" target="_blank" rel="nofollow">大街校园招聘</a></li>
+
+                            <li><a href="http://www.ganji.com/zhaopin/" target="_blank" rel="nofollow">赶集网招聘</a></li>
+                            <li>
+                                <a href="http://www.58.com/?path=job.shtml?utm_source%3d360%26utm_campaign%3d360-zhaopin-job"
+                                   target="_blank" rel="nofollow">58同城招聘</a></li>
+                            <li><a href="http://www.jobcn.com/" target="_blank" rel="nofollow">卓博人才网</a></li>
+                            <li><a href="http://www.job5156.com/" target="_blank" rel="nofollow">智通人才网</a></li>
+                            <li><a href="http://www.guolairen.com/" target="_blank" rel="nofollow">过来人求职网</a></li>
+                            <li><a href="http://www.yjbys.com/" target="_blank" rel="nofollow">应届毕业生</a></li>
+                            <li><a href="http://www.1010jz.com/" target="_blank" rel="nofollow">1010兼职网</a></li>
+                            <li><a href="http://www.58.com/zhaopinhui/" target="_blank" rel="nofollow">招聘会信息</a></li>
+                            <li><a href="http://www.cjol.com/" target="_blank" rel="nofollow">中国人才热线</a></li>
+                            <li><a href="http://www.job168.com/" target="_blank" rel="nofollow">南方人才网</a></li>
+                            <li><a href="http://www.528.com.cn/" target="_blank" rel="nofollow">528招聘网</a></li>
+                            <li><a href="http://baicai.com/" target="_blank" rel="nofollow">百才招聘网</a></li>
+                            <li><a href="http://xiaozhao.renren.com/" target="_blank" rel="nofollow">人人校招</a></li>
+                            <li><a href="http://www.myjob.com/" target="_blank" rel="nofollow">我的工作网</a></li>
+                            <li><a href="http://www.hiall.com.cn/" target="_blank" rel="nofollow">HiAll大学生招聘</a></li>
+                            <li><a href="http://www.chinajob.gov.cn/" target="_blank" rel="nofollow">中国就业网</a></li>
+                            <li><a href="http://www.holdhr.com/" target="_blank" rel="nofollow">才精聘道</a></li>
+                            <li><a href="http://www.kanzhun.com/" target="_blank" rel="nofollow">看准网</a></li>
+                            <li><a href="http://www.01hr.com/" target="_blank" rel="nofollow">数字英才网</a></li>
+                            <li><a href="http://www.baixing.com/" target="_blank" rel="nofollow">百姓网招聘</a></li>
+                        </ul>
+                    </div>
+                    <!--弹出 end-->
+                </ul>
+                <ul>
+                    <h3 class="more"><i class="fa fa-coffee"></i>追 剧</h3>
+                    <div class="like-list">
+                        <li><a href="http://www.dygod.net/" target="_blank" rel="nofollow">电影天堂</a></li>
+                        <li><a href="http://www.allyingshi.com/" target="_blank" rel="nofollow">人人影视</a></li>
+                        <li><a href="http://www.6vhao.com/" target="_blank" rel="nofollow">6v电影</a></li>
+                    </div>
+                    <!--弹出-->
+                    <div class="tool_tc">
+                        <ul>
+                            <h4><i class="fa fa-coffee"></i>「 追剧 」网站推荐</h4>
+                        </ul>
+                    </div>
+                    <!--弹出 end-->
+                </ul>
+                <ul>
+                    <h3 class="more"><i class="fa fa-bank"></i>银 行</h3>
+                    <div class="like-list">
+                        <li><a href="http://www.icbc.com.cn/" target="_blank" rel="nofollow">工商银行</a></li>
+                        <li><a href="http://www.ccb.com/" target="_blank" rel="nofollow">建设银行</a></li>
+                        <li><a href="http://www.boc.cn/" target="_blank" rel="nofollow">中国银行</a></li>
+                        <li><a href="http://www.bankcomm.com/" target="_blank" rel="nofollow">交通银行</a></li>
+                        <li><a href="http://www.citicbank.com/" target="_blank" rel="nofollow">中信银行</a></li>
+                    </div>
+                    <!--弹出-->
+                    <div class="tool_tc">
+                        <ul>
+                            <h4><i class="fa fa-bank"></i>「 银行 」网站推荐</h4>
+                            <li><a href="http://www.abchina.com/" target="_blank" rel="nofollow">农业银行</a></li>
+                            <li><a href="http://www.cmbchina.com/" target="_blank" rel="nofollow">招商银行</a></li>
+                            <li><a href="http://www.psbc.com/" target="_blank" rel="nofollow">邮政银行</a></li>
+                            <li><a href="http://www.cebbank.com/" target="_blank" rel="nofollow">光大银行</a></li>
+                            <li><a href="http://www.cmbc.com.cn/" target="_blank" rel="nofollow">民生银行</a></li>
+                            <li><a href="http://bank.pingan.com/" target="_blank" rel="nofollow">平安银行</a></li>
+                            <li><a href="http://www.spdb.com.cn/" target="_blank" rel="nofollow">浦发银行</a></li>
+                            <li><a href="http://www.cib.com.cn/" target="_blank" rel="nofollow">兴业银行</a></li>
+                            <li><a href="http://www.hxb.com.cn/" target="_blank" rel="nofollow">华夏银行</a></li>
+                            <li><a href="http://www.cgbchina.com.cn/" target="_blank" rel="nofollow">广发银行</a></li>
+                        </ul>
+                    </div>
+                    <!--弹出 end-->
+                </ul>
+            </div>
+        </div>
+        <div class="hd-wrap" id="hd-2" style="display: none;">
+            <div class="like-left">
+                <h2>「 购物推荐 」</h2>
+                <ul>
+                    <h3><i class="fa fa-building-o"></i>综 合</h3>
+                    <div class="like-list">
+                        <li><a href="http://www.taobao.com/" target="_blank" rel="nofollow">淘宝网</a></li>
+                        <li><a href="https://s.click.taobao.com/GGQ4nAx" target="_blank" rel="nofollow"
+                               id="jhs_go">聚划算</a></li>
+                        <li><a href="http://www.jd.com/" target="_blank" rel="nofollow">京东</a></li>
+                        <li><a href="http://www.suning.com/" target="_blank" rel="nofollow">苏宁易购</a></li>
+                        <li><a href="http://www.dangdang.com/" target="_blank" rel="nofollow">当当网</a></li>
+                        <li><a href="http://www.vip.com/" target="_blank" rel="nofollow">唯品会</a></li>
+                        <li><a href="https://www.1688.com/" target="_blank" rel="nofollow">阿里巴巴</a></li>
+                        <li><a href="http://www.yougou.com/" target="_blank" rel="nofollow">优购</a></li>
+                        <li><a href="http://www.gome.com.cn/" target="_blank" rel="nofollow">国美在线</a></li>
+                        <li><a href="http://www.yohobuy.com/" target="_blank" rel="nofollow">有货</a></li>
+                        <li><a href="http://www.jumei.com/" target="_blank" rel="nofollow">聚美优品</a></li>
+                        <li><a href="http://www.yhd.com/" target="_blank" rel="nofollow">一号店</a></li>
+                    </div>
+                </ul>
+                <ul>
+                    <h3><i class="fa fa-shopping-basket"></i>商 城</h3>
+                    <div class="like-list">
+                        <li><a href="https://www.jd.com/" target="_blank" rel="nofollow">京东商城</a></li>
+                        <li><a href="http://www.sfbest.com/" target="_blank" rel="nofollow">顺丰优选</a></li>
+                        <li><a href="http://you.163.com/" target="_blank" rel="nofollow">网易严选</a></li>
+                    </div>
+                </ul>
+                <ul>
+                    <h3><i class="fa fa-coffee"></i>实 惠</h3>
+                    <div class="like-list">
+                        <li><a href="https://www.zhe800.com/" target="_blank">折800</a></li>
+                        <li><a href="http://www.juanpi.com/" target="_blank">卷皮</a></li>
+                        <li><a href="http://www.mogujie.com/" target="_blank">蘑菇街</a></li>
+                        <li><a href="http://www.meilishuo.com/" target="_blank">美丽说</a></li>
+                    </div>
+                </ul>
+                <ul>
+                    <h3><i class="fa fa-book"></i>买 书</h3>
+                    <div class="like-list">
+                        <li><a href="https://book.jd.com/" target="_blank" rel="nofollow">京东图书</a></li>
+                        <li><a href="http://book.dangdang.com/" target="_blank" rel="nofollow">当当图书</a></li>
+                        <li>
+                            <a href="https://www.amazon.cn/%E5%9B%BE%E4%B9%A6/b/ref=topnav_storetab_b?ie=UTF8&amp;node=658390051"
+                               target="_blank" rel="nofollow">亚马逊图书</a></li>
+                    </div>
+                </ul>
+                <ul>
+                    <h3><i class="fa fa-book"></i>众 筹</h3>
+                    <div class="like-list">
+                        <li><a href="https://z.jd.com/" target="_blank" rel="nofollow">京东众筹</a></li>
+                        <li><a href="https://izhongchou.taobao.com/index.htm" target="_blank" rel="nofollow">淘宝众筹</a>
+                        </li>
+                    </div>
+                </ul>
+            </div>
+            <div class="like-right">
+                <h2>「 海淘购物 」</h2>
+                <ul>
+                    <h3><i class="fa fa-ship"></i>推 荐</h3>
+                    <div class="like-list">
+                        <li><a href="https://www.6pm.com/" target="_blank">6pm</a></li>
+                        <li><a href="https://www.kaola.com/" target="_blank" rel="nofollow">考拉海购</a></li>
+                        <li><a href="https://www.amazon.com/" rel="external nofollow noopener" target="_blank"
+                               title="亚马逊（美国）">美亚</a></li>
+                        <li><a href="https://www.amazon.co.uk/" rel="external nofollow noopener" target="_blank"
+                               title="亚马逊（英国）">英亚</a></li>
+                        <li><a href="https://www.amazon.de/" rel="external nofollow noopener" target="_blank"
+                               title="亚马逊（德国）">德亚</a></li>
+                        <li><a href="https://www.amazon.co.jp/" rel="external nofollow noopener" target="_blank"
+                               title="亚马逊（日本）">日亚</a></li>
+                        <li><a href="https://www.tmall.hk/" rel="external nofollow noopener" target="_blank"
+                               title="天猫国际">天猫国际</a></li>
+                        <li><a href="https://www.jd.hk/" rel="external nofollow noopener" target="_blank" title="京东全球购">京东全球购</a>
+                        </li>
+                    </div>
+                </ul>
+            </div>
+        </div>
+        <div class="hd-wrap" id="hd-3" style="display: none;">
+            <div class="like-left">
+                <h2>「 在线影视 」</h2>
+                <ul>
+                    <h3><i class="fa fa-film" aria-hidden="true"></i>推 荐</h3>
+                    <div class="like-list">
+                        <li><a href="https://www.iqiyi.com/" rel="external nofollow noopener" target="_blank"
+                               title="爱奇艺 - 海量正版高清视频在线观看！">爱奇艺</a></li>
+                        <li><a href="https://www.youku.com/" rel="external nofollow noopener" target="_blank"
+                               title="优酷 - 视频播放，视频发布，视频搜索！">优酷</a></li>
+                        <li><a href="https://www.tudou.com/" rel="external nofollow noopener" target="_blank"
+                               title="土豆 - 每个人都是生活的导演！">土豆</a></li>
+                        <li><a href="https://v.qq.com/" rel="external nofollow noopener" target="_blank"
+                               title="腾讯视频 - 在线视频媒体平台，海量高清视频在线观看！">腾讯视频</a></li>
+                        <li><a href="http://www.mgtv.com/" rel="external nofollow noopener" target="_blank"
+                               title="芒果TV - 看见好时光！">芒果TV</a></li>
+                        <li><a href="https://www.bilibili.com/" rel="external nofollow noopener" target="_blank"
+                               title="哔哩哔哩 - 弹幕视频网 - ( ゜- ゜)つロ 乾杯~">哔哩哔哩</a></li>
+                        <li><a href="http://www.acfun.cn/" rel="external nofollow noopener" target="_blank"
+                               title="AcFun - 弹幕视频网 - 认真你就输啦 (・ω・)ノ- ( ゜- ゜)つロ">AcFun</a></li>
+                        <li><a href="http://www.ku6.com/" rel="external nofollow noopener" target="_blank"
+                               title="酷6网 - 视频门户！">酷6网</a></li>
+                        <li><a href="https://www.56.com/" rel="external nofollow noopener" target="_blank"
+                               title="56网 - 原创视频分享网站！">56网</a></li>
+                        <li><a href="http://v.baidu.com/" rel="external nofollow noopener" target="_blank"
+                               title="百度视频 - 中文视频搜索引擎！">百度视频</a></li>
+                        <li><a href="https://tv.sohu.com/" rel="external nofollow noopener" target="_blank"
+                               title="搜狐视频 - 正版高清视频在线观看！">搜狐视频</a></li>
+                        <li><a href="http://www.fun.tv/" rel="external nofollow noopener" target="_blank"
+                               title="风行网 - 新一代视频平台！">风行网</a></li>
+                        <li><a href="http://www.le.com/" rel="external nofollow noopener" target="_blank">乐视视频</a></li>
+                        <li><a href="http://www.kankan.com/" rel="external nofollow noopener" target="_blank"
+                               title="天天看看是一个综合高清影视视频平台，免费提供电影、电视剧、综艺、音乐MV、动漫、新片、大片的高清在线点播和下载">天天看看</a></li>
+                    </div>
+                </ul>
+                <ul>
+                    <h3><i class="fa fa-comments-o"></i>影 评</h3>
+                    <div class="like-list">
+                        <li><a href="https://movie.douban.com/" rel="external nofollow noopener" target="_blank"
+                               title="豆瓣电影 - 提供最新的电影介绍及评论包括上映影片的影讯查询及购票服务。">豆瓣电影</a></li>
+                        <li><a href="http://www.mtime.com/" rel="external nofollow noopener" target="_blank"
+                               title="Mtime时光网：让电影遇见生活">Mtime时光网</a></li>
+                    </div>
+                </ul>
+            </div>
+            <div class="like-right">
+                <h2>「 影视下载 」</h2>
+                <ul>
+                    <h3><i class="fa fa-download" aria-hidden="true"></i>热 门</h3>
+                    <div class="like-list">
+                        <li><a href="http://www.hao6v.com/" target="_blank" rel="external nofollow noopener"
+                               title="6V电影 - 每天搜集互联网最新电影和电视剧！">6v电影</a></li>
+                        <li><a href="https://www.dy2018.com/" rel="external nofollow noopener" target="_blank"
+                               title="电影天堂">电影天堂</a></li>
+                        <li><a href="http://www.piaohua.com/" rel="external nofollow noopener" target="_blank"
+                               title="飘花电影 - 每天搜集最新迅雷免费电影下载！">飘花电影</a></li>
+                        <li><a href="http://www.66ys.tv/" rel="external nofollow noopener" target="_blank"
+                               title="66影视网 - 电影、电视剧，迅雷电影下载（无弹窗网站）">66影视网</a></li>
+                        <li><a href="http://www.dygang.net/" rel="external nofollow noopener" target="_blank"
+                               title="电影港-每天搜集最新的电影免费迅雷下载。专注于高清电影的下载服务。">电影港</a></li>
+
+
+                    </div>
+                </ul>
+                <ul>
+                    <h3><i class="fa fa-user-secret"></i>美 剧</h3>
+                    <div class="like-list">
+                        <li><a href="http://www.ttmeiju.vip/" target="_blank" rel="external nofollow noopener"
+                               title="天天美剧,您的高清美剧下载中心,美剧爱好者的天堂">天天美剧</a></li>
+                        <li><a href="http://tv.sohu.com/ushotall/" target="_blank" rel="external nofollow noopener"
+                               title="搜狐美剧">搜狐美剧</a></li>
+
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--弹出tool-->
+<div class="tool_tc" id="tool_ajax"></div>
+<!--弹出层-->
+<div id="tool_tc_bj"></div>
+<script type="text/javascript" src="/navigation/jquery.min.js"></script>
+<script src="/navigation/hm.js"></script>
+<script src="/navigation/ui.js"></script>
+<script type="text/javascript" src="/js/baidutj.js"></script>
+<script src="https://res.wx.qq.com/open/js/jweixin-1.4.0.js" type="text/javascript"></script>
+<script src="/js/weixin.js"></script>
+<script>
+    $(function () {
+        $(".all-user .hd-wrap:not(:first)").hide();
+        $("#user-js li span").each(function (index) {
+            $(this).click(
+                function () {
+                    $("#user-js ul li span.on").removeClass("on");
+                    $(this).addClass("on");
+                    $(".all-user .hd-wrap:visible").hide();
+                    $(".all-user .hd-wrap:eq(" + index + ")").show();
+                })
+        })
+    })
+</script>
+<script>
+    var form = document.getElementById("form");
+    var google = document.getElementById("google");
+    var youku = document.getElementById("youku");
+    var yqq = document.getElementById("yqq");
+    var bing = document.getElementById("bing");
+    var baidu = document.getElementById("baidu");
+    var haosou = document.getElementById("so");
+    var sogou = document.getElementById("sogou");
+    var sogouweixin = document.getElementById("sogouweixin");
+    var taobao = document.getElementById("taobao");
+    var zzzquan = document.getElementById("zzzquan");
+    /*
+    var tmall = document.getElementById("tmall");
+    */
+    var ip138 = document.getElementById("ip138");
+    var dict = document.getElementById("dict");
+    var jd = document.getElementById("jd");
+    var zhihu = document.getElementById("zhihu");
+    var weibo = document.getElementById("weibo");
+    var pansou = document.getElementById("pansou");
+    var github = document.getElementById("github");
+    var searchCenter = document.getElementById("searchCenter");
+    var inputBottom = document.getElementById("inputBottom");
+    var searchRight = document.getElementById("searchRight");
+    var searchSubmit = document.getElementById("searchSubmit");
+    var submit = document.getElementById("submit");
+
+    searchRight.onclick = function () {
+        searchSubmit.click();
+    };
+    google.onclick = function () {
+        clearInputBottom();
+        searchRight.innerHTML = "搜索谷歌";
+        form.action = "https://www.dogedoge.com/results";
+        searchCenter.name = "q";
+        inputBottom.name = "newwindow";
+        inputBottom.value = "0";
+    };
+    youku.onclick = function () {
+        clearInputBottom();
+        searchRight.innerHTML = "搜索视频";
+        form.action = "http://www.soku.com/search_video/";
+        searchCenter.name = "q";
+    };
+    yqq.onclick = function () {
+        clearInputBottom();
+        searchRight.innerHTML = "搜索音乐";
+        form.action = "https://y.qq.com/portal/search.html";
+        searchCenter.name = "w";
+    };
+    bing.onclick = function () {
+        clearInputBottom();
+        searchRight.innerHTML = "搜索必应";
+        form.action = "https://www.bing.com/search";
+        searchCenter.name = "q";
+    };
+    baidu.onclick = function () {
+        clearInputBottom();
+        searchRight.innerHTML = "搜索百度";
+        form.action = "https://www.baidu.com/s";
+        searchCenter.name = "wd";
+    };
+    dict.onclick = function () {
+        clearInputBottom();
+        searchRight.innerHTML = "查字典";
+        form.action = "https://cn.bing.com/dict/search";
+        searchCenter.name = "q";
+    };
+    ip138.onclick = function () {
+        clearInputBottom();
+        searchRight.innerHTML = "查询IP地址";
+        form.action = "http://www.ip138.com/ips138.asp";
+        searchCenter.name = "ip";
+    };
+    haosou.onclick = function () {
+        clearInputBottom();
+        searchRight.innerHTML = "搜索360";
+        form.action = "https://www.haosou.com/s";
+        searchCenter.name = "q";
+    };
+    taobao.onclick = function () {
+        clearInputBottom();
+        searchRight.innerHTML = "搜索淘宝";
+        form.action = "https://s.taobao.com/search";
+        searchCenter.name = "q";
+    };
+    zzzquan.onclick = function () {
+        clearInputBottom();
+        searchRight.innerHTML = "搜索优惠券";
+        form.action = "https://quan.zhizhizhi.com/zq/";
+        searchCenter.name = "cps";
+    };
+    /*
+    tmall.onclick = function () {
+        clearInputBottom();
+        searchRight.innerHTML = "搜索天猫";
+        form.action = "https://list.tmall.com/search_product.htm";
+        searchCenter.name = "q";
+    };
+    */
+    jd.onclick = function () {
+        clearInputBottom();
+        searchRight.innerHTML = "搜索京东";
+        form.action = "https://search.jd.com/Search";
+        searchCenter.name = "keyword";
+        inputBottom.name = "enc";
+        inputBottom.value = "UTF-8";
+    };
+    zhihu.onclick = function () {
+        clearInputBottom();
+        searchRight.innerHTML = "搜索知乎";
+        form.action = "https://www.zhihu.com/search";
+        searchCenter.name = "q";
+        inputBottom.name = "type";
+        inputBottom.value = "content";
+    };
+    sogou.onclick = function () {
+        clearInputBottom();
+        searchRight.innerHTML = "搜索搜狗";
+        form.action = "https://www.sogou.com/web";
+        searchCenter.name = "query";
+    };
+    sogouweixin.onclick = function () {
+        clearInputBottom();
+        searchRight.innerHTML = "搜索微信";
+        form.action = "https://weixin.sogou.com/weixin";
+        searchCenter.name = "query";
+        inputBottom.name = "type";
+        inputBottom.value = "2";
+    };
+    weibo.onclick = function () {
+        clearInputBottom();
+        searchRight.innerHTML = "搜索微博";
+        form.action = "https://s.weibo.com/weibo";
+        searchCenter.name = "q";
+        inputBottom.name = "Refer";
+        inputBottom.value = "SWeibo_box";
+    };
+    pansou.onclick = function () {
+        clearInputBottom();
+        searchRight.innerHTML = "搜索网盘";
+        form.action = "http://www.pansou.com/";
+        searchCenter.name = "q";
+    };
+    github.onclick = function () {
+        clearInputBottom();
+        searchRight.innerHTML = "搜索GitHub";
+        form.action = "https://github.com/search";
+        searchCenter.name = "q";
+    };
+
+    function clearInputBottom() {
+        inputBottom.name = "";
+        inputBottom.value = "";
+    }
+
+    function formCheck() {
+        if (searchCenter.value == "") {
+            return false;
+        }
+    }
+
+    searchCenterPlaceholder();
+    submit.onclick = function () {
+        searchCenter.focus();
+        setTimeout(function () {
+            searchCenterPlaceholder();
+        }, 50);
+    };
+
+    function searchCenterPlaceholder() {
+        var str = searchRight.innerHTML;
+        searchCenter.placeholder = "输入内容，" + str + "！";
+    }
+</script>
+
+</body>
+</html>

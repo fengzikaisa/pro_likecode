@@ -1,6 +1,5 @@
 initConfig();
 function initConfig() {
-    console.log(34534)
     $.ajax({
         type: "POST",
         url: "/oauth/wxConfig",
