@@ -3,6 +3,7 @@ package com.likecode.controller;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.likecode.common.utils.HttpClientUtil;
+import com.likecode.common.utils.RandomUtil;
 import com.likecode.common.utils.UserAgentUtils;
 import lombok.extern.log4j.Log4j;
 import org.springframework.stereotype.Controller;
@@ -38,6 +39,20 @@ public class ImgController {
             model.addAttribute("url",url);
         }
         return "img/index";
+
+    }
+
+    /**
+     * lol
+     * @param model
+     * @return
+     */
+    @RequestMapping(value="lol")
+    public String lol(Model model, HttpServletRequest request) {
+        int num=RandomUtil.getRandomForLol(1,798);
+        String url="http://file.iluwen.com/lol/lol%20("+num+").jpg";
+        model.addAttribute("url",url);
+        return "img/lol";
 
     }
 

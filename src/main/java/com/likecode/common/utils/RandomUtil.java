@@ -19,6 +19,13 @@ public class RandomUtil {
         return sb.toString();
     }
 
+    public static int getRandomForLol(int min,int max){
+        Random rand = new Random();
+        // randNumber 将被赋值为一个 MIN 和 MAX 范围内的随机数
+        int randNumber =rand.nextInt(max - min + 1) + min;
+        return randNumber;
+    }
+
     /**
      * 随机生成名字后六位
      * @return
@@ -71,8 +78,4 @@ public class RandomUtil {
         return temp;
     }
 
-    public static void main(String args[]){
-        System.out.println(currentDate());
-        System.out.println(orderNo(22,33));
-    }
 }
