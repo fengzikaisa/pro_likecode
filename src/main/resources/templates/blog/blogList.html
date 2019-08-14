@@ -24,7 +24,7 @@
 
       <div th:each="blog : ${blogList}">
         <h3><a th:href="@{/blog/{id}(id=${blog.id})}" th:text="${blog.title}"></a></h3>
-        <figure><img th:data-original="${blog.img}" alt="" class="lazy"></figure>
+        <figure><img th:data-original="${blog.img!=null && blog.img!=''}?${blog.img}:'/img/timg.jpg'" alt="" class="lazy"></figure>
         <ul>
           <p th:text="${#strings.abbreviate(blog.blogAbstract,100)}"></p>
           <a th:title="${blog.title}" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank" class="readmore">阅读全文&gt;&gt;</a>

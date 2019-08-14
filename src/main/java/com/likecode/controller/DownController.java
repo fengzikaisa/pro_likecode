@@ -9,6 +9,8 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class DownController {
@@ -27,6 +29,7 @@ public class DownController {
         String filename="%s%s.jpg";
         String savePath="d:\\wk\\img\\";
         String urlString="https://ossweb-img.qq.com/images/lol/web201310/skin/big%s00%s.jpg";
+        List<String> nameList=new ArrayList<>();
         for(int i=1;i<600;i++){
             if(jsonObject.has(String.valueOf(i))){
                 String name=jsonObject.getString(String.valueOf(i));
@@ -36,6 +39,7 @@ public class DownController {
                     String urlString1=String.format(urlString,i,j);
                     System.out.println("filename1:"+filename1);
                     try{
+                        //下载
                         download(urlString1,filename1,savePath);
                     }
                     catch (Exception e){
@@ -45,7 +49,7 @@ public class DownController {
                 }
             }
         }
-
+        System.out.println(nameList.toString());
         // TODO Auto-generated method stub  
 //        download("https://ossweb-img.qq.com/images/lol/web201310/skin/big17001.jpg", "1_li1325169021.jpg","d:\\wk\\img\\");
     }
