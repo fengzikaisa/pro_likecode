@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>留言板</title>
+    <meta name="keywords" content="王恺的博客、丰子恺撒、王恺" />
+    <link href="/blog/css/base.css" rel="stylesheet">
+    <link href="/blog/css/main.css" rel="stylesheet">
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/baidutj.js"></script>
+</head>
+<body>
+<div id="wrapper">
+    <!--header-->
+    <div th:replace="blog/header"></div>
+    <div class="container">
+        <div class="con_content">
+            <!--评论系统-->
+            <h2 class="nh1"><b>说点什么吧~</b></h2>
+            <div class="comment"></div>
+        </div>
+        <div class="blank"></div>
+    </div>
+    <!--底部-->
+    <div th:replace="blog/footer"></div>
+</div>
+</body>
+<script type="text/javascript" src="/js/comment/av-min.js"></script>
+<script type="text/javascript" src="/js/comment/Valine.min.js"></script>
+<script type="text/javascript">
+    $(function () {
+        new Valine({
+            // AV 对象来自上面引入av-min.js(老司机们不要开车➳♡゛扎心了老铁)
+            av: AV,
+            el: '.comment', //
+            app_id: 'j92SW9y9deGcgQKiUVnHIsbL-gzGzoHsz', // 这里填写上面得到的APP ID
+            app_key: 'ima0eWYoHr5zREcTkJnILCV7', // 这里填写上面得到的APP KEY
+            placeholder: '点击这里，说点什么吧~' // [v1.0.7 new]留言框占位提示文字
+        });
+    })
+</script>
+</html>
