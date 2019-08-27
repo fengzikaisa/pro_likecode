@@ -59,13 +59,10 @@ function getShareData() {
         data.title = document.title;
     }
     if (data.desc == null || data.desc == '') {
-        data.desc = document.getElementsByTagName('meta')['Description'].getAttribute('content');
+        data.desc = document.getElementsByTagName('meta')['description'].getAttribute('content');
     }
     if (data.imgUrl != null && data.imgUrl.indexOf('http') != 0) {
         data.imgUrl = "http://" + location.hostname + (location.port==''?'':':'+location.port) + data.imgUrl;
-    }
-    if (data.imgUrl == null || data.imgUrl == '') {
-        data.imgUrl = "http://" + location.hostname + (location.port==''?'':':'+location.port) + '/logo.png';
     }
     return data;
 }

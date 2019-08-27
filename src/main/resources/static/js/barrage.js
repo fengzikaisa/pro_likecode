@@ -55,6 +55,18 @@ function send(){
         alert("你特么倒是写点东西呀。");
         return false;
     }
+    if(msg.indexOf("alert") >= 0 ) {
+        alert("个人小站，若搞，请轻搞");
+        return false;
+    }
+    if(msg.indexOf("<script>") >= 0 ) {
+        alert("个人小站，若搞，请轻搞");
+        return false;
+    }
+    if(msg.indexOf("$") >= 0 ) {
+        alert("个人小站，若搞，请轻搞");
+        return false;
+    }
     if(msg.length>100){
         alert("最多发送100个字符！");
         return false;
@@ -79,7 +91,7 @@ function send(){
                     }
                 }
             }else{
-                alert(data.result);
+                alert(data.msg);
             }
 
         },

@@ -38,6 +38,19 @@ public class BarrageController extends BaseController{
 	@ResponseBody
 	@RequestMapping(value="saveBarrage" ,method = RequestMethod.POST)
 	public ResultBean love(Model model,String content,HttpServletRequest request) {
+	 	boolean flag=false;
+		if(content.indexOf("alert")!=-1){
+			flag=true;
+		}
+		if(content.indexOf("<script>")!=-1){
+			flag=true;
+		}
+		if(content.indexOf("$")!=-1){
+			flag=true;
+		}
+		if(flag){
+			return new ResultBean("100001",null,"手下留情，兄弟");
+		}
 		Barrage barrage=new Barrage();
 		barrage.setContent(content);
 		barrage.setIp(IpUtil.getIP4(request));
