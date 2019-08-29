@@ -61,4 +61,9 @@ public class BarrageServiceImpl implements BarrageService {
         return bean;
     }
 
+    @Override
+    public boolean updateBarrage() {
+        return barrageDao.updateBarrage();
+    }
+
 }

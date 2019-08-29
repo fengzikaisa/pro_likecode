@@ -1,5 +1,7 @@
 package com.likecode.scheduled;
 
+import com.likecode.service.BarrageService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
@@ -14,9 +16,15 @@ import lombok.extern.log4j.Log4j;
 @Log4j
 @Component
 public class ScheduledTest {
-	@Scheduled(cron = "0 0/1 8-20 * * ?")
-	public void executeFileDownLoadTask() {
+	@Autowired
+	BarrageService barrageServiceImpl;
 
+	/**
+	 * 每日清除弹幕
+	 */
+	@Scheduled(cron = "0 0 0 1/1 * ? ")
+	public void delDanMu() {
+		barrageServiceImpl.updateBarrage();
 //		System.out.println("111");
 	}
 }

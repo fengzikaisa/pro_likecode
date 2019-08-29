@@ -21,4 +21,6 @@ public interface BarrageService {
      */
     public ResultBean insertBarrage(@Param("barrage") Barrage barrage);
 
+    boolean updateBarrage();
+
 }

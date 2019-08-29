@@ -4,9 +4,12 @@
     <insert id="insertBarrage">
         INSERT INTO t_barrage (content,ip,create_time)VALUES(#{barrage.content},#{barrage.ip},NOW())
     </insert>
+    <update id="updateBarrage">
+        UPDATE t_barrage set is_del='20'
+    </update>
 
     <select id="getBarrages" resultType="com.likecode.bean.Barrage">
-        select * from t_barrage
+        select * from t_barrage b where b.is_del='10'
     </select>
 
     <select id="getBarrageCount" resultType="java.lang.Integer">

@@ -18,5 +18,6 @@ public class Barrage implements Serializable {
     private String content;
     private String ip;
     private Date createTime;
+    private String isDel;
 
 }

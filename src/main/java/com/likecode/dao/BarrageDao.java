@@ -18,4 +18,6 @@ public interface BarrageDao {
     int insertBarrage(@Param("barrage") Barrage barrage);
 
     int getBarrageCount(@Param("ip") String ip,@Param("startTime") Date startTime,@Param("endTime")Date endTime);
+
+    boolean updateBarrage();
 }
