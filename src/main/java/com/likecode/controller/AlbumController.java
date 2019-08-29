@@ -1,3 +1,4 @@
+/*
 package com.likecode.controller;
 
 import com.likecode.bean.Album;
@@ -21,10 +22,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+*/
 /**
  * Created by wangkai on 2017/10/19.
  * 相册控制器
- */
+ *//*
+
 @Log4j
 @Controller
 @RequestMapping("album")
@@ -34,11 +37,13 @@ public class AlbumController extends BaseController {
     AlbumService albumService;
 
 
-    /**
+    */
+/**
      * 我的图片
      * @param model
      * @return
-     */
+     *//*
+
     @RequestMapping("myPicture")
     public String myPicture(Model model) {
 
@@ -54,13 +59,15 @@ public class AlbumController extends BaseController {
         return "blog/myPicture";
     }
 
-    /**
+    */
+/**
      * 加密相册
      * @param model
      * @param pwd
      * @param session
      * @return
-     */
+     *//*
+
     @ResponseBody
     @RequestMapping(value="secrecyPicture",method = RequestMethod.POST)
     public ResultBean secrecyPicture(Model model, String pwd, HttpSession session,int albumId) {
@@ -77,3 +84,4 @@ public class AlbumController extends BaseController {
     }
 
 }
+*/

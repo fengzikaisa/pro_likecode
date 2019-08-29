@@ -1,3 +1,4 @@
+/*
 package com.likecode.aop;
 
 import com.likecode.bean.Blog;
@@ -12,9 +13,11 @@ import org.springframework.stereotype.Component;
 import javax.servlet.http.HttpSession;
 import java.util.Arrays;
 
+*/
 /**
  * Created by wangkai on 2017/10/13.
- */
+ *//*
+
 @Aspect
 @Component
 @Log4j
@@ -44,10 +47,13 @@ public class BlogAspect {
         String  id=point.getArgs()[point.getArgs().length-1].toString();
         log.info("id:"+id);
         log.info(returnValue.toString().indexOf("mobile"));
-        /*if(!(returnValue.toString().indexOf("mobile") > -1)){
+        */
+/*if(!(returnValue.toString().indexOf("mobile") > -1)){
             ResultBean result=blogService.updateBlogStat(Integer.parseInt(id),"readCount");
             log.info("@AfterReturning：结束  result:"+result);
-        }*/
+        }*//*
+
 
     }
 }
+*/
