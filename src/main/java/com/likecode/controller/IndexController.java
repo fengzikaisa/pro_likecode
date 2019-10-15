@@ -40,9 +40,9 @@ public class IndexController {
         JSONObject jsonObject= HttpClientUtil.httpGet("http://open.iciba.com/dsapi");
         String content=jsonObject.getString("content");
         String note=jsonObject.getString("note");
+        model.addAttribute("content",content);
+        model.addAttribute("note",note);
         if(UserAgentUtils.isMobile(request)){
-            model.addAttribute("content",content);
-            model.addAttribute("note",note);
             return "mobile/blog";
         }
         return "blog/blogList";
