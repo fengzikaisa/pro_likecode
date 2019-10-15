@@ -1,5 +1,6 @@
 package com.likecode.controller;
 
+import com.alibaba.fastjson.JSONObject;
 import com.likecode.bean.Album;
 import com.likecode.bean.Blog;
 import com.likecode.bean.FriendshipLink;
@@ -8,6 +9,8 @@ import com.likecode.bean.ext.UserExt;
 import com.likecode.common.SystemHelper;
 import com.likecode.common.bean.ResultBean;
 import com.likecode.common.controller.BaseController;
+import com.likecode.common.http.HttpClient;
+import com.likecode.common.utils.HttpClientUtil;
 import com.likecode.common.utils.UserAgentUtils;
 import com.likecode.service.AlbumService;
 import com.likecode.service.BlogService;
@@ -101,10 +104,15 @@ public class BlogController extends BaseController {
         List<BlogExt> blogList=blogService.getBlogs("10");
         List<FriendshipLink> friend10= friendshipLinkService.getFriendshipLinkList("10");
         List<FriendshipLink> friend20= friendshipLinkService.getFriendshipLinkList("20");
+        JSONObject jsonObject=HttpClientUtil.httpGet("http://open.iciba.com/dsapi");
+        String content=jsonObject.getString("content");
+        String note=jsonObject.getString("note");
         model.addAttribute("blogList",blogList);
         model.addAttribute("friend10",friend10);
         model.addAttribute("friend20",friend20);
         if(UserAgentUtils.isMobile(request)){
+            model.addAttribute("content",content);
+            model.addAttribute("note",note);
             return "mobile/blog";
         }
         return "blog/blogList";

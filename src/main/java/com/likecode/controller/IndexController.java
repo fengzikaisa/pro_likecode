@@ -1,7 +1,9 @@
 package com.likecode.controller;
 
+import com.alibaba.fastjson.JSONObject;
 import com.likecode.bean.FriendshipLink;
 import com.likecode.bean.ext.BlogExt;
+import com.likecode.common.utils.HttpClientUtil;
 import com.likecode.common.utils.UserAgentUtils;
 import com.likecode.service.BlogService;
 import com.likecode.service.FriendshipLinkService;
@@ -35,7 +37,12 @@ public class IndexController {
         model.addAttribute("blogList",blogList);
         model.addAttribute("friend10",friend10);
         model.addAttribute("friend20",friend20);
+        JSONObject jsonObject= HttpClientUtil.httpGet("http://open.iciba.com/dsapi");
+        String content=jsonObject.getString("content");
+        String note=jsonObject.getString("note");
         if(UserAgentUtils.isMobile(request)){
+            model.addAttribute("content",content);
+            model.addAttribute("note",note);
             return "mobile/blog";
         }
         return "blog/blogList";

@@ -1,94 +1,99 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>王恺的博客</title>
-  <meta name="keywords" content="王恺、丰子恺撒、恺撒、小撒" />
-<meta name="description" content="王恺的个人博客，学习笔记，生活记录，感想随笔等。" />
-<link href="/blog/css/base.css" rel="stylesheet">
-<link href="/blog/css/index.css" rel="stylesheet">
-<!--[if lt IE 9]>
-<script src="/blog/js/modernizr.js"></script>
-<![endif]-->
-  <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-<script type="text/javascript" src="/js/baidutj.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>王恺的博客</title>
+    <meta name="keywords" content="王恺、丰子恺撒、恺撒、小撒"/>
+    <meta name="description" content="王恺的个人博客，学习笔记，生活记录，感想随笔等。"/>
+    <link href="/blog/css/base.css" rel="stylesheet">
+    <link href="/blog/css/index.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="/blog/js/modernizr.js"></script>
+    <![endif]-->
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/baidutj.js"></script>
 </head>
 <body>
 <div id="wrapper">
-  <!--header-->
-  <div th:replace="blog/header"></div>
+    <!--header-->
+    <div th:replace="blog/header"></div>
 
-  <div class="jztop"></div>
-  <div class="container">
-    <div class="bloglist f_l">
+    <div class="jztop"></div>
+    <div class="container">
+        <div class="bloglist f_l">
 
-      <div th:each="blog : ${blogList}">
-        <h3><a th:href="@{/blog/{id}(id=${blog.id})}" th:text="${blog.title}"></a></h3>
-        <figure><img th:data-original="${blog.img!=null && blog.img!=''}?${blog.img}:'/img/timg.jpg'" alt="" class="lazy"></figure>
-        <ul>
-          <p th:text="${#strings.abbreviate(blog.blogAbstract,100)}"></p>
-          <a th:title="${blog.title}" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank" class="readmore">阅读全文&gt;&gt;</a>
-        </ul>
-        <p class="dateview">
-          <span th:text="${#dates.format(blog.createTime,'yyyy-MM-dd')}"></span>
-          <span th:text="|作者：${blog.author}|"></span>
-          <span th:text="|标签：${blog.label}|"></span>
-          <span th:text="${blog.type==10} ? '类型：原创':'类型：转载'"></span>
-          <!--<span th:text="|浏览：${blog.readCount}次|"></span>-->
-        </p>
-      </div>
+            <div th:each="blog : ${blogList}">
+                <h3><a th:href="@{/blog/{id}(id=${blog.id})}" th:text="${blog.title}"></a></h3>
+                <figure><img th:data-original="${blog.img!=null && blog.img!=''}?${blog.img}:'/img/timg.jpg'" alt=""
+                             class="lazy"></figure>
+                <ul>
+                    <p th:text="${#strings.abbreviate(blog.blogAbstract,100)}"></p>
+                    <a th:title="${blog.title}" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank" class="readmore">阅读全文&gt;&gt;</a>
+                </ul>
+                <p class="dateview">
+                    <span th:text="${#dates.format(blog.createTime,'yyyy-MM-dd')}"></span>
+                    <span th:text="|作者：${blog.author}|"></span>
+                    <span th:text="|标签：${blog.label}|"></span>
+                    <span th:text="${blog.type==10} ? '类型：原创':'类型：转载'"></span>
+                    <!--<span th:text="|浏览：${blog.readCount}次|"></span>-->
+                </p>
+            </div>
 
-    </div>
-    <div class="r_box f_r">
-      <div class="tit01">
-        <h3 class="tit">关注我</h3>
-        <div class="gzwm">
-          <ul>
-            <li><a class="email" title="MTUyMTAxMDQ0Nzk=">我的电话</a></li>
-            <li><a class="qq" href="mailto:likecode@126.com" target="_blank" title="likecode@126.com">我的邮箱</a></li>
-            <li><a class="tel" title="NzY5NTQ5MTU4">我的QQ</a></li>
-            <li><a class="prize" href="" title="ZmVuZy16aS1rYWk=">我的微信</a></li>
-          </ul>
         </div>
-      </div>
-      <div class="ad"><h3 class="tit">个人公众号</h3><img src="/img/gongzhonghao.jpg" /></div>
-      <div class="ad"><h3 class="tit">智能垃圾分类微信小程序</h3><img src="/img/xiaochengxu.jpg" /></div>
-      <div class="ph">
-        <h3 class="tit">友情链接</h3>
-        <ul class="rank">
-          <li th:each="friend :${friend10}"><a th:href="${friend.url}" th:title="${friend.name}" target="_blank" th:text="${friend.name}"></a></li>
-        </ul>
-      </div>
+        <div class="r_box f_r">
+            <div class="tit01">
+                <h3 class="tit">关注我</h3>
+                <div class="gzwm">
+                    <ul>
+                        <li><a class="email" title="MTUyMTAxMDQ0Nzk=">我的电话</a></li>
+                        <li><a class="qq" href="mailto:likecode@126.com" target="_blank"
+                               title="likecode@126.com">我的邮箱</a></li>
+                        <li><a class="tel" title="NzY5NTQ5MTU4">我的QQ</a></li>
+                        <li><a class="prize" href="" title="ZmVuZy16aS1rYWk=">我的微信</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="ad"><h3 class="tit">个人公众号</h3><img src="/img/gongzhonghao.jpg"/></div>
+            <div class="ad"><h3 class="tit">智能垃圾分类微信小程序</h3><img src="/img/xiaochengxu.jpg"/></div>
+            <div class="ph">
+                <h3 class="tit">友情链接</h3>
+                <ul class="rank">
+                    <li th:each="friend :${friend10}"><a th:href="${friend.url}" th:title="${friend.name}"
+                                                         target="_blank" th:text="${friend.name}"></a></li>
+                </ul>
+            </div>
 
 
-      <div class="tuwen">
-        <h3 class="tit">其他技术相关网站</h3>
-        <ul>
-          <li th:each="friend :${friend20}"><a th:href="${friend.url}" th:title="${friend.name}" target="_blank"><img src=""><b th:text="${friend.name}">我的网易博客</b></a></li>
-        </ul>
-      </div>
-      <!--<div class="ad"><img src="http://oxp9goqe4.bkt.clouddn.com/%E5%8F%A4%E8%A3%85_%E5%A5%B3.jpg"></div>-->
-      <!--<div class="ad"><img src="http://oxp9goqe4.bkt.clouddn.com/%E5%8F%A4%E8%A3%85_%E7%94%B7.jpg"></div>-->
+            <div class="tuwen">
+                <h3 class="tit">其他技术相关网站</h3>
+                <ul>
+                    <li th:each="friend :${friend20}"><a th:href="${friend.url}" th:title="${friend.name}"
+                                                         target="_blank"><img src=""><b
+                            th:text="${friend.name}">我的网易博客</b></a></li>
+                </ul>
+            </div>
+            <!--<div class="ad"><img src="http://oxp9goqe4.bkt.clouddn.com/%E5%8F%A4%E8%A3%85_%E5%A5%B3.jpg"></div>-->
+            <!--<div class="ad"><img src="http://oxp9goqe4.bkt.clouddn.com/%E5%8F%A4%E8%A3%85_%E7%94%B7.jpg"></div>-->
 
-      <!--延迟加载示例-->
-      <!--<div class="ad"><img data-original="http://oxp9goqe4.bkt.clouddn.com/%E5%8F%A4%E8%A3%85_%E5%A5%B3.jpg" class="lazy"></div>
-      <div class="ad"><img data-original="http://oxp9goqe4.bkt.clouddn.com/%E5%8F%A4%E8%A3%85_%E7%94%B7.jpg" class="lazy"></div>-->
+            <!--延迟加载示例-->
+            <!--<div class="ad"><img data-original="http://oxp9goqe4.bkt.clouddn.com/%E5%8F%A4%E8%A3%85_%E5%A5%B3.jpg" class="lazy"></div>
+            <div class="ad"><img data-original="http://oxp9goqe4.bkt.clouddn.com/%E5%8F%A4%E8%A3%85_%E7%94%B7.jpg" class="lazy"></div>-->
 
 
+        </div>
     </div>
-  </div>
 
-  <!--底部-->
-  <div th:replace="blog/footer"></div>
+    <!--底部-->
+    <div th:replace="blog/footer"></div>
 </div>
 <script src="/js/canvas-nest.js"></script>
 <script type="text/javascript" src="/js/jquery.lazyload.js"></script>
 <script type="text/javascript" src="/js/biegaowo.js"></script>
 <script type="text/javascript">
-  $(function(){
-      //图片懒加载
-      $("img.lazy").lazyload({effect: "fadeIn"});
-  })
+    $(function () {
+        //图片懒加载
+        $("img.lazy").lazyload({effect: "fadeIn"});
+    })
 </script>
 </body>
 </html>
