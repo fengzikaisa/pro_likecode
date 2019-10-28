@@ -104,7 +104,7 @@
                 }, methods: {
                     getAllTypes: function () {
                         var t = this;
-                        fetch("https://www.printf520.com:8080/GetType").then(function (t) {
+                        fetch("https://www.tophub.fun:8080/GetType").then(function (t) {
                             return t.json()
                         }).then(function (n) {
                             var e = n.Data;
@@ -112,7 +112,7 @@
                         })
                     }, getInfo: function (t) {
                         var n = this;
-                        fetch("https://www.printf520.com:8080/GetTypeInfo?id=" + t).then(function (t) {
+                        fetch("https://www.tophub.fun:8080/GetTypeInfo?id=" + t).then(function (t) {
                             return t.json()
                         }).then(function (t) {
                             return n.infos = t.Data
