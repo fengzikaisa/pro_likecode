@@ -56,4 +56,18 @@ public class ImgController {
 
     }
 
+    /**
+     * 道德经
+     * @param model
+     * @return
+     */
+    @RequestMapping(value="dao")
+    public String dao(Model model, HttpServletRequest request) {
+        int num=RandomUtil.getRandomForLol(1,81);
+        String url="http://file.iluwen.com/dao/"+num+".png";
+        model.addAttribute("url",url);
+        return "img/dao";
+
+    }
+
 }
