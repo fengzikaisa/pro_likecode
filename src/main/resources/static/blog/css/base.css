@@ -68,8 +68,9 @@ a:hover {
 	margin: 0 5px
 }
 #wrapper {
-	background-color: burlywood;
-/*	background: url(../images/ftbg_1.png) bottom center no-repeat;*/
+	/*background-color: burlywood;*/
+	/*background: url(../images/ftbg.jpg);*/
+	background: url(../../img/yu.jpg);
 	overflow: hidden;
 }
 header {
