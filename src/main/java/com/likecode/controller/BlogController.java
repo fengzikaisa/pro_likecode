@@ -104,17 +104,10 @@ public class BlogController extends BaseController {
         List<BlogExt> blogList=blogService.getBlogs("10");
         List<FriendshipLink> friend10= friendshipLinkService.getFriendshipLinkList("10");
         List<FriendshipLink> friend20= friendshipLinkService.getFriendshipLinkList("20");
-        JSONObject jsonObject=HttpClientUtil.httpGet("http://open.iciba.com/dsapi");
-        String content=jsonObject.getString("content");
-        String note=jsonObject.getString("note");
-        model.addAttribute("content",content);
-        model.addAttribute("note",note);
         model.addAttribute("blogList",blogList);
         model.addAttribute("friend10",friend10);
         model.addAttribute("friend20",friend20);
         if(UserAgentUtils.isMobile(request)){
-            model.addAttribute("content",content);
-            model.addAttribute("note",note);
             return "mobile/blog";
         }
         return "blog/blogList";
